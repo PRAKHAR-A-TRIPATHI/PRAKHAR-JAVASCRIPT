@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //case 1
+        // var num = 10;
+
+        // {
+        //     var num = 11;
+
+        // }
+        // console.log(num);
+
+        //case 2
+        // var num = 15;
+        // var num = 15;
+
+        // {
+        //     let num = 3;
+        // }
+        // console.log(num);
+
+        //case 3
+        // var num = 15;
+
+        // {
+        //     const num = 3;
+        // }
+        // console.log(num);
+
+        //case 4  error because var and const two in global one varibale one time use
+        // var num = 15;
+        // const num = 2;
+
+        // {
+        //     const num = 3;
+        // }
+        // console.log(num);
+
+        //case 5 
+        // var num = 15;
+        // const num = 2;
+
+        // {
+        //     const num = 3;
+        // }
+        // console.log(num);
+
+        //case 6
+        // var num = 15;
+        // let num1 = 10;
+
+        // {
+        //     const num1 = 3;
+        // }
+        // console.log(num1);
+
+        //case7 error undefine p is undefine
+        // console.log(p);
+        // var num = 15;
+        // let num1 = 10;
+
+        // {
+        //     const num1 = 3;
+        // }
+        // console.log(num1);
+
+        //case 8  
+        // // Declare a variable with var
+        // var x = 10;
+        // // Redeclare the variable in the same scope
+        // var x = 20;
+        // // Reassign the variable in the same scope
+        // x = 30;
+        // // Declare a variable with var in a different scope
+        // {
+        //     var x = 40;
+        // }
+        // // Redeclare the variable in a different scope
+        // {
+        //     var x = 50;
+        // }
+        // // Reassign the variable in a different scope
+        // {
+        //     x = 60;
+        // }
+
+        //case 9
+        // Redeclaration in the same scope
+        // let x = 10;
+        // console.log(x); // 10
+        // x = 20;
+        // console.log(x); // 20
+        // // Reassignment in the same scope
+        // let y = 10;
+        // console.log(y); // 10
+        // y = 90;
+        // console.log(y); // 90
+        // // Redeclaration in a different scope
+        // {
+        //     let z = 70;
+        //     console.log(z); // 70
+        // }
+        // // z is not accessible here
+        // // Reassignment in a different scope
+        // {
+        //     let a = 10;
+        //     console.log(a); // 10
+        //     a = 89;
+        //     console.log(a); // 89
+        // }
+
+        // //case10
+        // // Redeclaration in the same scope
+        // const x = 10;
+        // console.log(x); // 10
+        // // x = 20; // Error: Cannot reassign a constant
+        // // Reassignment in the same scope
+        // const y = 10;
+        // console.log(y); // 10
+        // // y = y + 10; // Error: Cannot reassign a constant
+        // // Redeclaration in a different scope
+        // {
+        //     const z = 10;
+        //     console.log(z); // 10
+        // }
+        // // z is not accessible here
+        // // Reassignment in a different scope
+        // {
+        //     const a = 10;
+        //     console.log(a); // 10
+        //     // a = a + 10; // Error: Cannot reassign a constant
+        // }
+
+        //case 11
+        // var x;
+        // console.log(x);
+
+        // console.log(i); // undefined
+
+
+        //case 12
+        // console.log(num);
+        // var num;
+        // num = 10;
+        // {
+        //     console.log(num)
+        // }
+
+        //case 13
+        // console.log(num);
+        // var num = 20;
+        // num = 10;
+        // {
+        //     console.log(num)
+        // }
+
+        // case 14 error syntex error one varvible one time use
+        // var num = 10;
+        // let num = 10;
+        // {
+        //     console.log(num)
+        // }
+
+        // case 15  
+        // var num = 10;
+
+        // {
+        //     num = 15;
+
+        // }
+        // console.log(num)
+
+        // case 16
+        // const num = 10;
+        // {
+        //     const num = 11;
+        // }
+        // console.log(num)
+
+        // case 17
+        // let num = 10;
+        // {
+        //     let num = 11;
+        //     console.log(num)
+        // }
+        // console.log(num)
+
+        // case 18
+        // let num = 10;
+        // let num = 17;
+        // {
+        //     let num = 11;
+        //     console.log(num)
+        // }
+        // console.log(num)
+
+        // case 19
+        // var num = 10;
+        // var num = 17;
+        // {
+        //     let num = 11;
+        //     console.log(num)
+        // }
+        // console.log(num)
+
+        // case 20 reffrence eror :cannot exes"num" berfore inntialization
+        // const num=10;
+        // {
+        //     console.log(num);
+        //     const num=5;
+        //     console.log(num);
+
+        // }
+        // console.log(num);
+
+        // case 21 
+        // const star=5;
+        // console.log(star);
+        // {
+        //     console.log(star);
+        // }
+        // console.log(star);
+        
+        // case 22
+        // const star=5;
+        // console.log(star);
+        // {
+        //    const star=23;
+        // }
+        // console.log(star);
+
+        // case 23 ReferenceError: Cannot access 'star' before initialization
+    
+        // const star=5;
+      
+        // {
+        //     console.log(star);
+        //    const star=23;
+        // }
+        // console.log(star);
+
+        //case 25 
+        // var star=5;
+      
+        // {
+        //     console.log(star);
+        //    var star=23;
+        // }
+        // console.log(star);
+
+        // case 26
+        // let star=5;
+      
+        // {
+        //     console.log(star);
+        //    let star=23;
+        // }
+        // console.log(star);
+
+
+
+    </script>
+</body>
+
+</html>
