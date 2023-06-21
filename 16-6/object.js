@@ -141,7 +141,7 @@
 // let n ="name";
 // let obj = {
 //     [n]:"prakhar",
-//     course:"p.tech"
+//     course:"B.tech"
 // };
 // console.log(obj);
 
@@ -159,4 +159,6 @@
 // }
 // let dtails = ["name", "age", "coursse"];
 // console.log(obj[dtails[1]]);
+
+
 

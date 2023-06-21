@@ -11,10 +11,10 @@
 //   joiningDate: new Date(),
 // };
 
-//   let devloper2=devloper1;
+  // let devloper2=devloper1;
 //#1
-//   let devloper2 = Object.assign({},devloper1);
-//   devloper2.name="shlok";
+  // let devloper2 = Object.assign({},devloper1);
+  // devloper2.name="shlok";
 
 //#2
 //  let devloper2={...devloper1}
@@ -47,19 +47,19 @@
 // user.name="shlok";
 
 //3
-let obj={
-  name:"prakhar",
-  addresh:{
-    city:'delhi',
-    state:"up"
-  },
-  getdata:function(){
-    return "all data hrer";
-  }
-};
-//deep copy
-let user =JSON.parse( JSON.stringify(obj));
-user.addresh.state="Gujrat";
-user.addresh.city="Ahmedabad";
-console.log(obj);
-console.log(user);
+// let obj={
+//   name:"prakhar",
+//   addresh:{
+//     city:'delhi',
+//     state:"up"
+//   },
+//   getdata:function(){
+//     return "all data hrer";
+//   }
+// };
+// //deep copy
+// let user =JSON.parse( JSON.stringify(obj));
+// user.addresh.state="Gujrat";
+// user.addresh.city="Ahmedabad";
+// console.log(obj);
+// console.log(user);
