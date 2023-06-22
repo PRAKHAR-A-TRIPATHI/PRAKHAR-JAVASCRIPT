@@ -69,5 +69,8 @@
 
 
 // 7 Comparing strings
-
+var a="prakhar";
+var b="shlok";
+var c;
+console.log(c);
 
