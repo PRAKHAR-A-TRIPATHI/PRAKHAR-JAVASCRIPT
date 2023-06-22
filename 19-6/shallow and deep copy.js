@@ -1,10 +1,10 @@
-//shallow and deep copy
+// shallow and deep copy
 // let devloper1 = {
 //   name: "prakhar",
 //   Skills: {
 //     primary: "full stak",
 //     secondary: "js",
-//   },
+//   }
 //   caluculateAge: function name(params) {
 //     return 30;
 //   },
@@ -20,6 +20,7 @@
 //  let devloper2={...devloper1}
 //  devloper2.name='Shlok';
 //  devloper2.Skills.primary='front end';
+//  devloper2.Skills.secondary='front end';
 
 // #3
 // let devloper2 = JSON.parse(JSON.stringify(devloper1));
@@ -27,8 +28,8 @@
 // devloper2.Skills.primary = "front end";
 // devloper2.Skills.secondary = "java";
 
-// console.log(devloper1);
-// console.log(devloper2);
+console.log(devloper1);
+console.log(devloper2);
 
 //new-=Example
 
