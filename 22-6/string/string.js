@@ -69,8 +69,29 @@
 
 
 // 7 Comparing strings
-var a="prakhar";
-var b="shlok";
-var c;
-console.log(c);
+// var a="prakhar";
+// var b="shlok";
+// var c;
+// console.log(c);
+
+// let string1 = 'apple';
+// let string2 = 'banana';
+
+// console.log(string1.localeCompare(string2)); // -1
+
+// let string1 = 'hello world';
+// let string2 = 'world';
+
+// console.log(string1.indexOf(string2)); // 6
+
+// let string1 = 'hello';
+// let string2 = 'Hello';
+
+// console.log(string1 === string2); // false
+
+// let string1 = 'hello';
+// let string2 ="Hello";
+
+// console.log(string1 == string2); // false
+
 
