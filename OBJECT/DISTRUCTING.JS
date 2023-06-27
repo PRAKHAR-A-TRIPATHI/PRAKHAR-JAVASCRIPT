@@ -24,8 +24,8 @@
 //   // Destructuring nested objects
 //   const { name, age, address: { city, country } } = person;
   
-//   console.log(city);    // Output: 'New York'
-//   console.log(country); // Output: 'USA'
+//   console.log(city);    // 
+//   console.log(country); // 
   
 
 // #3
@@ -42,6 +42,10 @@ const person = {
 //   console.log(age);    // Output: 25
 //   console.log(gender); // Output: 'Male'
   
-const { name, age, gender, city = 'Unknown' } = person;
+// const { name, age, gender, city = 'Unknown' } = person;
 
-console.log(city);  // Output: 'Unknown'
+// console.log(city);  // Output: 'Unknown'
+
+let obj1={
+
+}

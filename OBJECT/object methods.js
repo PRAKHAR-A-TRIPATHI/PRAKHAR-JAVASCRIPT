@@ -5,8 +5,8 @@
 // console.log(obj3) // Output: { a: 1, b: 2 }
 
 // Object.is()
-console.log(Object.is(25, "25")); // Output: false
-console.log(Object.is(NaN, NaN)); // Output: true
+// console.log(Object.is(25, "25")); // Output: false
+// console.log(Object.is(NaN, NaN)); // Output: true
 
 // Object.entries()
 // let obj = { a: 1, b: 2, c: 3 }

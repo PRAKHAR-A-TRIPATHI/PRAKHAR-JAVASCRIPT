@@ -93,5 +93,3 @@
 // let string2 ="Hello";
 
 // console.log(string1 == string2); // false
-
-
