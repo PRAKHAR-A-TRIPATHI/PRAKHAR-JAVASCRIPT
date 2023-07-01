@@ -17,7 +17,7 @@
 //     return value+v1;
 // })
 // console.log(arr1);
- 
+
 // const result = donuts.filter(donut => donut.batters.batter.some(batter => batter.type === 'Regular') && donut.topping.some(topping => topping.type === 'Chocolate'));
 
 // const result = donuts.filter(donut => donut.topping.some(topping => topping.type === 'Chocolate' || topping.type === 'Sugar'));

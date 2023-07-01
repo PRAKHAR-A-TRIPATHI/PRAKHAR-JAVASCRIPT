@@ -26,16 +26,17 @@
 
 
 //2
-// const users  = [
-//     {first_name: "Handnm", last_name: "L demo", age: 17},
-//     {first_name: "Q Wei", last_name: "Alxezx", age: 30},
-//     {first_name: "Pdeq Twern", last_name: "Ruse", age: 22},
-//     {first_name: "Widfruyn", last_name: "Ruby", age: 11},
-//     {first_name: "Erdfg Pso", last_name: "Loal", age: 34},
-//     {first_name: "Dedfgmors", last_name: "Poet", age: 60},
-//     {first_name: "Ale4tos", last_name: "Lkeu", age: 16},
-//    ]
+const users  = [
+    {first_name: "Handnm", last_name: "L demo", age: 17},
+    {first_name: "Q Wei", last_name: "Alxezx", age: 30},
+    {first_name: "Pdeq Twern", last_name: "Ruse", age: 22},
+    {first_name: "Widfruyn", last_name: "Ruby", age: 11},
+    {first_name: "Erdfg Pso", last_name: "Loal", age: 34},
+    {first_name: "Dedfgmors", last_name: "Poet", age: 60},
+    {first_name: "Ale4tos", last_name: "Lkeu", age: 16},
+   ]
 //    Write a code that adds new key in each object named : isMature
+
 // for (const user of users) {
 //     user.isMature = user.age>=18;
 // }
@@ -45,11 +46,12 @@
 //     name.isMature = users.age>=18;
 // })
 
-// users.map((name)=>{
-//     name.isMature = users.age>=18;
-// })
+users.map((name)=>{
+    name.isMature = users.age>=18;
+    // return users.age>=18;
+    console.log(users);
+})
 
-// console.log(users);
 
 
 //3
@@ -86,12 +88,13 @@ const nestedObject = {
   };
 //  => print all items of this object in line
 // const{name,age,address:{street,city,state},hobbies}=nestedObject;
+
 // console.log(name,age,street,city,state,hobbies[0],hobbies[1],hobbies[2]);
 
-for (const key in nestedObject) {
-    console.log(`${key}: ${nestedObject[key]}`);
-  }
-console.log(nestedObject);
+// for (const key in nestedObject) {
+//     console.log(`${key}: ${nestedObject[key]}`);
+//   }
+// console.log(nestedObject);
 
 
 
