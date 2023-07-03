@@ -74,27 +74,72 @@ let donuts = [
 ];
 
 // //1
+// function toppingChocolate(arr) {
+//   let a = arr.filter((item) => item.topping.filter(topping => topping.type === "Chocolate").length );
+//   return a
+// }
+// console.log(toppingChocolate(donuts));
+
+//2
+// function regularToppingChocolate(arr) {
+//   let a = arr.filter((item) => item.topping.filter(topping => topping.type === "Chocolate").length);
+//   let b = arr.filter((item) => item.batters.batter.filter(batter => batter.type === "Regular").length);
+//   return a,b;
+// }
+// console.log(regularToppingChocolate(donuts));
+
+//3
+// function toppingChocolateSugar(arr) {
+//   let a = arr.filter((item) => item.topping.filter(top => top.type === "Chocolate").length &&
+//    item.topping.filter(top => top.type === "Sugar").length);
+//    return a;
+// }
+// console.log(toppingChocolateSugar(donuts));
+
+//4
+// function ppuChecker(arr) {
+//    let a = arr.filter((val)=> val.ppu > 0.5)
+//    return a
+// }
+// console.log(ppuChecker(donuts));
+
+//5
+// function bringAll(arr) {
+//  let a = arr.map((item) => item.batters)
+//  return a;
+// }
+// console.log(bringAll(donuts));
+
+//6
+// function batterTwoandmorethan(arr){
+//   let a= arr.filter(value => value.batters.batter.length>=2);
+//   return a;
+// }
+// console.log(batterTwoandmorethan(donuts));
+// const result = donuts.filter(donut => donut.batters.batter.length >= 2);
+
+// //1
 // let value = donuts.filter((item)=>item.topping.filter((topping)=>topping[i].type == "Chocolate"))
 // console.log(value);
 
 
-function toppingChocolate(array) {
-    let a = donuts.filter((value, index, arr) => {
-        let topping = value.topping;
-        for (let i = 0; i < topping.length; i++) {
-            if (topping[i].type == "Chocolate"){
-                console.log(value.type+":");
-                console.log(value);
-                // return value;
-            }
-        }
-    });
-    console.log(a);
-  }
-  toppingChocolate(donuts);
+// function toppingChocolate(array) {
+//     let a = donuts.filter((value, index, arr) => {
+//         let topping = value.topping;
+//         for (let i = 0; i < topping.length; i++) {
+//             if (topping[i].type == "Chocolate"){
+//                 console.log(value.type+":");
+//                 console.log(value);
+//                 // return value;
+//             }
+//         }
+//     });
+//     console.log(a);
+//   }
+//   toppingChocolate(donuts);
 
 //2
-// const result = donuts.filter(donut => donut.batters.batter.some(batter => batter.type === 'Regular') && donut.topping.some(topping => topping.type === 'Chocolate'));
+// const result = donuts.filter(donut => donut.batters.batter.filter(batter => batter.type === 'Regular') && donut.topping.filter(topping => topping.type === 'Chocolate'));
 
 //3
 
@@ -104,13 +149,13 @@ function toppingChocolate(array) {
 // const result = donuts.filter(donut => donut.ppu > 0.5);
 
 //5
-// const result = [].concat(...donuts.map(donut => donut.batters.batter));
-
+// const result = [].concat(...donuts.map(donut => donut.batters));
+// console.log(result);
 //6
 // const result = donuts.filter(donut => donut.batters.batter.length >= 2);
 
 // console.log(result);
-
+// console.log(result);
 
 //10 Get name initials
 // input = "George Raymond Richard Martin"; Output: “GRRM”
@@ -160,26 +205,124 @@ function toppingChocolate(array) {
 // let output = shortenWords(input);
 // console.log(output); // Output: "E3y d7r l3s to mix k8s and j8t"
 
-//11
-// const products = [
-//   { name: "Product 1", price: 20, category: "Electronics" },
-//   { name: "Product 2", price: 30, category: "Clothes" },
-//   { name: "Product 3", price: 40, category: "Electronics" },
-//   { name: "Product 4", price: 50, category: "Clothes" },
-//   { name: "Product 5", price: 60, category: "Clothes" },
-//   { name: "Product 6", price: 70, category: "Electronics" },
-//   { name: "Product 7", price: 80, category: "Clothes" },
-//   { name: "Product 8", price: 90, category: "Electronics" },
-// ];
-// let categoryCounts = {};
-// for (let i = 0; i < products.length; i++) {
-//   let product = products[i];
-//   if (categoryCounts[product.category]) {
-//     categoryCounts[product.category]++;
-//   } else {
-//     categoryCounts[product.category] = 1;
+//12
+const products = [
+  { name: "Product 1", price: 20, category: "Electronics" },
+  { name: "Product 2", price: 30, category: "Clothes" },
+  { name: "Product 3", price: 40, category: "Electronics" },
+  { name: "Product 4", price: 50, category: "Clothes" },
+  { name: "Product 5", price: 60, category: "Clothes" },
+  { name: "Product 6", price: 70, category: "Electronics" },
+  { name: "Product 7", price: 80, category: "Clothes" },
+  { name: "Product 8", price: 90, category: "Electronics" },
+];
+
+
+// 1 
+// function propertyCounter(arrayName) {
+//     let newObject = {};
+//     let Clothes = arrayName.filter(value => value.category == "Clothes");
+//     let Electronics = arrayName.filter(value => value.category == "Electronics");
+//     let a = Clothes.length;
+//     let b = Electronics.length;
+//     newObject.Clothes = a;
+//     newObject.Electronics = b;
+//     return newObject 
+// }
+// console.log(propertyCounter(products));
+
+//2
+// function averagePrice(products) {
+//     let a = 0;
+//     let b = 0;
+//     let c = 0;
+//     let d = 0;
+//     for (let i = 0; i < products.length; i++) {
+//         if (products[i].category == "Clothes") {
+//             a += products[i].price;
+//             b++;
+//             // console.log(a);
+//         } else if (products[i].category == "Electronics") {
+//             c += products[i].price;
+//             d++;
+//             // console.log(c);
+//         }
+//     }
+//     return { Clothes: a / b, Electronics: c / d }
+// }
+// let aveObject = averagePrice(products);
+// console.log(aveObject);
+
+// function calculateAveragePriceByCategory(products) {
+//   const categoryAverages = {};
+
+//   products.forEach(product => {
+//     const { category, price } = product;
+
+//     if (!categoryAverages[category]) {
+//       categoryAverages[category] = { total: 0, count: 0 };
+//     }
+
+//     categoryAverages[category].total += price;
+//     categoryAverages[category].count++;
+//   });
+
+//   for (const category in categoryAverages) {
+//     const { total, count } = categoryAverages[category];
+//     categoryAverages[category] = total / count;
 //   }
+
+//   return categoryAverages;
 // }
 
-// console.log(categoryCounts);
-// // Output: { Clothes: 4, Electronics: 4 }
+// const averagePrices = calculateAveragePriceByCategory(products);
+// console.log(averagePrices);
+
+
+// 13
+const employees = [
+  { name: "John", salary: 50000, department: "IT" },
+  { name: "Jane", salary: 60000, department: "HR" },
+  { name: "Bob", salary: 55000, department: "IT" },
+  { name: "Sophie", salary: 75000, department: "HR" },
+  { name: "Mike", salary: 65000, department: "IT" },
+  { name: "Emily", salary: 80000, department: "HR" },
+  { name: "David", salary: 70000, department: "IT" },
+];
+
+// 2
+function propertyCounter(arrayName) {
+      let newObject = {};
+      let IT = arrayName.filter(value => value.department == "IT");
+      let HR = arrayName.filter(value => value.department == "HR");
+      let a = IT.salary;
+      let b = HR.length;
+      newObject.IT = a;
+      newObject.HR = b;
+      return newObject 
+  }
+  console.log(propertyCounter(employees));
+
+// count the average salary of each department
+// function averagePrice(employees) {
+//       let a = 0;
+//       let b = 0;
+//       let c = 0;
+//       let d = 0;
+//       for (let i = 0; i < employees.length; i++) {
+//           if (employees[i].department == "IT") {
+//               a += employees[i].salary;
+//               b++;
+//               // console.log(a);
+//           } else if (employees[i].department == "HR") {
+//               c += employees[i].salary;
+//               d++;
+//               // console.log(c);
+//           }
+//       }
+//       return { IT: a / b, HR: c / d }
+//   }
+//   let aveObject = averagePrice(employees);
+//   console.log(aveObject);
+
+

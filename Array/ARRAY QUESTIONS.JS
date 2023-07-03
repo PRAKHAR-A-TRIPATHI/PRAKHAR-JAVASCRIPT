@@ -13,6 +13,15 @@
 //     name.full_name = name.first_name+" "+name.last_name;
 //   })
 
+// function addFullName(arr) {
+  //   const b = arr.map(a => ({
+  //     ...a, fullName : a.first_name + " " + a.last_name
+  //   }))
+  //   return b
+  // }
+  // console.log(addFullName(names));
+  
+
     // names.forEach((name) => {
     //   name.full_name = name.first_name + ' ' + name.last_name;
     // });
@@ -46,13 +55,21 @@ const users  = [
 //     name.isMature = users.age>=18;
 // })
 
-users.map((name)=>{
-    name.isMature = users.age>=18;
-    // return users.age>=18;
-    console.log(users);
-})
+// users.map((name)=>{
+//     name.isMature = users.age>=18;
+//     // return users.age>=18;
+//     console.log(users);
+// })
 
-
+// function addIsMature(arr) {
+//     let b = arr.map(a => ({
+//       ...a, isMature : a.age >= 18
+//     }))
+//     return b;
+//   }
+//   console.log(addIsMature(users));
+  
+  
 
 //3
 // let arr = [1,2,3,5]
@@ -75,17 +92,27 @@ users.map((name)=>{
 // })
 
 
+// function arrPrinter(arr) {
+//   for(let i = 0; i < arr.length; i++){
+//       for(let j = 0; j < arr[i].length; j++){
+//           console.log(arr[i][j]);
+//       }
+//   }
+// }
+// arrPrinter(nestedArray)
+
+
 //5
-const nestedObject = {
-    name: "Vishal Kukreja",
-    age: 32,
-    address: {
-      street: "123 Mumbai fashion St",
-      city: "Midtown",
-      state: "MH",
-    },
-    hobbies: ["reading", "drawing", "gardening"],
-  };
+// const nestedObject = {
+//     name: "Vishal Kukreja",
+//     age: 32,
+//     address: {
+//       street: "123 Mumbai fashion St",
+//       city: "Midtown",
+//       state: "MH",
+//     },
+//     hobbies: ["reading", "drawing", "gardening"],
+//   };
 //  => print all items of this object in line
 // const{name,age,address:{street,city,state},hobbies}=nestedObject;
 
@@ -96,6 +123,16 @@ const nestedObject = {
 //   }
 // console.log(nestedObject);
 
+// function itemPrinter(obj) {
+//     for (let key in obj) {
+//         if (typeof obj[key] === "object") {
+//             itemPrinter(obj[key]);
+//         }
+        
+
+//     }
+//   }
+// itemPrinter(nestedObject);
 
 
 
@@ -158,4 +195,28 @@ const nestedObject = {
 //   console.log(containsNumber(["1", "a", "h"])); // false
 //   console.log(containsNumber(["a", 3, "gh"])); // true
 //   console.log(containsNumber(["a", '3df', "gh"])); // false
+
+// function multiplyArrayElements(array, multiplier) {
+//   let i = 0;
+//   while (i < array.length) {
+//     array[i] *= multiplier;
+//     i++;
+//   }
+//   return array;
+// }
+
+// // Usage example:
+// const numbers = [1, 2, 3, 4, 5];
+// const multipliedNumbers = multiplyArrayElements(numbers, 2);
+// console.log(multipliedNumbers);
+
+//8
+// const numbers = [1, 2, 3, 4];
+// const doubled = numbers.map((num, index, array) => {
+//   array.push(num * 2);
+//   return num * 2;
+// });
+// console.log(numbers, doubled);
+
+
 
