@@ -126,28 +126,44 @@
 // console.log(filter);
 
 
-//new questions
-function generateOutput(data) {
-    let output = {};
+// new questions
+// function generateOutput(data) {
+//     let output = {};
   
-    for (let i = 0; i < data.length; i++) {
-      let name = data[i];
-      let firstLetter = name[0].toLowerCase();
+//     for (let i = 0; i < data.length; i++) {
+//       let name = data[i];
+//       let firstLetter = name[0].toLowerCase();
   
-      if (output[firstLetter] === undefined) {
-        // Create a new array for the first letter if it doesn't exist
-        output[firstLetter] = [];
-      }
+//       if (output[firstLetter] === undefined) {
+//         // Create a new array for the first letter if it doesn't exist
+//         output[firstLetter] = [];
+//       }
   
-      for (let j = 0; j < name.length; j++) {
-        output[firstLetter].push(name[j]);
-      }
-    }
+//       for (let j = 0; j < name.length; j++) {
+//         output[firstLetter].push(name[j]);
+//       }
+//     }
   
-    return output;
-  }
+//     return output;
+//   }
   
-  let data = ["prakhar", "shlok", "anupkumar", "rahul", "krish3", "new"];
-  let result = generateOutput(data);
-  console.log(result);
-  
+//   let data = ["prakhar", "shlok", "anupkumar", "rahul", "krish3", "new","prakhas"];
+//   let result = generateOutput(data);
+//   console.log(result);
+
+// let names = ["amit", "ram", "akshay", "bhavesh", "mitesh", "chetan", "rudra", "zebra", "yak", "zinda"];
+// function groupByAlphabetically(arr) {
+//     const short = arr.sort().map(val => val.toLowerCase());
+//     let empty = {};
+//     short.forEach(element => {
+//         const firstChar = element.charAt(0).toLowerCase();
+//         if(empty[firstChar]){
+//             empty[firstChar].push(element);
+//         }else{
+//             empty[firstChar] = [element]
+//         }
+//     });
+//     return empty;
+// }
+// console.log(groupByAlphabetically(names));
+
