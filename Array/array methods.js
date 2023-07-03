@@ -1,8 +1,8 @@
 let name=["prakhar","shlok","aman","Rahul","krishna","shlok"]
 
 // splice 
-// name.splice(2,3,21,22,23);
-// console.log(name);
+name.splice(2,3,21,22,23);
+console.log(name);
 
 //reverce
 // name.reverse()
@@ -127,6 +127,6 @@ let name=["prakhar","shlok","aman","Rahul","krishna","shlok"]
 // console.log(num.flat(2));
 
 //every
-var age=[10,13,18,20];
-var aage=(value)=>value>18;
-console.log(age.every(aage));
+// var age=[10,13,18,20];
+// var aage=(value)=>value>18;
+// console.log(age.every(aage));

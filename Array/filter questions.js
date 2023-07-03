@@ -215,21 +215,22 @@ const products = [
   { name: "Product 6", price: 70, category: "Electronics" },
   { name: "Product 7", price: 80, category: "Clothes" },
   { name: "Product 8", price: 90, category: "Electronics" },
+  // {name:"product 9",price:80,category:"Electronics"}
 ];
 
 
 // 1 
-// function propertyCounter(arrayName) {
-//     let newObject = {};
-//     let Clothes = arrayName.filter(value => value.category == "Clothes");
-//     let Electronics = arrayName.filter(value => value.category == "Electronics");
-//     let a = Clothes.length;
-//     let b = Electronics.length;
-//     newObject.Clothes = a;
-//     newObject.Electronics = b;
-//     return newObject 
-// }
-// console.log(propertyCounter(products));
+function propertyCounter(arrayName) {
+    let newObject = {};
+    let Clothes = arrayName.filter(value => value.category == "Clothes");
+    let Electronics = arrayName.filter(value => value.category == "Electronics");
+    let a = Clothes.length;
+    let b = Electronics.length;
+    newObject.Clothes = a;
+    newObject.Electronics = b;
+    return newObject 
+}
+console.log(propertyCounter(products));
 
 //2
 // function averagePrice(products) {
@@ -280,28 +281,36 @@ const products = [
 
 
 // 13
-const employees = [
-  { name: "John", salary: 50000, department: "IT" },
-  { name: "Jane", salary: 60000, department: "HR" },
-  { name: "Bob", salary: 55000, department: "IT" },
-  { name: "Sophie", salary: 75000, department: "HR" },
-  { name: "Mike", salary: 65000, department: "IT" },
-  { name: "Emily", salary: 80000, department: "HR" },
-  { name: "David", salary: 70000, department: "IT" },
-];
+// const employees = [
+//   { name: "John", salary: 50000, department: "IT" },
+//   { name: "Jane", salary: 60000, department: "HR" },
+//   { name: "Bob", salary: 55000, department: "IT" },
+//   { name: "Sophie", salary: 75000, department: "HR" },
+//   { name: "Mike", salary: 65000, department: "IT" },
+//   { name: "Emily", salary: 80000, department: "HR" },
+//   { name: "David", salary: 70000, department: "IT" },
+// ];
 
-// 2
-function propertyCounter(arrayName) {
-      let newObject = {};
-      let IT = arrayName.filter(value => value.department == "IT");
-      let HR = arrayName.filter(value => value.department == "HR");
-      let a = IT.salary;
-      let b = HR.length;
-      newObject.IT = a;
-      newObject.HR = b;
-      return newObject 
-  }
-  console.log(propertyCounter(employees));
+// // 2
+// function propertyCounter(arrayName) {
+//       let newObject = {};
+//       let IT = arrayName.filter(value => value.department == "IT");
+//       let HR = arrayName.filter(value => value.department == "HR");
+//       let a = arrayName.salary;
+//       let b = arrayName.salary;
+//       newObject.IT = a;
+//       newObject.HR = b;
+//       return newObject 
+//   }
+//   console.log(propertyCounter(employees));
+
+// function departWiseSalary(arr) {
+//   let a = arr.filter(val => val.department === "IT").map(val => val.salary)
+//   let b = arr.filter(val => val.department === "HR").map(val => val.salary)
+//   let c = {IT:a,HR:b};
+//   return c
+// }
+// console.log(departWiseSalary(employees));
 
 // count the average salary of each department
 // function averagePrice(employees) {
