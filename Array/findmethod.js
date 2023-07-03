@@ -126,18 +126,28 @@
 // console.log(filter);
 
 
-//1
-const names  = [
-    {first_name: "Handnm", last_name: "L demo"},
-    {first_name: "Q Wei", last_name: "Alxezx"},
-    {first_name: "Pqwern", last_name: "Ruse"},
-    {first_name: "Wiruyn", last_name: "Ruby"},
-    {first_name: "Erpso", last_name: "Loal"},
-    {first_name: "Demors", last_name: "Poet"},
-    {first_name: "Aleos", last_name: "Lkeu"},
-    ]
-    // Write a code that adds new key in each object named 
-
-//    names.map((name)=>{
-//             name.full_name = name.first_name+" "+name.last_name;
-//           })
+//new questions
+function generateOutput(data) {
+    let output = {};
+  
+    for (let i = 0; i < data.length; i++) {
+      let name = data[i];
+      let firstLetter = name[0].toLowerCase();
+  
+      if (output[firstLetter] === undefined) {
+        // Create a new array for the first letter if it doesn't exist
+        output[firstLetter] = [];
+      }
+  
+      for (let j = 0; j < name.length; j++) {
+        output[firstLetter].push(name[j]);
+      }
+    }
+  
+    return output;
+  }
+  
+  let data = ["prakhar", "shlok", "anupkumar", "rahul", "krish3", "new"];
+  let result = generateOutput(data);
+  console.log(result);
+  
