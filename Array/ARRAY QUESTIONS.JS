@@ -77,11 +77,11 @@ const users  = [
 
 
 //4
-// const nestedArray = [
-//     [1, 2, 3],
-//     [4, 5, 6],
-//     [7, 8, 9],
-//   ];
+const nestedArray = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+  ];
 // console.log(nestedArray[1][2]);  
 // console.log(nestedArray);
 // for (const item of nestedArray) {
@@ -101,6 +101,14 @@ const users  = [
 // }
 // arrPrinter(nestedArray)
 
+// function arrPrinter(arr){
+//   arr.forEach(element => {
+//     arr.forEach((value)=>{
+//       console.log(value,element);
+//     })
+//   });
+// }
+// console.log(arrPrinter(nestedArray));
 
 //5
 // const nestedObject = {
@@ -122,6 +130,7 @@ const users  = [
 //     console.log(`${key}: ${nestedObject[key]}`);
 //   }
 // console.log(nestedObject);
+
 
 // function itemPrinter(obj) {
 //     for (let key in obj) {
@@ -178,7 +187,13 @@ const users  = [
 // [“a”, 3, “gh”] => true
 // [“a”, ‘3df’, “gh”] => false
 
-
+// function containsNumber(array) {
+//   return array.find(element => typeof element === 'number') !== undefined;
+// }
+//   console.log(containsNumber([1, 2, 3])); // true
+//   console.log(containsNumber(["1", "a", "h"])); // false
+//   console.log(containsNumber(["a", 3, "gh"])); // true
+//   console.log(containsNumber(["a", '3df', "gh"])); // false
 
 // 6
 // function containsNumber(array) {
@@ -191,10 +206,7 @@ const users  = [
 //   }
   
 // //   // Test cases
-//   console.log(containsNumber([1, 2, 3])); // true
-//   console.log(containsNumber(["1", "a", "h"])); // false
-//   console.log(containsNumber(["a", 3, "gh"])); // true
-//   console.log(containsNumber(["a", '3df', "gh"])); // false
+
 
 // function multiplyArrayElements(array, multiplier) {
 //   let i = 0;
@@ -218,5 +230,11 @@ const users  = [
 // });
 // console.log(numbers, doubled);
 
+// 22
+// const example = ({ a, b, c },d) => {
+//   console.log(a, b, c,d);  
+//   };
+//   example({a:0, b:1, c:2});
+  
 
 
