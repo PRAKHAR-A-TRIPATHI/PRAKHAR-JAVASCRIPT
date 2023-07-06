@@ -155,12 +155,13 @@
 // console.log(mergedObject); // { a: 1, b: 4, c: 5 }
 
 
-function assign(obj1,obj2){
-    return{...obj1,...obj2}
-}
-let obj1 ={a:15}
-let obj2 ={b:20}
+// function assign(obj1,obj2){
+//     return{...obj1,...obj2}
+// }
+// let obj1 ={a:15}
+// let obj2 ={b:20}
 
-let obj3 = assign(obj1,obj2);
-obj3.a=20;
-console.log(obj3);
+// let obj3 = assign(obj1,obj2);
+// obj3.a=20;
+// console.log(obj3);
+

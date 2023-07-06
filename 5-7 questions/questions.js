@@ -1,4 +1,4 @@
-// 23
+// 23         
 // let b = [2,2,3,4,5];
 //  let sum = b.reduce((a,b)=>{
 //     return a+b*b;
@@ -59,17 +59,17 @@
 // const nestedArray = [[1, 2], [3, 4], [5, 6]];
 
 // let flate = nestedArray.reduce((a,b)=>{
-//     return a.concat;
+//     return a.concat(b);
 // });
 // console.log(flate);
 
 // 26
 // const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
 
-// let Even = numbers.filter((a)=>{
+// let squareofEven = numbers.filter((a)=>{
 //    return a%2==0;
-// });
-// let squareofEven =Even.map((a)=> a*a)
+// }).map((a)=> a*a)
+
 // console.log(squareofEven);
 
 // const squareofEven = numbers.reduce((a, b) => {
@@ -130,21 +130,21 @@
 // }
 // console.log(factorial(num));
 
-// 31
-const people = [
-  { name: "Alice", age: 18 },
-  { name: "Bob", age: 20 },
-  { name: "Charlie", age: 19 },
-  { name: "David", age: 21 },
-];
+// // 31
+// const people = [
+//   { name: "Alice", age: 18 },
+//   { name: "Bob", age: 20 },
+//   { name: "Charlie", age: 19 },
+//   { name: "David", age: 21 },
+// ];
 
-function findIndex(arr) {
-    let find = arr.reduce((a,b,c)=>{
-        if (b.name.charAt(0) === "A" && b.age <= 20) {
-            return c;
-        }
-        return a;
-    },"")
-    return find;
-}  
-console.log(findIndex(people));
+// function findIndex(arr) {
+//     let find = arr.reduce((a,b,c)=>{
+//         if (b.name.charAt(0) === "A" && b.age <= 20) {
+//             return c;
+//         }
+//         return a;
+//     },"")
+//     return find;
+// }  
+// console.log(findIndex(people));
