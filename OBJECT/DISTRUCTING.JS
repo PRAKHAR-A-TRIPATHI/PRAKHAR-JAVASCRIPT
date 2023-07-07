@@ -36,16 +36,16 @@ const person = {
   };
   
   // Destructuring the `person` object
-//   const { name, age, gender } = person;
+  // const { name, age, gender } = person;
   
-//   console.log(name);   // Output: 'John Doe'
-//   console.log(age);    // Output: 25
-//   console.log(gender); // Output: 'Male'
+  // console.log(name);   // Output: 'John Doe'
+  // console.log(age);    // Output: 25
+  // console.log(gender); // Output: 'Male'
   
-// const { name, age, gender, city = 'Unknown' } = person;
+const { name, age, gender, city = 'Unknown' } = person;
 
-// console.log(city);  // Output: 'Unknown'
+console.log(city);  // Output: 'Unknown'
 
-let obj1={
+// let obj1={
 
-}
+// }

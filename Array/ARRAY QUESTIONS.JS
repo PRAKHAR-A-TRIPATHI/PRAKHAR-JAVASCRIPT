@@ -1,17 +1,19 @@
 //1
-// const names = [
-//     { first_name: "Asndnm", last_name: "L demo" },
-//     { first_name: "Qpweui", last_name: "Alxezx" },
-//     { first_name: "Pqwern", last_name: "Ruse" },
-//     { first_name: "Wiruyn", last_name: "Ruby" },
-//     { first_name: "Erpso", last_name: "Loal" },
-//     { first_name: "Demors", last_name: "Poet" },
-//     { first_name: "Aleos", last_name: "Lkeu" },
-//   ];
+const names = [
+    { first_name: "Asndnm", last_name: "L demo" },
+    { first_name: "Qpweui", last_name: "Alxezx" },
+    { first_name: "Pqwern", last_name: "Ruse" },
+    { first_name: "Wiruyn", last_name: "Ruby" },
+    { first_name: "Erpso", last_name: "Loal" },
+    { first_name: "Demors", last_name: "Poet" },
+    { first_name: "Aleos", last_name: "Lkeu" },
+  ];
   
-//   names.map((name)=>{
-//     name.full_name = name.first_name+" "+name.last_name;
-//   })
+  names.map((name)=>{
+    name.full_name = name.first_name+" "+name.last_name;
+  })
+
+    console.log(names);
 
 // function addFullName(arr) {
   //   const b = arr.map(a => ({
@@ -111,16 +113,16 @@ const nestedArray = [
 // console.log(arrPrinter(nestedArray));
 
 //5
-// const nestedObject = {
-//     name: "Vishal Kukreja",
-//     age: 32,
-//     address: {
-//       street: "123 Mumbai fashion St",
-//       city: "Midtown",
-//       state: "MH",
-//     },
-//     hobbies: ["reading", "drawing", "gardening"],
-//   };
+const nestedObject = {
+    name: "Vishal Kukreja",
+    age: 32,
+    address: {
+      street: "123 Mumbai fashion St",
+      city: "Midtown",
+      state: "MH",
+    },
+    hobbies: ["reading", "drawing", "gardening"],
+  };
 //  => print all items of this object in line
 // const{name,age,address:{street,city,state},hobbies}=nestedObject;
 
@@ -167,17 +169,17 @@ const nestedArray = [
 //  drawing
 //  gardening
 
-// function printItems(obj) {
-//     for (let key in obj) {
-//       if (typeof obj[key] === "object") {
-//         printItems(obj[key]); // Recursively call the function for nested objects and arrays
-//       } else {
-//         console.log(obj[key]);
-//       }
-//     }
-//   }
+function printItems(obj) {
+    for (let key in obj) {
+      if (typeof obj[key] === "object") {
+        printItems(obj[key]); // Recursively call the function for nested objects and arrays
+      } else {
+        console.log(obj[key]);
+      }
+    }
+  }
   
-//   printItems(nestedObject);
+  printItems(nestedObject);
 
 
 //6.
