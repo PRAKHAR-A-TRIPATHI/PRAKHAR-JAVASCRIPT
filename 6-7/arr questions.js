@@ -86,7 +86,7 @@
 // 41
 // function countArrays(arr) {
 //     const arrays = arr.filter(element => Array.isArray(element));
-//     return arrays.legnth;
+//     return arrays.length;
 //   }
   
 //   console.log(countArrays([2, 8, [6], 3, 3, 5, 3, 4, [5, 4]])); 

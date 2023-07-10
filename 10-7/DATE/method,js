@@ -1,0 +1,128 @@
+
+// const date  = new Date();
+// const dateString = date.toString();
+// console.log(dateString); 
+
+// 1.  toDateString()
+
+// console.log(date.toDateString());
+
+
+// 2.  getDate()
+
+// console.log(date.getDate());
+
+
+// 3.  getFullYear()
+
+// console.log(date.getFullYear());
+
+
+// 4.  getMonth()
+
+// console.log(date.getMonth()); // ==> 0 to 11 === jan to dec
+
+
+// 5.  getDay()
+
+// console.log(date.getDay());   // ==> 0 to 6 === sun to sat 
+
+
+// 6. getHours()
+
+// console.log(date.getHours()); // ==> 0 to 23
+
+
+// 7. getMinutes()
+
+// console.log(date.getMinutes()); // ==> 0 to 59
+
+
+// 8. getSeconds()
+
+// console.log(date.getSeconds()); // ==> 0 to 59
+
+
+// 9. getMilliseconds()
+
+// console.log(date.getMilliseconds());    // ==> 0 to 999
+
+
+// 10. setDate()
+
+// date.setDate(1);
+// console.log(date.toString()); 
+// date.setDate(31);
+// console.log(date.toString()); 
+// date.setDate(0);
+// console.log(date.toString()); 
+// date.setDate(32);
+// console.log(date.toString()); 
+// date.setDate(-1);
+// console.log(date.toString()); 
+
+
+// 11. setFullYear()
+
+// date.setFullYear(2000);
+// console.log(date.toString());
+
+// date.setFullYear(2004, 7);
+// console.log(date.toString());
+
+// date.setFullYear(2004, 7, 22);
+// console.log(date.toString());
+
+
+// 12. setHours()
+
+// date.setHours(9);
+// console.log(date.toString());
+
+// date.setHours(113,42);
+// console.log(date.toString());
+
+// date.setHours(1,3,59);
+// console.log(date.toString());
+
+// date.setHours(1,3,5,987);
+// console.log(date.toString());
+
+
+// 13. setMilliseconds()
+
+// date.setMilliseconds(324)
+// console.log(date.toString());
+
+// date.setMilliseconds(32434)
+// console.log(date.toString());
+
+
+// 14. setMinutes()
+
+// date.setMinutes(14);
+// console.log(date.toString());
+
+// date.setMinutes(14,87);
+// console.log(date.toString());
+
+// date.setMinutes(14,7,3434);
+// console.log(date.toString());
+
+
+// 15. setMonths()
+
+// date.setMonth(0)
+// console.log(date.toString());
+
+// date.setMonth(0 , 11)
+// console.log(date.toString());
+
+
+// 16. setSeconds()
+
+// date.setSeconds(0)
+// console.log(date.toString());
+
+// date.setSeconds(0, 1000)
+// console.log(date.toString());

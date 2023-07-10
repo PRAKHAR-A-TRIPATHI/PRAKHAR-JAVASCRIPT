@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>date</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        background-color: aqua;
+        text-align: center;
+    }
+    h1{
+        font-size: 50px;
+    }
+    button{
+        background-color: red;
+        border-radius: 5px;
+        padding: 5px;
+        border: 2px solid blue;
+    }
+    input{
+        padding: 5px;
+        border-radius: 5px;
+        border: 2px solid blue;
+    }
+    </style>
+</head>
+<body>
+    <h1>Date and Time </h1>
+    <input type="datetime-local" id="time">
+    <button onclick="getdatetime()">Click Get Date</button>
+
+    <script>
+        function getdatetime(){
+            let data = document.getElementById("time").value;
+            let now = new Date(data);
+            console.log(now.getHours ());
+            
+            // console.log(typeof data);
+        }
+       </script>
+</body>
+</html>
+

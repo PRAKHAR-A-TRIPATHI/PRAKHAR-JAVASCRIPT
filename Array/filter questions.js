@@ -233,26 +233,26 @@ function propertyCounter(arrayName) {
 console.log(propertyCounter(products));
 
 //2
-// function averagePrice(products) {
-//     let a = 0;
-//     let b = 0;
-//     let c = 0;
-//     let d = 0;
-//     for (let i = 0; i < products.length; i++) {
-//         if (products[i].category == "Clothes") {
-//             a += products[i].price;
-//             b++;
-//             // console.log(a);
-//         } else if (products[i].category == "Electronics") {
-//             c += products[i].price;
-//             d++;
-//             // console.log(c);
-//         }
-//     }
-//     return { Clothes: a / b, Electronics: c / d }
-// }
-// let aveObject = averagePrice(products);
-// console.log(aveObject);
+function averagePrice(products) {
+    let a = 0;
+    let b = 0;
+    let c = 0;
+    let d = 0;
+    for (let i = 0; i < products.length; i++) {
+        if (products[i].category == "Clothes") {
+            a += products[i].price;
+            b++;
+            // console.log(a);
+        } else if (products[i].category == "Electronics") {
+            c += products[i].price;
+            d++;
+            // console.log(c);
+        }
+    }
+    return { Clothes: a / b, Electronics: c / d }
+}
+let aveObject = averagePrice(products);
+console.log(aveObject);
 
 // function calculateAveragePriceByCategory(products) {
 //   const categoryAverages = {};

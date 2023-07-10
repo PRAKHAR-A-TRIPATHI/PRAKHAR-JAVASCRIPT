@@ -1,23 +1,23 @@
 // 14
-// let data =["jeel","prakhar","bhakti","mehgna","vansh","bhaumik","pujan","rudhra","sachin","Dhurval"]
+let data =["jeel","prakhar","bhakti","mehgna","vansh","bhaumik","pujan","rudhra","sachin","Dhurval"]
 // 1
-// function newArray(data) {
-//     let obj = {};
+function newArray(data) {
+    let obj = {};
   
-//     for (let i = 0; i < data.length; i++) {
-//       let firstLetter = data[i][0];
+    for (let i = 0; i < data.length; i++) {
+      let firstLetter = data[i][0];
   
-//       if (obj[firstLetter]) {
-//         obj[firstLetter].push(data[i]);
-//       } else {
-//         obj[firstLetter] = [data[i]];
-//       }+
-//     }
+      if (obj[firstLetter]) {
+        obj[firstLetter].push(data[i]);
+      } else {
+        obj[firstLetter] = [data[i]];
+      }
+    }
   
-//     return obj;
-//   }
-//   let arr1=newArray(data);
-//   console.log(arr1);
+    return obj;
+  }
+  let arr1=newArray(data);
+  console.log(arr1);
 //   2
 // function newArray(data) {
 //     let obj = {};
@@ -61,7 +61,6 @@
 //   const flattenedArray = flattenDepth(nestedArray, Infinity);
 //   console.log(flattenedArray); 
   
-  
 // without dept 
 
 // function flat(arr) {
@@ -96,25 +95,25 @@
 //   }
   
 // 16
-// function filter(arr, callback) {
-//     let filtered = [];
-  
-//     for (let i = 0; i < arr.length; i++) {
-//       if (callback(arr[i], i, arr)) {
-//         filtered.push(arr[i]);
-//       }
-//     }
-  
-//     return filtered;
-//   }
-//   let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    // function filter(arr, callback) {
+    //     let filtered = [];
+    
+    //     for (let i = 0; i < arr.length; i++) {
+    //       if (callback(arr[i], i, arr)) {
+    //         filtered.push(arr[i]);
+    //       }
+    //     }
+    
+    //     return filtered;
+    //   }
+    //   let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-// function isEven(number,index,arr) {
-//   return number % 2 === 0;
-// }
+    // function isEven(number,index,arr) {
+    //   return number % 2 === 0;
+    // }
 
-// let filteredNumbers = filter(numbers, isEven);
-// console.log(filteredNumbers); // Output: [2, 4, 6, 8, 10]
+    // let filteredNumbers = filter(numbers, isEven);
+    // console.log(filteredNumbers); // Output: [2, 4, 6, 8, 10]
 // 2
 // function filter(arr, callback) {
 //     let filtered = [];
