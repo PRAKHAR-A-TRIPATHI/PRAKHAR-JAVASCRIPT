@@ -126,3 +126,8 @@
 
 // date.setSeconds(0, 1000)
 // console.log(date.toString());
+
+// let a= 3.14;
+// let b=-3.14;
+// console.log(a==b);
+// console.log(a===b);

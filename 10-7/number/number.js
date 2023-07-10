@@ -34,3 +34,5 @@
 // let num=10.64;
 // let num1 = num.toPrecision(2);
 // console.log(num1);
+
+// console.log(Math.sqrt([8,10]));

@@ -1,0 +1,84 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Digital Clock</title>
+    <style>
+        #clock {
+            font-size: 50px;
+            text-align: center;
+            margin-top: 20%;
+        }
+    </style>
+</head>
+<body onload="setInterval('digitalClock()', 1000)">
+    <div id="clock"></div>
+
+    <script type="text/javascript">
+        function digitalClock() {
+            var date = new Date();
+            var hours = date.getHours();
+            var minutes = date.getMinutes();
+            var seconds = date.getSeconds();
+            if (hours>12){
+
+            } 
+
+            if (hours < 10) {
+                hours = "0" + hours;
+            }
+
+            if (minutes < 10) {
+                minutes = "0" + minutes;
+            }
+
+            if (seconds < 10) {
+                seconds = "0" + seconds;
+            }
+ 
+            var time = hours + ":" + minutes + ":" + seconds;
+
+            document.getElementById("clock").innerHTML = time;
+        }
+    </script>
+</body>
+</html>  -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Digital Clock</title>
+    <style>
+        body{
+            background-color: rgb(13, 14, 14);
+        }
+        #clock {
+            font-size: 200px;
+            text-align: center;
+            margin-top: 13%;
+            color: rgb(32, 214, 62);
+        }
+    </style>
+</head>
+<body onload="setInterval('digitalClock()', 1000)">
+    <div id="clock"></div>
+
+    <script type="text/javascript">
+        function digitalClock() {
+            var date = new Date();
+            var hours = date.getHours();
+            var minutes = date.getMinutes();
+            var seconds = date.getSeconds();
+            var ampm = hours >= 12 ? 'PM' : 'AM';
+
+            hours = hours % 12;
+            hours = hours ? hours : 12;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+
+            var time = hours + ':' + minutes + ':' + seconds + ' ' + ampm;
+
+            document.getElementById('clock').innerHTML = time;
+        }
+    </script>
+</body>
+</html>

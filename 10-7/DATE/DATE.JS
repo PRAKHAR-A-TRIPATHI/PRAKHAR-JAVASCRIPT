@@ -47,3 +47,93 @@
 // var newdate  = new Date();
 // console.warn(newdate.getDate());
 
+// 8
+// let d = new Date();
+// console.log(d.toLocaleTimeString());
+
+// 9
+// let d = new Date();
+// console.log(d.toLocaleDateString());
+
+// 10
+// let d = new Date();
+// console.log(d.toTimeString());
+
+// 11
+// let d = new Date();
+// d.toTimeString();
+
+// 12
+// let d = new Date();
+// d.toDateString();
+
+// 13
+// let d = new Date();
+// d.setTime(1627924800000);
+
+// 14
+// let d = new Date();
+// d.setMilliseconds(999);
+
+// 15
+// let d = new Date();
+// d.setMilliseconds(999);
+
+// // 16
+// let d = new Date();
+// d.setSeconds(30);
+
+// 17
+// let d = new Date();
+// d.setMinutes(45);
+
+// 18
+// let d = new Date();
+// d.setHours(17);
+
+// // 19
+// let d = new Date();
+// d.setMonth(5);
+
+// // 20
+// let d = new Date();
+// d.setDate(20);
+
+// // 21
+// const d = new Date();
+// d.getTime();
+
+    // // 22
+    // const d = new Date();
+    // d.getMilliseconds();
+
+// // 23
+// const d = new Date();
+// d.getMilliseconds();
+
+// // 24
+// const d = new Date();
+// d.getSeconds();
+
+// // 25
+// const d = new Date();
+// d.getMinutes();
+
+
+// // 26
+// const d = new Date();
+// d.getHours();
+
+// 27
+// const d = new Date();
+// d.getDate();
+
+// 28
+// const d = new Date();
+// d.getMonth();
+
+// // 29
+// const d = new Date();
+// d.getFullYear();
+
+// console.log(10*2/5+Math.pow(2,3)-4%3);
