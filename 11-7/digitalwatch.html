@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>digital watch</title>
+    <style>
+        body{
+            background-color: rgb(241, 182, 93);
+        }
+        h1{
+            margin: 20%;
+            text-align: center;
+            font-size: 100px;
+            color: rgb(192, 45, 8) ;
+        }
+    </style>
+</head>
+<body onload="time()">
+     <h1></h1>
+     <script>
+        function watch(){
+            let date = new Date();
+            let hour = date.getHours();
+            let minutes = date.getMinutes();
+            let seconds =date.getSeconds();
+            let milliseconds = date.getMilliseconds();
+
+            let time = hour +  ":" + minutes + ":" + seconds+":"+milliseconds;
+            document.getElementsByTagName("h1")[0].innerText=time;
+            setTimeout(watch,1)
+        }
+        watch();
+     </script>
+</body>
+</html>

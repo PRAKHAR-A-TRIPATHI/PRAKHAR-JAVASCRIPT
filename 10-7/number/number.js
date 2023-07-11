@@ -27,7 +27,7 @@
 // console.log(num1);
 
 
-// let num=10.444555555555555555555555555555555;
+// let num=10.544555555555555555555555555555555;
 // let num1 = num.toFixed(0);
 // console.log(num1);
 
@@ -36,3 +36,10 @@
 // console.log(num1);
 
 // console.log(Math.sqrt([8,10]));
+
+// const a ={x:1};
+// const b= {y:2};
+// const c =Object.assign(a,b);
+// console.log(c==={x:1,y:2});\
+
+console.log("" && 0);

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigitalClock</title>
+    <style>
+        body {
+            background-color: rgb(245, 241, 241);
+        }
+
+        h1 {
+            text-align: center;
+            font-family: cursive;
+            font-size: 100px;
+            color: rgb(20, 4, 92);
+        }
+        div{
+            margin-top: 13%;
+            border:5px solid  rgb(10, 3, 3);
+            position: relative;
+            overflow: hidden; 
+            z-index: 1;
+        }
+        div::after{
+            content: "";
+            width: 30%;
+            height: 100%;
+           transition: 1s;
+         background-color: yellow;
+           position: absolute;
+           top:0;
+           left:100%;
+           z-index: -1;
+          
+           
+        }
+        div:hover::after{
+           
+           background-color: yellow;
+           position: absolute;
+           top: 0;
+           left: 70%;
+       }
+        div::before{
+            content: "";
+            width: 30%;
+            height: 100%;
+           transition: 1s;
+        background-color: yellow;
+           position: absolute;
+           top:0;
+           right: 100%;
+           z-index: -1;
+           
+        }
+       
+        div:hover::before{
+           
+            background-color: yellow;
+            position: absolute;
+            top: 0;
+            right: 70%;
+        }
+        .top{
+            position: absolute;
+            height: 100%;
+            width: 20%;
+            background-color: yellow;
+            top: -100%;
+            right: 50%;
+            transition: 1s;
+            z-index: -1;
+        }
+        .bottom{
+            position: absolute;
+            height: 100%;
+            width: 20%;
+            background-color: yellow;
+            bottom: -100%;
+            left: 50%;
+            transition: 1s;
+            z-index: -1;  
+        }
+        div:hover .top{
+            top:0;  
+        }
+        div:hover .bottom{
+            bottom: 0;
+            
+        }
+        #date{
+            display: none; 
+        }
+        div:hover #time{
+           display: none;
+        }
+        div:hover #date{
+            display: block;
+        }
+    </style>
+</head>
+
+<body onload="timer()">
+    <div>
+        <h1 id="time"></h1>
+        <span class="top"></span> <span class="bottom"> </span>
+        <h1 id="date"></h1>
+    </div>
+</body>
+<script>
+    function showTime() {
+        let date = new Date();
+        let hours = date.getHours();
+        let minutes = date.getMinutes();
+        let seconds = date.getSeconds();
+        let milliseconds = date.getMilliseconds();
+        if (milliseconds < 100) {
+            if (milliseconds < 9) {
+                milliseconds = "00" + milliseconds;
+            } else {
+                milliseconds = "0" + milliseconds;
+            }
+        };
+        if (hours >= 12) {
+            session = "PM";
+        }
+        if (hours > 12) {
+            hours = hours - 12;
+        };
+        if (hours < 10) {
+            hours = "0" + hours
+        };
+        if (minutes < 10) {
+            minutes = "0" + minutes
+        };
+        if (seconds < 10) {
+            seconds = "0" + seconds
+        };
+        let time = hours + ":" + minutes + ":" + seconds + ":" + milliseconds + ":" + session;
+        document.getElementById("time").innerHTML = time;
+        setTimeout(showTime, 1);
+    }
+    showTime();
+
+    function time() {
+            let date = new Date();
+            let newDate = date.getDate();
+            let month = date.getMonth();
+            let newMonth = (month + 1)
+            let year = date.getFullYear();
+            let arr = [ "Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
+            let a= date.getDay();
+            let day=arr[a];
+            let time = day+"-"+newDate + "-/" + newMonth + "-/" + year;
+            document.getElementById("date").innerHTML = time;
+    }
+    time();
+
+</script>
+
+</html>

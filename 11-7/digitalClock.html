@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigitalClock</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        h1{
+            margin-top: 15%;
+            text-align: center;
+            font-family:cursive;
+            font-size: 130px;
+            color: rgb(51, 162, 196);
+        }
+    </style>
+</head>
+<body onload="timer()">
+    <h1></h1>
+</body>
+<script>
+    function showTime() {
+  let date = new Date();
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  let seconds = date.getSeconds();
+  let milliseconds = date.getMilliseconds();
+  if(milliseconds<100){
+      if(milliseconds<9){
+          milliseconds="00"+milliseconds;
+        } else{
+            milliseconds= "0"+milliseconds;
+        }
+    } ;
+    if(hours>=12){
+        session = "PM";
+    }
+    if(hours>12){
+        hours = hours-12;
+    };
+    if(hours<10){
+      hours = "0"+hours
+    };
+    if(minutes<10){
+        minutes = "0"+minutes
+    };
+    if(seconds<10){
+        seconds = "0"+seconds
+    };
+  let time = hours + ":" + minutes + ":" + seconds + ":"  + milliseconds+":"+session;
+  document.getElementsByTagName("h1")[0].innerText = time;
+  setTimeout(showTime, 1);
+}
+showTime();
+
+</script>
+</html>
