@@ -35,3 +35,12 @@
 // let num1 = num.toPrecision(4);
 // console.log(num1);
 
+// let a = false;
+// console.log(Number(a));
+
+// let a  = 3.141324;
+// console.log(a.toPrecision);
+
+// let a = false;
+// console.log(a.toPrecision());
+
