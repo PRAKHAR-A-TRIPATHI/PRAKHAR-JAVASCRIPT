@@ -18,4 +18,4 @@ function adddays(year,month,day){
     
     return result.toLocaleString();
 }
-console.log(adddays());
+console.log(adddays(1,1));

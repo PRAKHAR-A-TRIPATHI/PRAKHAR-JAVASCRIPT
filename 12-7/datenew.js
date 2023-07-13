@@ -38,7 +38,7 @@
 // let date1 = new Date("2022-07-01");
 // let date2 = new Date("2022-07-10");
 // let diffInTime = date2.getTime() - date1.getTime();
-// let diffInDays = diffInTime / (1000 * 3600 * 24);
+// let diffInDays = diffInTime / (-1000 * 3600 * 24);
 // console.log(diffInDays); // Output: 9
 
 // function countDays(date1, date2) {
@@ -58,5 +58,9 @@
 // event.setDate(35);
 // console.log(event.getDate()); 
   
-let Jan02_1970 = new Date(24 * 3600 * 1000);
-console.log( Jan02_1970 );
+// let Jan02_1970 = new Date(24 * 3600 * 1000);
+// console.log( Jan02_1970 );
+
+// let Dec31_1969 = new Date(-24 * 3600 * 1000);
+// alert( Dec31_1969 );
+

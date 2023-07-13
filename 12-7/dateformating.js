@@ -16,6 +16,15 @@
 
 
 
+
+
+
+
+
+
+
+
+
 // function formater(syntax) {
 //   syntax = syntax.toLowerCase();
 //   let OGDate = new Date();
