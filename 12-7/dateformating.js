@@ -1,18 +1,21 @@
-// function transform(formating) {
-//   formating=formating.toLowerCase();
-//   let date = new Date();
-//   let year = date.getFullYear();
-//   let month = date.getMonth() + 1;
-//   let day = date.getDate();
+function transform(formating) {
+  formating=formating.toLowerCase();
+  let date = new Date();
+  let year = date.getFullYear();
+  let month = date.getMonth() + 1;
+  let day = date.getDate();
 
-//   let output = formating.replace("yyyy", year);
-//   output = output.replace("mm", month)
-//   output = output.replace("dd", day);
+  let output = formating.replace("yyyy", year);
+  output = output.replace("mm", month)
+  output = output.replace("dd", day);
 
-//   return output;
-// }
+  return output;
+}
 
-// console.log(transform("mm*YYYY*dd"));
+console.log(transform("mm*YYYY*dd"));
+console.log(transform("yyyy/dd/mm"));
+console.log(transform("mm*YYYY/dd"));
+console.log(transform("mm*YYYY*dd"));
 
 
 
