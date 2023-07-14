@@ -14,7 +14,7 @@
 
 //  cllass name 
 
-let clas = document.getElementsByClassName("list")
+// let clas = document.getElementsByClassName("list")
 // console.log(clas);
 // not work for each loop
 
