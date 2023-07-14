@@ -721,16 +721,16 @@ const products = [
 //   console.log(findMaxLength([1, 5, 2, 6, 4, 23, 89])); 
   
 // 43
-function isFactorChain(arr) {
-    for (let i = 1; i < arr.length; i++) {
-      if (arr[i] % arr[i - 1] !== 0) {
-        return false;
-      }
-    }
+// function isFactorChain(arr) {
+//     for (let i = 1; i < arr.length; i++) {
+//       if (arr[i] % arr[i - 1] !== 0) {
+//         return false;
+//       }
+//     }
     
-    return true;
-  }
+//     return true;
+//   }
   
-  console.log(isFactorChain([2, 4, 8, 16, 32])); // Output: true
-  console.log(isFactorChain([2, 4, 16, 32, 68])); // Output: false
-  console.log(isFactorChain([2, 4, 16, 32, 64])); // Output: true
+//   console.log(isFactorChain([2, 4, 8, 16, 32])); // Output: true
+//   console.log(isFactorChain([2, 4, 16, 32, 68])); // Output: false
+//   console.log(isFactorChain([2, 4, 16, 32, 64])); // Output: true
