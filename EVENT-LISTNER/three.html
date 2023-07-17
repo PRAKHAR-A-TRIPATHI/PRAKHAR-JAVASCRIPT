@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+    <style>
+        .container{
+            background-color: blue;
+            display: flex;
+        }
+        .box{
+            height: 100px;
+            width: 200px;
+            margin: 10px;
+            background-color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="box" id="box-1" onclick="fun()">box-1</div>
+        <div class="box" id="box-2" onmouseover="over()">box-2</div>
+        <div class="box" id="box-3" onmousemove="move()">box-3</div>
+        <div class="box" id="box-4">box-4</div>
+    </div>
+
+    <input type="text" id="input" onkeypress="key()">
+
+    <script src="three.js"></script>
+</body>
+
+</html>
