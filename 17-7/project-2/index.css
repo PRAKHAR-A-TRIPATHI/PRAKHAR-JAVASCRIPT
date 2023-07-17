@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    background-color: aqua;
+    height: 60px;
+
+}
+.navbar ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navbar ul li{
+    margin: 10px;
+    list-style: none;
+}
+.navbar ul li a{
+    text-decoration: none;
+    /* color: black; */
+    text-transform: uppercase;
+}
+
+a.active{
+    background-color: black;
+    color: white;
+}
