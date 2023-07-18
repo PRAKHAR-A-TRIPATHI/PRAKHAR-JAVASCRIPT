@@ -89,6 +89,8 @@
 //   }
 //   let value=maxOfThree(22,23,24);
 //   console.log(value);
+
+
 //2
 // const maxOfThree = function(a, b, c) {
 //     return (a > b) ? ((a > c) ? a : c) : ((b > c) ? b : c);

@@ -207,9 +207,65 @@
 // console.log(is_string([1, 2, 4, 0])); // false
 
 // 61
-function is_Blank(str) {
-    return str.length === 0;
-}
-console.log(is_Blank('')); // true
-console.log(is_Blank('abc')); // false
+// function is_Blank(str) {
+//     return str.length === 0;
+// }
+// console.log(is_Blank('')); // true
+// console.log(is_Blank('abc')); // false
+
+// 62
+// function string_to_array(value){
+//     return value.split(" ");
+// } 
+// console.log(string_to_array("Robin Singh")); // ["Robin", "Singh"]
+
+// 63
+// function truncate_string(str,value){
+//     return str.slice(0,value);
+// }
+// console.log(truncate_string("Robin Singh",4));
+
+// 64
+// function protect_email(str) {
+//     return str.replace(str.slice(5,str.indexOf("@")) , '...')
+// }
+// console.log(protect_email("robin_singh@example.com")); 
+
+// // 65
+// function string_parameterize(input){
+//     return input.replaceAll(" ","-").toLowerCase();
+// }
+// function string_parameterize(value){
+//     return value.toLowerCase().split(" ").join("-");
+// }
+// console.log(string_parameterize("Robin Singh from USA."));
+// // Output: "robin-singh-from-usa"
+
+// 66
+// function capitalize(value){
+//     return value.replace(value.charAt(0),value.charAt(0).toUpperCase())
+// }
+// console.log(capitalize('js string exercises'));
+// Output: "Js string exercises"
+
+// 67
+// function capitalize_Words(value){
+//     return value.split(" ").map((v)=> v.replace(v.charAt(0),v.charAt(0).toUpperCase())).join(" ");
+// }
+// console.log(capitalize_Words('js string exercises'));
+// "Js String Exercises"
+
+// 68
+// function insert(str,addStr='',position = 0) {
+//     return str.slice(0,position) + addStr + str.slice(position);
+// }
+// console.log(insert('We are doing some exercises.'));
+// console.log(insert('We are doing some exercises.','JavaScript '));
+// console.log(insert('We are doing some exercises.','JavaScript ',18));
+
+// What is the output of the following code?
+// let text = "Apple, Banana, Kiwi";
+// text.slice(-12, -6);
+// console.log(text);
+
 

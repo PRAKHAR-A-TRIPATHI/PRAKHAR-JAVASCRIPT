@@ -323,20 +323,20 @@
   
 //   console.log(capitalize_Words('js string exercises'));
   
-function insert(mainString, insString, pos) {
-    // default position is 1
-    if(typeof(pos) == "undefined") {
-        pos = 1;
-    }
-    // slice the mainString into two parts
-    var firstPart = mainString.substring(0,pos);
-    var secondPart = mainString.substring(pos);
-    // concatenate first part with inserted string and second part
-    var finalString = firstPart + insString + secondPart;
-    return finalString;
-}
+// function insert(mainString, insString, pos) {
+//     // default position is 1
+//     if(typeof(pos) == "undefined") {
+//         pos = 1;
+//     }
+//     // slice the mainString into two parts
+//     var firstPart = mainString.substring(0,pos);
+//     var secondPart = mainString.substring(pos);
+//     // concatenate first part with inserted string and second part
+//     var finalString = firstPart + insString + secondPart;
+//     return finalString;
+// }
 
-console.log(insert('We are doing some exercises.')); // "We are doing some exercises."
-console.log(insert('We are doing some exercises.','JavaScript ')); // "JavaScript We are doing some exercises."
-console.log(insert('We are doing some exercises.','JavaScript ',18)); // "We are doing some JavaScript exercises.”
+// console.log(insert('We are doing some exercises.')); // "We are doing some exercises."
+// console.log(insert('We are doing some exercises.','JavaScript ')); // "JavaScript We are doing some exercises."
+// console.log(insert('We are doing some exercises.','JavaScript ',18)); // "We are doing some JavaScript exercises.”
 

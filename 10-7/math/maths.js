@@ -67,6 +67,14 @@
 // console.log(Math.min());
 
 // 12 pi
-let a  = Math.PI
-console.log(a);
+// let a  = Math.PI
+// console.log(a);
 
+function pow(a,b){
+    if(Math.pow(a,2)==b){
+        return true;
+    }else{
+        return false;
+    }
+}
+console.log(pow(2,4));
