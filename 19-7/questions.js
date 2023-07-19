@@ -49,4 +49,4 @@ let b = [
 //     return true;
 //   }
 //   console.log(isPrime(6));
-  
+

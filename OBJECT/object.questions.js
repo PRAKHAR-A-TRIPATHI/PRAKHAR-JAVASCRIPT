@@ -146,7 +146,7 @@
 //     x: 34,
 //     y: 56
 //   }
-//   operationObj(a);
+// //   operationObj(a);
 //   console.log(a);
   
 // const object1 = { a: 1, b: 2, c: 3 };

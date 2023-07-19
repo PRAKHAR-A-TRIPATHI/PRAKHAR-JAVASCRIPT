@@ -113,16 +113,16 @@ const nestedArray = [
 // console.log(arrPrinter(nestedArray));
 
 //5
-const nestedObject = {
-    name: "Vishal Kukreja",
-    age: 32,
-    address: {
-      street: "123 Mumbai fashion St",
-      city: "Midtown",
-      state: "MH",
-    },
-    hobbies: ["reading", "drawing", "gardening"],
-  };
+// const nestedObject = {
+//     name: "Vishal Kukreja",
+//     age: 32,
+//     address: {
+//       street: "123 Mumbai fashion St",
+//       city: "Midtown",
+//       state: "MH",
+//     },
+//     hobbies: ["reading", "drawing", "gardening"],
+//   };
 //  => print all items of this object in line
 // const{name,age,address:{street,city,state},hobbies}=nestedObject;
 
