@@ -18,11 +18,11 @@
 //  cllass name 
 
 let clas = document.getElementsByClassName("list")
-console.log(clas);
+// console.log(clas);
 // not work for each loop
 
-// let array = Array.from(clas);
-// console.log(array);
+let array = Array.from(clas);
+console.log(array);
 
 // array.forEach(function(l){
 //     l.style.backgroundColor = "pink";
