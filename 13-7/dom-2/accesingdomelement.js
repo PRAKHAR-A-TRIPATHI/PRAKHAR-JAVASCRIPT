@@ -3,7 +3,7 @@
 // document.write(a)
 
 // var b = document.getElementsByClassName("class")[2].innerHTML;
-// // console.log(b);
+// console.log(b);
 
 // var tag = document.getElementsByTagName("p")
 // console.log(tag);
