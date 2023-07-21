@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task-2</title>
+</head>
+<body>
+        <label for="text">Password:</label>
+        <input type="text" id="text" ><br><br>
+        <button onclick="randompass(event)">genrate</button>
+    <script> 
+        function randompass(event) {
+            var password = document.getElementById("text");
+            console.log("pdsb"+Math.round(Math.random(password)*10)+"qfbdg"+Math.round(Math.random(password)*10)+"t"+Math.round(Math.random(password)*1000)+"redgg")
+            // console.log(password);
+            password.value = "pdsb"+Math.round(Math.random(password)*10)+"qfbdg"+Math.round(Math.random(password)*10)+"t"+Math.round(Math.random(password)*1000)+"redgg"
+        }
+    </script>
+
+</body>
+</html>

@@ -12,3 +12,4 @@ document.getElementById("one").addEventListener("click",function(e){
 document.getElementById("three").addEventListener("click",function(e){
     three.remove();
 })
+

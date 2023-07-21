@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task-1</title>
+</head>
+<body>
+    <form onsubmit="emailandPassword(event)">
+        <label for="email">Email:</label>
+        <input type="email" id="email" ><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" ><br><br>
+        <button>Submit</button>
+    </form>
+
+    <script>
+        function emailandPassword(event) {
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            alert("Email: " + email + "\nPassword: " + password);
+        }
+    </script>
+</body>
+</html>

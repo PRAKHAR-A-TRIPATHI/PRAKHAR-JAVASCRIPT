@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Random Character Generator</title>
+  </head>
+  <body>
+    <input type="number" placeholder="Enter a number" />
+    <button>Generate</button>
+    <p id="output"></p>
+
+    <script>
+      function printRandomChars(n) {
+        let result = '';
+        let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        for (let i = 0; i < n; i++) {
+          result += characters.charAt(Math.floor(Math.random() * characters.length));
+        }
+        document.querySelector('#output').textContent = result;
+      }
+
+      document.querySelector('button').addEventListener('click', () => {
+        let n = parseInt(document.querySelector('input').value);
+        printRandomChars(n);
+      });
+    </script>
+  </body>
+</html>

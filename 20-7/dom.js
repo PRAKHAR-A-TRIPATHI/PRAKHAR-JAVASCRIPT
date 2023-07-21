@@ -54,7 +54,47 @@
 // console.log(ul.hasAttribute('order-placed'))
 // console.log(ul.attributes)
 
-//  creating and removing 
-const newdiv = document.createElement("div");
-const 
-body.append(newdiv);
+//  creating and removing
+// const newdiv = document.createElement("div");
+// const
+// body.append(newdiv);
+
+// const newText = document.createTextNode('Namaste World')
+// newDiv.appendChild(newText)
+// body.append(newDiv)
+// body.prepend(newDiv)
+// body.before(newDiv)
+// body.after(newDiv)
+// firstDiv.replaceWith(newDiv)
+// firstDiv.remove()
+
+// Manipulating Classes
+// body.className = "second page"
+// body.classList.add('new')
+// body.classList.remove('new')
+// body.classList.toggle('new')
+// console.log(body.classList)
+
+// Mainipulating Style
+// body.style.color= "red"
+// body.style['background-color']= "orange"
+// body.style.margin= "200px"
+
+// Events
+// function callMe(event) {
+//   console.log(event.type);
+//   console.log(event.currentTarget);
+//   console.log(event.clientY);
+//   console.log(event.clientX);
+//   alert("heloo ");
+// }
+// // clickBtn.onclick = callMe
+
+// clickBtn.addEventListener("click", callMe);
+// // clickBtn.addEventListener('click', function(){
+// //     alert("Thanks")
+// // })
+// // clickBtn.removeEventListener('click',callMe)
+// // clickBtn.removeEventListener('click', function(){
+// //     alert("Thanks")
+// // })

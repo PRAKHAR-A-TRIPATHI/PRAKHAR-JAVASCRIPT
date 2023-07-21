@@ -413,18 +413,7 @@ const products = [
 // }
 // console.log(averagePrice(products));
 
-function averagePrice(arr){
-  let average=arr.reduce((acc,value)=>{
-    acc[value.category]=(acc[value.category]||0);
-    let devider = (acc[value.category]||0)+1;
-    let sum = acc[value.category]+value.price
-    let val = sum/devider
-    acc[value.category] = val;
-    return acc;
-  },{})
-  return average;
-}
-console.log(averagePrice(products));
+
 
 
 // 14 ----------------------------------------------------------------------------------------------------------
@@ -437,3 +426,43 @@ console.log(averagePrice(products));
 // 		…….. And so on
 // 	    }
 
+// 23--------------------------------------------------------------------------------------
+// let arr = [1, 2, 3, 4, 5];
+// let sumOfSquares = arr.reduce((sum, num) => sum + Math.pow(num, 2), 0);
+// console.log(sumOfSquares); // Output: 55
+
+// 24-------------------------------------------------------------------------------------------------
+// const students = [
+//   { name: 'Alice', age: 20, grade: 'A' },
+//   { name: 'Bob', age: 18, grade: 'B' },
+//   { name: 'Charlie', age: 19, grade: 'A' },
+//   { name: 'David', age: 20, grade: 'C' },
+// ];
+	// => sort by age
+	// => sort by grade
+	// => sort by name
+	// => average of ages
+	// => sum of ages
+
+  // 35-----------------------------------------------
+  // function difference(arr1, arr2) {
+  //   // Flattening the arrays
+  //   arr1 = arr1.flat(Infinity);
+  //   arr2 = arr2.flat(Infinity);
+  
+  //   // Finding the symmetric difference
+  //   let result = arr1
+  //     .filter((x) => !arr2.includes(x))
+  //     .concat(arr2.filter((x) => !arr1.includes(x)));
+  
+  //   // Sorting the result
+  //   result.sort((a, b) => a - b);
+  
+  //   return result;
+  // }
+  
+  // // Test Data
+  // console.log(difference([1, 2, 3], [100, 2, 1, 10])); // Output: [3, 10, 100]
+  // console.log(difference([1, 2, 3, 4, 5], [1, [2], [3, [[4]]], [5, 6]])); // Output: [6]
+  // console.log(difference([1, 2, 3], [100, 2, 1, 10])); // Output: [3, 10, 100]
+  

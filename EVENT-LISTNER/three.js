@@ -1,5 +1,5 @@
-function fun(){
-    console.log("Hello World");
+function fun(e){
+    console.log("hello worls");
 }
 
 const over =() =>{
@@ -9,19 +9,19 @@ const move =() =>{
     console.log("move");
 }
 const key =() =>{
-    console.log("key press");
+    // console.log("key press");
 }
 
 // eventlistner
-const box1 = document.getElementById("box-1");
-box1.addEventListener("click",function(e){
-    console.log("hello world2",e.clientX,e.clientY);
-})
-
-// const input = document.getElementById("input");
-// input.addEventListener("keydown",(e)=>{
-//     console.log("key",e.key);
+// const box1 = document.getElementById("box-1");
+// box1.addEventListener("click",function(e){
+//     console.log("hello world2",e.clientX,e.clientY);
 // })
+
+const input = document.getElementById("input");
+input.addEventListener("keydown",(e)=>{
+    console.log("key",e.key);
+})
 // input.addEventListener("keypress",(e)=>{
 //     console.log("key",e.key);
 // })
