@@ -18,15 +18,16 @@ getPass.addEventListener("click", (e) => {
   if (document.querySelector("#num").checked) {
     result += num;
   }
-  if (document.querySelector("#special").checked) {
+  if (document.querySelector("#symbol").checked) {
     result += saymbol;
   }
 
   let newPassword = "";
-
-  for (i = 0; i <= 8; i++) {
-    let randomPass = Math.floor(Math.random() * result.length);
-    newPassword += result.charAt(randomPass);
+  let n = parseInt(document.querySelector('#range').value);
+  for (i = 0; i < n; i++) {
+    // let randomPass = Math.floor(Math.random() * result.length);
+    // newPassword += result.charAt(randomPass);
+    newPassword += result.charAt(Math.floor(Math.random()*result.length))
   }
-  document.querySelector("#randompass").textContent = newPassword;
+  document.querySelector("#randompass").value = newPassword;
 });
