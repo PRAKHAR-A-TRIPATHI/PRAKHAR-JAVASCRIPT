@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: blanchedalmond;
+        }
+        h1 {
+            text-align: center;
+            font-size: 100px;
+            font-family: fantasy;
+        }
+        .new{
+            margin-top: 10% ;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="new">
+        <h1 id="date"></h1>
+        <h1 id="time"></h1>
+    </div>
+    <script>
+        function time() {
+            let date = new Date();
+            let newDate = date.getDate();
+            let month = date.getMonth();
+            let newMonth = (month + 1)
+            let day = date.getFullYear();
+            let time = newDate + "/" + newMonth + "/" + day;
+            document.getElementById("date").innerHTML = time;
+
+            function watch() {
+                let date = new Date();
+                let hour = date.getHours();
+                let minutes = date.getMinutes();
+                let seconds = date.getSeconds();
+                let milliseconds = date.getMilliseconds();
+
+                let time1 = hour + ":" + minutes + ":" + seconds + ":" + milliseconds;
+                document.getElementById("time").innerHTML = time1;
+                setTimeout(watch, 1000)
+            }
+            watch();
+        }
+        time();
+    </script>
+</body>
+
+</html>

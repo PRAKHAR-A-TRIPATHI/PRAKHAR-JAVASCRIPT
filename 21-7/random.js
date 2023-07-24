@@ -6,7 +6,7 @@ getPass.addEventListener("click", (e) => {
   let saymbol = "@#$%&*/-`+";
 
   let result = "";
-
+  
   if (document.querySelector("#upper").checked) {
     result += upp;
   }

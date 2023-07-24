@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic-table</title>
+    <style>
+     body{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        height: 100vh;
+     }
+     table{
+        font-size: 30px;
+     }  
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <table border="2px solid white" style="border-collapse: collapse;">
+            <tr>
+                <th>id</th>
+                <th>first name</th>
+                <th>last name</th>
+                <th>email </th>
+                <th>phone number</th>
+            </tr>
+        </table>
+    </div>
+</body>
+<script>
+    const usersData = [
+  {
+    id: 432,
+    first_name: "Asd",
+    last_name: "paerl",
+    email: "abc@gmail.com",
+    phone: "+919394099203"
+  },
+  {
+    id: 342,
+    first_name: "dsf",
+    last_name: "paerl",
+    email: "sdf@gmail.com",
+    phone: "+919394099089"
+  },
+  {
+    id: 765,
+    first_name: "dfgf",
+    last_name: "dfg",
+    email: "muyjgh@gmail.com",
+    phone: "+919394054345"
+  },
+  {
+    id: 123,
+    first_name: "sdxfg",
+    last_name: "gdfd",
+    email: "werrew@gmail.com",
+    phone: "+915464569203"
+  },
+]
+const table = document.querySelector('table')
+for(i = 0 ; i < usersData.length; i++) {
+    let tr = document.createElement('tr')
+    for(let key in usersData[i]){
+        let td = document.createElement('td')
+        td.innerHTML = usersData[i][key]
+        tr.appendChild(td)
+    }
+    table.appendChild(tr)
+}
+
+</script>
+</html>

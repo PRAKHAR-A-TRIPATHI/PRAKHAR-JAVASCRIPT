@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const usersData = [
+  {
+    id: 432,
+    first_name: "Asd",
+    last_name: "paerl",
+    email: "abc@gmail.com",
+    phone: "+919394099203"
+  },
+  {
+    id: 342,
+    first_name: "dsf",
+    last_name: "paerl",
+    email: "sdf@gmail.com",
+    phone: "+919394099089"
+  },
+  {
+    id: 765,
+    first_name: "dfgf",
+    last_name: "dfg",
+    email: "muyjgh@gmail.com",
+    phone: "+919394054345"
+  },
+  {
+    id: 123,
+    first_name: "sdxfg",
+    last_name: "gdfd",
+    email: "werrew@gmail.com",
+    phone: "+915464569203"
+  },
+];
+
+let table = document.createElement('table');
+let thead = document.createElement('thead');
+let tbody = document.createElement('tbody');
+
+let headers = ['id', 'First Name', 'Last Name', 'Email', 'Phone'];
+let headerRow = document.createElement('tr');
+
+headers.forEach(headerText => {
+  let header = document.createElement('th');
+  let textNode = document.createTextNode(headerText);
+  header.appendChild(textNode);
+  headerRow.appendChild(header);
+});
+
+thead.appendChild(headerRow);
+table.appendChild(thead);
+
+usersData.forEach(user => {
+  let row = document.createElement('tr');
+
+  Object.values(user).forEach(text => {
+    let cell = document.createElement('td');
+    let textNode = document.createTextNode(text);
+    cell.appendChild(textNode);
+    row.appendChild(cell);
+  })
+
+  tbody.appendChild(row);
+});
+
+table.appendChild(tbody);
+document.body.appendChild(table);
+
+    </script>
+</body>
+</html>

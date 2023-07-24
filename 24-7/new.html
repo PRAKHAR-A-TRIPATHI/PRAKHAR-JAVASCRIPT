@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table id="usersTable">
+        <tr>
+            <th>Serial Number</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+        </tr>
+    </table>
+
+    <script>
+        const usersData = [
+            {
+                id: 432,
+                first_name: "Asd",
+                last_name: "paerl",
+                email: "mailto:abc@gmail.com",
+                phone: "+919394099203"
+            },
+            {
+                id: 342,
+                first_name: "dsf",
+                last_name: "paerl",
+                email: "mailto:sdf@gmail.com",
+                phone: "+919394099089"
+            },
+            {
+                id: 765,
+                first_name: "dfgf",
+                last_name: "dfg",
+                email: "mailto:muyjgh@gmail.com",
+                phone: "+919394054345"
+            },
+            {
+                id: 123,
+                first_name: "sdxfg",
+                last_name: "gdfd",
+                email: "mailto:werrew@gmail.com",
+                phone: "+915464569203"
+            },
+        ]
+
+        const table = document.getElementById('usersTable')
+
+        usersData.forEach(user => {
+            const row = table.insertRow(-1)
+            
+            const cell1 = row.insertCell(0)
+            cell1.innerHTML = user.id
+            
+            const cell2 = row.insertCell(1)
+            cell2.innerHTML = user.first_name
+            
+            const cell3 = row.insertCell(2)
+            cell3.innerHTML = user.last_name
+
+            const cell4 = row.insertCell(3)
+            cell4.innerHTML = user.email
+
+            const cell5 = row.insertCell(4)
+            cell5.innerHTML = user.phone
+        })
+    </script>
+
+</body>
+
+</html>

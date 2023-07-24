@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .notification-container {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+      }
+
+      .notification {
+        background-color: #4CAF50;
+        color: white;
+        padding: 15px 30px;
+        border-radius: 10px;
+        margin-top: 10px;
+      }
+
+      body{
+        background-color: black;
+
+      }
+      button{
+        padding: 20px;
+        margin-top: 20%;
+        margin-left: 40%;
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <button onmousemove="showNotification()">Show Notification</button>
+
+    <div class="notification-container"></div>
+
+    <script>
+      function showNotification() {
+        let notificationContainer = document.querySelector('.notification-container');
+        let notifications = ['Hi there!' , 'Have a nice day' , 'Thanks' , 'Follow me',"by"];
+        let current_noti = notifications[Math.floor(Math.random() * notifications.length)]
+        let notification = document.createElement('div');
+        notification.classList.add('notification');
+        notification.textContent = current_noti;
+        notificationContainer.appendChild(notification);
+
+        setTimeout(() => {
+          notification.remove();
+        }, 3000);
+      }
+    </script>
+  </body>
+</html>
