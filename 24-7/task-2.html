@@ -29,18 +29,19 @@
     </style>
   </head>
   <body>
-    <button onmousemove="showNotification()">Show Notification</button>
+    <button onclick="Notification()">Show Notification</button>
 
     <div class="notification-container"></div>
 
     <script>
-      function showNotification() {
+      
+      function Notification() {
         let notificationContainer = document.querySelector('.notification-container');
         let notifications = ['Hi there!' , 'Have a nice day' , 'Thanks' , 'Follow me',"by"];
-        let current_noti = notifications[Math.floor(Math.random() * notifications.length)]
+        let random = notifications[Math.floor(Math.random() * notifications.length)]
         let notification = document.createElement('div');
         notification.classList.add('notification');
-        notification.textContent = current_noti;
+        notification.textContent = random;
         notificationContainer.appendChild(notification);
 
         setTimeout(() => {

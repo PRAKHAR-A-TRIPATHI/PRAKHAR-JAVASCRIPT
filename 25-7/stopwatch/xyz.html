@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+        body{
+            background-color: black;
+        }
+      .clock {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background-color: #9e4545;
+      }
+
+      .clock:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 12px;
+        height: 12px;
+        margin: -6px 0 0 -6px;
+        border-radius: 6px;
+        background-color: white;
+      }
+
+      .hour-hand,
+      .minute-hand,
+      .second-hand {
+        position: absolute;
+        bottom: 50%;
+        left: 50%;
+        border-radius: 4px;
+        transform-origin: bottom center;
+      }
+
+      .hour-hand {
+        width: 4px;
+        height: 40px;
+        margin-left: -2px;
+        background-color: white;
+      }
+
+      .minute-hand {
+        width: 2px;
+        height: 60px;
+        margin-left: -1px;
+        background-color: white;
+      }
+
+      .second-hand {
+        width: 1px;
+        height: 80px;
+        margin-left: -0.5px;
+        background-color: red;
+      }
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .hour-hand {
+        animation-name: rotate;
+        animation-duration: 3600s; /*12 hours*/
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+
+      .minute-hand {
+        animation-name: rotate;
+        animation-duration: 60s; /*1 hour*/
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+
+      .second-hand {
+        animation-name: rotate;
+        animation-duration: 0.001s; /*1 minute*/
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="clock">
+      <div class="hour-hand"></div>
+      <div class="minute-hand"></div>
+      <div class="second-hand"></div>
+    </div>
+    <script>
+      const hourHand = document.querySelector(".hour-hand");
+      const minuteHand = document.querySelector(".minute-hand");
+      const secondHand = document.querySelector(".second-hand");
+
+      function setDate() {
+          const now = new Date();
+          const seconds = now.getSeconds();
+          const secondsDegrees = (seconds / 60) * 360 + 90; // add 90 to offset the initial rotation
+          secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
+
+          const minutes = now.getMinutes();
+          const minutesDegrees = (minutes / 60) * 360 + (seconds / 60) * 6 + 90; // add the seconds to make the minute hand move smoothly
+          minuteHand.style.transform = `rotate(${minutesDegrees}deg)`;
+
+          const hours = now.getHours();
+          const hoursDegrees = (hours / 12) * 360 + (minutes / 60) * 30 + 90; // add the minutes to make the hour hand move smoothly
+          hourHand.style.transform = `rotate(${hoursDegrees}deg)`;
+       }
+
+       setTimeout(setDate,1000);
+    </script>
+   </body>
+</html>
