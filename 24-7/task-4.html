@@ -39,8 +39,8 @@ button {
   border-radius: 10px;
 }
 
-button:hover {
-  background-color: #bbb;
+button:active {
+  background-color: #a248cc;
 }
 </style>
 </head>
@@ -89,7 +89,7 @@ function formatTime(time) {
   var minutes = Math.floor((time % 3600) / 60);
   var seconds = Math.floor((time % 60));
 
-  return hours + ":" + minutes + ":" + seconds;
+  return hours.toString().padStart(2,"0") + ":" + minutes.toString().padStart(2,"0") + ":" + seconds.toString().padStart(2,"0");
 }
 
 document.getElementById("start").addEventListener("click", start);
