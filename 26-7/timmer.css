@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+    color: white;
+}
+p{
+    font-size: 70px;
+}
+button{
+    padding: 10px 30px;
+}
+.buttons{
+    margin-top: 20px;
+
+}
+button:active{
+    background-color: red;
+}
+#hou{
+    color : orangered;
+}
+#min{
+    color: orangered;
+}
+#mili{
+    color: green;
+}
+#sec{
+    color: blue;
+}
+.time{
+border-radius: 50%;
+    border: 2px solid white;
+    height: 295px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 340px;
+    box-shadow: 0 0 10px 10px;
+}

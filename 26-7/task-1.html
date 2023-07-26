@@ -5,13 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        ul {
+            list-style-type: decimal;
+        }
+
+        .btnRemove {
+            background-color: rgb(128, 128, 219);
+            border: none;
+            border-radius: 5px;
+            padding: 4px;
+            margin: 1px 92px;
+        }
+    </style>
 </head>
 
 <body>
-    <input type="text" id="text"> <br> <br>
-    <button type="submit" onclick="list()">Submit</button>
-
+    <form action="#" onsubmit="list()">
+        <input type="text" id="text"> <br> <br>
+        <button type="submit">Submit</button>
+    </form>
     <ul id="ul"></ul>
+
 </body>
 <script>
     function list() {
@@ -21,20 +41,30 @@
         if (space.length > 3) {
             let conf = confirm(val + "  add this value in list")
             if (conf) {
-                var li = document.createElement("li");
+                let li = document.createElement("li");
                 li.innerHTML = val;
                 document.getElementById("ul").appendChild(li);
+                let btn = document.createElement("button");
+                btn.innerHTML = "remove"
+                btn.className = "btnRemove"
+                li.appendChild(btn);
+                console.log(btn);
+                btn.addEventListener("click", () => {
+                    li.remove();
+                });
 
+                input.value = "";
             } else {
-                input.value = ""
+                input.value = "";
             }
         } else {
             confirm("please enter valid Value")
         }
 
-
-
     }
+
+
+
 </script>
 
 </html>

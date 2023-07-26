@@ -1,6 +1,6 @@
-let milisecond = 0;
+let milisecond = 1000;
 let seconds = 0;
-let minutes = 0;
+let minutes = 10;
 let hours = 0;
 let sec = document.getElementById("sec");
 let min = document.getElementById("min");
@@ -12,18 +12,18 @@ let start = document.querySelector("#start");
 const timer = () => {
     start.disabled=true;
     stopWatch = setTimeout(() => {
-    milisecond += 5;
-    if (milisecond === 1000) {
-      seconds++;
-      milisecond = 0;
+    milisecond -= 5;
+    if (milisecond === 0) {
+      seconds--;
+      milisecond = 1000;
     }
-    if (seconds === 60) {
-      minutes++;
-      seconds = 0;
+    if (seconds === 0) {
+      minutes--;
+      seconds = 60;
     }
-    if (minutes == 60) {
-      hours++;
-      minutes = 0;
+    if (minutes == 0) {
+      hours--;
+      minutes = 60;
     }
 
     // console.log(`Minute: ${minutes}, Seconds : ${seconds}`);
@@ -41,11 +41,11 @@ function stopTimer() {
 function resettime() {
   stopTimer();
   mili.innerText = "0";
-  milisecond=0;
+  milisecond=1000;
   sec.innerText = "0";
   seconds=0;
   min.innerText = "0";
-  minutes=0;
+  minutes=10;
   hou.innerText = "0";
   hours=0;
   start.disabled=false;
