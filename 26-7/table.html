@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            border: 2px solid black;
+        }
+        table {
+          border-collapse: collapse;
+          width: 100%;
+          border: 2px solid black;
+        }
+      
+      </style>
+</head>
+<body>
+    <table id="myTable">
+        <thead>
+        <tr>
+          <th>Serial Number</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Phone Number</th>
+        </tr>
+    </thead>
+    <tbody id="tbody"></tbody>
+      </table>
+        
+</body>
+<script>
+const usersData = [
+  {
+    id: 432,
+    first_name: "Asd",
+    last_name: "paerl",
+    email: "mailto:abc@gmail.com",
+    phone: "+919394099203"
+  },
+  {
+    id: 342,
+    first_name: "dsf",
+    last_name: "paerl",
+    email: "mailto:sdf@gmail.com",
+    phone: "+919394099089"
+  },
+  {
+    id: 765,
+    first_name: "dfgf",
+    last_name: "dfg",
+    email: "mailto:muyjgh@gmail.com",
+    phone: "+919394054345"
+  },
+  {
+    id: 123,
+    first_name: "sdxfg",
+    last_name: "gdfd",
+    email: "mailto:werrew@gmail.com",
+    phone: "+915464569203"
+  },
+];
+
+const tbody = document.querySelector("#tbody")
+console.log(tbody);
+
+
+usersData.forEach((val)=>{
+  console.log(val);
+   tbody.innerHTML +=
+   `<tr>      
+            <td>${val.id}</td>
+            <td>${val.first_name}</td>
+            <td>${val.last_name}</td>
+            <td>${val.email}</td>
+            <td>${val.phone}</td>
+        </tr>`
+})
+
+</script>
+</html>
+
+
+

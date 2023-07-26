@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="text"> <br> <br>
+    <button type="submit" onclick="list()">Submit</button>
+
+    <ul id="ul"></ul>
+</body>
+<script>
+    function list() {
+        let input = document.getElementById("text");
+        let val = input.value;
+        let space = input.value.replaceAll(" ", "")
+        if (space.length > 3) {
+            let conf = confirm(val + "  add this value in list")
+            if (conf) {
+                var li = document.createElement("li");
+                li.innerHTML = val;
+                document.getElementById("ul").appendChild(li);
+
+            } else {
+                input.value = ""
+            }
+        } else {
+            confirm("please enter valid Value")
+        }
+
+
+
+    }
+</script>
+
+</html>
