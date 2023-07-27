@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edit</title>
+    <style>
+        body {
+            background-color: rgb(150, 19, 25);
+            color: white;
+            padding: 10px;
+        }
+
+        ul {
+            list-style-type: decimal;
+        }
+
+        .btnRemove {
+            background-color: rgb(128, 128, 219);
+            border: none;
+            border-radius: 5px;
+            padding: 4px;
+            margin: 1px 92px;
+        }
+        .edit{
+            background-color: rgb(128, 128, 219);
+            border: none;
+            border-radius: 5px;
+            padding: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="#" onsubmit="list()">
+        <input type="text" id="text"> <br> <br>
+        <button type="submit">Submit</button>
+    </form>
+    <ul id="ul"></ul>
+
+</body>
+<script>
+    function list() {
+        let input = document.getElementById("text");
+        let val = input.value;
+        let space = input.value.replaceAll(" ", "")
+        if (space.length > 3) {
+            let conf = confirm(val + "  add this value in list")
+            if (conf) {
+                let li = document.createElement("li");
+                li.innerHTML = val;
+                document.getElementById("ul").appendChild(li);
+                let btn = document.createElement("button");
+                btn.innerHTML = "remove"
+                btn.className = "btnRemove"
+                li.appendChild(btn);
+                // console.log(btn);
+                btn.addEventListener("click", () => {
+                    li.remove();
+                });
+
+                let btn2 = document.createElement("button");
+                btn2.innerHTML="Edit";
+                btn2.className="edit"
+                li.appendChild(btn2);
+                btn2.addEventListener("click",()=>{
+                    let inp = document.createElement("input");
+                    inp.type="text";
+                    // inp.value=li.textContent;
+                    li.appendChild(inp);
+                    // console.log(inp.value);
+                   
+                    btn2.addEventListener("click",()=>{
+                              li.innerHTML=inp.value;
+                    })
+                });
+               
+
+                input.value = "";
+            } else {
+                input.value = "";
+            }
+        } else {
+            confirm("please enter valid Value")
+        }
+
+    }
+
+
+
+
+
+</script>
+
+</html>
