@@ -26,6 +26,7 @@ function list() {
 
             let btn3 = document.createElement("button");
             btn3.innerText = "ok";
+            btn3.className="ok"
             let inp = document.createElement("input");
             btn2.addEventListener("click", () => {
                 inp.type = "text";
@@ -33,9 +34,15 @@ function list() {
                 li.appendChild(inp);
                 // console.log(inp.value);
                 btn2.addEventListener("click", () => {
-                    span.innerText = inp.value;
+                    if(inp.value===""){
+                        li.appendChild(btn3)
+                    }else{
+                        span.innerText = inp.value;
+                        li.appendChild(btn3);
+                    }
+                   
                     // li.removeChild(inp);
-                    li.appendChild(btn3)
+                    
                 })
             });
             btn3.addEventListener("click", () => {

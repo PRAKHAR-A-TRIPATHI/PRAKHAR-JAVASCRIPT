@@ -22,6 +22,14 @@ ul {
     border: none;
     border-radius: 5px;
     padding: 4px;
+    margin: 9px;
+}
+.ok{
+    background-color: rgb(128, 128, 219);
+    border: none;
+    border-radius: 5px;
+    padding: 4px;
+    margin: 9px;
 }
 input{
     padding: 5px;
