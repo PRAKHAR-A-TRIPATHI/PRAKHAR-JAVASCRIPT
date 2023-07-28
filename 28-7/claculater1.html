@@ -6,7 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>clculater</title>
     <style>
+        * {
+            font-size: 30px;
+            font: optional;
+            font-weight: 700;
+            font-style: oblique;
+        }
 
+        body {
+            display: flex;
+            justify-content: center;
+            background-color: black;
+        }
+
+        button {
+            padding: 10px 50px;
+            margin: 4px;
+            height: 50px;
+            width: 110px;
+            border-radius: 10px;
+            background-color: darkblue;
+            color: white;
+            border: none;
+        }
+
+        input {
+            padding: 5px;
+            width: 46%;
+            border-radius: 10px;
+        }
+
+        button:active {
+            background-color: rgb(46, 26, 231);
+            color: black;
+        }
+
+        .calculater {
+            padding: 10px;
+            border: 3px solid blue;
+            height: auto;
+            width: 500px;
+            border-radius: 10px;
+            background-color: antiquewhite
+        }
+
+        ;
     </style>
 </head>
 
@@ -15,6 +59,7 @@
         <div class="input">
             <span colspan="3"> <input type="text" id="result" /> </span>
             <span> <button onclick="clearInput()">C</button></span>
+            <span> <button onclick="clear_last()">CE</button></span>
         </div>
         <div class="row">
             <button onclick="display('1')">1</button>
@@ -32,11 +77,11 @@
             <button onclick="display('7')">7</button>
             <button onclick="display('8')">8</button>
             <button onclick="display('9')">9</button>
-            <button  onclick=" display('+')">+</button>
+            <button onclick=" display('+')">+</button>
         </div>
         <div class="row">
-            <button onclick="display('.')">1</button>
-            <button onclick="display('0')">2</button>
+            <button onclick="display('.')">.</button>
+            <button onclick="display('0')">0</button>
             <button onclick="calculate()" id="btn">=</button>
             <button onclick="display('*')">*</button>
         </div>
@@ -54,7 +99,11 @@
         var q = eval(p);
         document.getElementById("result").value = q;
     }
-
+    function clear_last() {
+        let display_area = document.getElementById("result");
+        display_area.value = display_area.value.slice(0, display_area.value.length - 1)
+    }
+    
 </script>
 
 </html>
