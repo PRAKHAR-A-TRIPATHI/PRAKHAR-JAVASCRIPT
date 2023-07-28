@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clculater</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="calculater">
+        <div class="input">
+            <span colspan="3"> <input type="text" id="result" /> </span>
+            <span> <button onclick="clearInput()">C</button></span>
+        </div>
+        <div class="row">
+            <button onclick="display('1')">1</button>
+            <button onclick="display('2')">2</button>
+            <button onclick="display('3')">3</button>
+            <button onclick="display('/')">/</button>
+        </div>
+        <div class="row">
+            <button onclick="display('4')">4</button>
+            <button onclick="display('5')">5</button>
+            <button onclick="display('6')">6</button>
+            <button onclick="display('-')">-</button>
+        </div>
+        <div class="row">
+            <button onclick="display('7')">7</button>
+            <button onclick="display('8')">8</button>
+            <button onclick="display('9')">9</button>
+            <button  onclick=" display('+')">+</button>
+        </div>
+        <div class="row">
+            <button onclick="display('.')">1</button>
+            <button onclick="display('0')">2</button>
+            <button onclick="calculate()" id="btn">=</button>
+            <button onclick="display('*')">*</button>
+        </div>
+    </div>
+</body>
+<script>
+    function clearInput() {
+        document.getElementById("result").value = "";
+    }
+    function display(value) {
+        document.getElementById("result").value += value;
+    }
+    function calculate() {
+        var p = document.getElementById("result").value;
+        var q = eval(p);
+        document.getElementById("result").value = q;
+    }
+
+</script>
+
+</html>
