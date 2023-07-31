@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="#" onsubmit="passvalid()">
+        <input type="text" id="pass">
+        <button>click button</button>
+    </form>
+</body>
+<script>
+    let pass = document.getElementById("pass");
+    function passvalid() {
+        let value = pass.value;
+        if (value.length < 8) {
+            alert("manimum 8 charcter password");
+        }
+        let uppercase = false;
+        let lowercase = false;
+        let number = false;
+        for (let i = 0; i < value.length; i++) {
+            let char = value.charAt(i);
+            if (char >= 'A' && char <= 'Z') {
+               if( hasUppercase = true){
+                return true;
+               }else{
+                alert("enter on Capital char")
+               }
+            } else if (char >= 'a' && char <= 'z') {
+                hasLowercase = true;
+            } else if (char >= '0' && char <= '9') {
+                hasNumber = true;
+            }
+        }
+    }
+</script>
+
+</html>

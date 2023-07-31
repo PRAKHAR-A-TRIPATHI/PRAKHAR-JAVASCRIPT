@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CRUD App</title>
+    <style>
+        body {
+            font-family:cursive;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            height: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 5px;
+            /* height: 20px; */
+        }
+
+        #app {
+
+            display: flex;
+        }
+
+        #delet{
+            background-color: red;
+            border: none;
+            border-radius: 5px;
+            padding: 5px;
+        }
+        #edit{
+            background-color: green;
+            border: none;
+            border-radius: 5px;
+            padding: 5px;
+        }
+        #btn{
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <form id="create-form" action="# ">
+            <h1>CRUD</h1>
+            Name:<input type="text" name="name" placeholder="Name"> <br> <br>
+            Email:<input type="email" name="email" placeholder="Email"> <br> <br>
+            Password:<input type="password" name="pass" placeholder="password"> <br> <br>
+            <button type="submit">Create</button> <br> <br>
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        
+    </div>
+    <script>
+        const app = document.getElementById('app');
+        const createForm = document.getElementById('create-form');
+        const table = document.querySelector('table');
+
+        const handleCreate = () => {
+            event.preventDefault();
+            const name = createForm.querySelector('input[name="name"]').value;
+            const email = createForm.querySelector('input[name="email"]').value;
+            const pass = createForm.querySelector('input[name="pass"]').value;
+
+            const row = document.createElement('tr');
+            row.id="newtr"
+            row.innerHTML = `
+    <td>${name}</td>
+    <td>${email}</td>
+    <td>${pass}</td>
+    <td id="btn"><button id="delet" onclick="removelist()">Delete</button> <button id="edit">Edit</button></td>
+  `;
+
+            table.appendChild(row);
+        };
+        createForm.addEventListener('submit', handleCreate);
+
+      function removelist(){
+        let edit = document.getElementById("delet")
+        let delet = document.getElementById("newtr");
+        delet.remove()
+      }
+         
+        
+    </script>
+</body>
+
+</html>
