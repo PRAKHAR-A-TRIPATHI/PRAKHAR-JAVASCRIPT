@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main{
+    display: flex;
+    padding: 10px;
+}
+
+.part1{
+    width: 50%;
+    padding: 10px;
+    border-right: 2px solid grey;
+}
+.part2{
+    width: 50%;
+    padding: 10px;
+}
+h1{
+    color: brown;
+    padding: 10px 0;
+}
+
+.grey {
+    color: grey;
+    padding: 10px 0;
+}
+.pcos{
+    border: 1px solid black;
+    border-radius: 20px;
+    width: 60px;
+    text-align: center;
+    padding: 5px 0;
+}
+.scedule{
+    display: flex;
+}
+.box{
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    color: red;
+    background-color: lightcoral;
+    margin: 2px;
+}
+input{
+    border-radius: 20px;
+    padding: 10px;
+    border-color: red;
+}
+button{
+    border-color:red ;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: lightcoral;
+    color: white;
+}
+#box-3{
+    background-color: lightseagreen;
+    width: 300px;
+    padding: 10px;
+    border-radius: 10px;
+}
+#box-3 div{
+    display: flex;
+    justify-content: space-between;
+}
+#box-3 div p{
+    padding: 10px 0;
+}
+.total{
+    border-top: 2px solid white;
+}
+.pay{
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+}
