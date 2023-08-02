@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+
+}
+.main{
+    height: 70%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+img{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: 0.5s;
+}
+.btn{
+    margin-top:20px;
+    text-align: center;
+}
+button{
+    font-size: 20px;
+    border: none;
+    background-color: green;
+    border-radius: 5px;
+    padding: 10px;
+}
+.barBox{
+    display: flex;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 30px;
+    font-weight: 900;
+    justify-content: center;
+    /* width: 300px; */
+}
+.Box{
+    border: 1px solid black;
+    display: flex;
+    background-color: aquamarine;
+}
+.barBox div{
+    margin: 0 10px;
+}
