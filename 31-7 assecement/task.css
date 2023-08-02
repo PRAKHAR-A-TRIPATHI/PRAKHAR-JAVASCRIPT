@@ -11,28 +11,41 @@
 
 .part1{
     width: 50%;
+    padding: 10px 30px;
+    border-right: 2px solid rgb(213, 213, 213);
+}
+.detail{
+    display: flex;
+    gap: 20px;
     padding: 10px;
-    border-right: 2px solid grey;
+}
+.img{
+   height: 70px;
+   width: 70px;
+   border-radius: 10px;
+   background-color: blue;
 }
 .part2{
     width: 50%;
-    padding: 10px;
+    padding: 20px 50px;
 }
 h1{
     color: brown;
-    padding: 10px 0;
+    padding: 10px 10px;
 }
 
 .grey {
     color: grey;
-    padding: 10px 0;
+    padding: 10px 10px;
+    font-size: 20px;
 }
 .pcos{
     border: 1px solid black;
     border-radius: 20px;
     width: 60px;
     text-align: center;
-    padding: 5px 0;
+    padding: 5px 10px;
+    margin: 5px;
 }
 .scedule{
     display: flex;
@@ -41,26 +54,41 @@ h1{
     padding: 10px;
     text-align: center;
     border-radius: 10px;
-    color: red;
-    background-color: lightcoral;
-    margin: 2px;
+   font-size: 20px;
+    margin: 5px;
+    width: 150px;
+    height: 80px;
 }
 input{
     border-radius: 20px;
-    padding: 10px;
-    border-color: red;
+    padding: 10px 10px;
+    width: 300px;
+    border:2px solid  rgb(240, 45, 45);
 }
 button{
-    border-color:red ;
-    padding: 10px;
+    /* border-color:1px solid red ; */
+    border: none;
+    padding: 13px 20px;
     border-radius: 20px;
     background-color: lightcoral;
     color: white;
 }
+.red{
+    color: red;
+    background-color: lightcoral;
+}
+.blue{
+    background-color: lightblue;
+    color: blue;
+}
+.green{
+    background-color: lightgreen;
+    color: green;
+}
 #box-3{
-    background-color: lightseagreen;
-    width: 300px;
-    padding: 10px;
+    background-color: rgb(211, 179, 241);
+    width: 400px;
+    padding: 18px;
     border-radius: 10px;
 }
 #box-3 div{
@@ -76,5 +104,51 @@ button{
 .pay{
     display: flex;
     justify-content: space-between;
-    width: 300px;
+    width: 450px;
+}
+#btn{
+    background-color: rgb(210, 43, 43);
+}
+.head{
+    padding:10px 10px;
+}
+.pymentdetails{
+    padding: 0 10px;
+}
+.pay{
+    padding: 0 10px;
+}
+#amo,
+#amo1
+{
+    font-size: 25px;
+    font-weight: 900;
+}
+.bold{
+    font-size: 20px;
+    font-weight: 700;
+}
+.color{
+    font-size: 20px;
+    font-weight: 600;
+    color: blueviolet;
+}
+
+@media(max-width:1080px) {
+   .main{
+    display: block;
+   }
+   .part1,.part2{
+    width: 100%;
+    border: none;
+   }
+   .detail{
+    justify-content: space-between;
+   }
+   .scedule{
+    justify-content: space-around;
+   }
+   input{
+    width: 100%;
+   }
 }

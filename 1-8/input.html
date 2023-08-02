@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CRUD Application</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>CRUD Application</h1>
+    <form id="form">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" name="email"><br><br>
+        <button type="submit">Add</button>
+    </form><br><br>
+
+    <table id="table">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </table>
+
+    <script>
+        let form = document.querySelector("#form");
+        let table = document.querySelector("#table");
+        let data = [];
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            let name = document.querySelector("#name").value;
+            let email = document.querySelector("#email").value;
+
+            if (name && email) {
+                data.push({ name, email });
+                renderTable();
+                form.reset();
+            }
+        });
+
+        function renderTable() {
+            let rows = "";
+            data.forEach((item, index) => {
+                rows += `
+                    <tr>
+                        <td>${item.name}</td>
+                        <td>${item.email}</td>
+                        <td><button onclick="editRow(${index})">Edit</button></td>
+                        <td><button onclick="deleteRow(${index})">Delete</button></td>
+                    </tr>`;
+            });
+            table.innerHTML = `
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>` + rows;
+        }
+
+        function editRow(index) {
+            let item = data[index];
+            document.querySelector("#name").value = item.name;
+            document.querySelector("#email").value = item.email;
+            data.splice(index, 1);
+            renderTable();
+        }
+
+
+        function deleteRow(index) {
+            data.splice(index, 1);
+            renderTable();
+        }
+    </script>
+</body>
+</html>

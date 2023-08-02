@@ -11,7 +11,10 @@ button.addEventListener("click", () => {
   let add = document.getElementById("add");
 
   let amount = Number(c);
-  if (amount >= 500 && amount < 1000) {
+  if(amount < 500){
+      add.innerText="invalid code(minimum  500 shoping to apply code)";
+      add.style.color = "red";
+  }else if (amount >= 500 && amount < 1000) {
     if (pro == "off25") {
       discount = 25;
       add.innerText = "Valid Code";
@@ -21,7 +24,7 @@ button.addEventListener("click", () => {
       add.innerText = "Invalid Code";
       add.style.color = "red";
     }
-  } else if (amount >= 1000 && amount < 2000) {
+  } else if (amount >= 1000 && amount <= 2000) {
     if (pro == "off25") {
       discount = 25;
       add.innerText = "Valid Code";
@@ -35,17 +38,17 @@ button.addEventListener("click", () => {
       add.innerText = "Invalid Code";
       add.style.color = "red";
     }
-  } else  if (amount >= 2000) {
-      if (b.value == "off25") {
+  } else  if (amount > 2000) {
+      if (pro== "off25") {
         discount = 25;
         add.innerText = "Valid Code";
         add.style.color = "green";
-      }else if (b.value == "off75") {
-        discount = 75;
+      }else if (pro == "off50") {
+        discount = 50;
         add.innerText = "Valid Code";
         add.style.color = "green";
-      }else if (b.value == "off50") {
-        discount = 50;
+      }else if (pro == "off75") {
+        discount = 75;
         add.innerText = "Valid Code";
         add.style.color = "green";
       }else {
@@ -73,13 +76,25 @@ button.addEventListener("click", () => {
   // console.log(discount);
   // console.log(gst);
   // return total;
+
 });
 
 let cheak = document.getElementById("cheack");
 
-b.addEventListener("click",()=>{
-  cheak.removeAttribute("disabled");
-})
+  b.addEventListener("input",(e)=>{
+    // console.log(e.target.value);
+    cheak.removeAttribute("disabled");
+    cheak.style.backgroundColor="red"
+    // if(e.target.value===""){
+    // }else{
+    // }
+    // console.log(cheak.value);
+    if(e.target.value === ''){
+      cheak.setAttribute('disabled', 'true')
+      cheak.style.backgroundColor = ' lightcoral'
+  }
+  })
+
 
 // cheak.addEventListener("click", () => {
 //   let promo = b.value;

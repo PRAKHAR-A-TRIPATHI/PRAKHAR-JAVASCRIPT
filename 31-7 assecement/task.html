@@ -1,72 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="task.css">
 </head>
+
 <body>
     <div class="main">
         <div class="part1">
             <h1>summary</h1>
             <p class="grey">booking Details</p>
             <div class="detail">
-                <h3>Manage PCOS Hoslistic program</h3>
-                <p class="pcos">pcos</p>
+                <div class="img">
+                </div>
+                <div class="ppp">
+                    <h3>Manage PCOS Hoslistic program</h3>
+                    <p class="pcos">pcos</p>
+                </div>
             </div>
             <p class="grey">Schedule on</p>
             <div class="scedule">
-                <div class="box">
+                <div class="box red">
                     <p>Date</p>
                     <p>10-07-2023</p>
                 </div>
-                <div class="box">
+                <div class="box blue">
                     <p>Time</p>
                     <p>04:30pm</p>
                 </div>
-                <div class="box">
+                <div class="box green">
                     <p>Duration</p>
                     <p>30 min</p>
                 </div>
             </div>
         </div>
         <div class="part2">
-            <h3>Amount</h3>
-            <input type="number" id="Amount">
-            <h3 class="grey">Promo Code</h3>
-            <div id="promo">
-                <input type="text" id="code">
-                <button id="cheack" disabled>Cheak</button>
-                <p id="add"></p>
+            <div class="head">
+                <h3>Amount</h3>
+                <input type="number" id="Amount">
             </div>
+            <div class="head">
+                <h3 class="grey">Promo Code</h3>
+                <div id="promo">
+                    <input type="text" id="code">
+                    <button id="cheack" disabled>Cheak</button>
+                    <p id="add"></p>
+                </div>
+            </div>
+
             <div class="pymentdetails">
                 <p class="grey">Payment Details</p>
                 <div id="box-3">
                     <div>
-                        <p>plan</p>
-                        <p>consultation</p>
+                        <p class="color">Plan</p>
+                        <p class="bold">consultation</p>
                     </div>
                     <div>
-                        <p>Gst</p>
-                        <p>18%</p>
+                        <p class="color">Gst</p>
+                        <p class="bold">18%</p>
                     </div>
                     <div>
-                        <p>summary</p>
-                        <p id="gst">$600</p>
+                        <p class="color">Summary</p>
+                        <p id="gst" class="bold">$600</p>
                     </div>
                     <div>
-                        <p>Discount</p>
-                        <p id="disc">$600</p>
+                        <p class="color">Discount</p>
+                        <p id="disc" class="bold">$600</p>
                     </div>
                     <div class="total">
-                        <p>Total</p>
+                        <p class="bold">Total</p>
                         <p id="amo1">$600.00</p>
                     </div>
                 </div>
-               
+
             </div>
-            <p class="grey">pay secualry by credit/debit and internet banking</p>
+            <p class="grey head ">pay secualry by credit/debit and internet banking</p>
             <div class="pay">
                 <div>
                     <p>Total</p>
@@ -75,10 +86,11 @@
                 <div>
                     <button id="btn">Pay now</button>
                 </div>
-               
+
             </div>
         </div>
     </div>
 </body>
 <script src="task.js"></script>
+
 </html>

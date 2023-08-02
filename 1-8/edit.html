@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVA SCRIPT</title>
+</head>
+
+<body>
+    <h2>Add New Data</h2>
+    <form id="add-form" onsubmit="addData()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <h2>Data Table</h2>
+    <table id="data-table">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Action</th>
+        </tr>
+    </table>
+
+</body>
+<script>
+    // Define the data structure
+let data = [
+    
+];
+
+// Create function to display data
+function displayData() {
+  let table = document.querySelector('#data-table');
+  table.innerHTML = '';
+  for (let i = 0; i < data.length; i++) {
+    let row = `<tr>
+                 <td>${data[i].id}</td>
+                 <td>${data[i].name}</td>
+                 <td>${data[i].age}</td>
+                 <td><button onclick="deleteData(${data[i].id})">Delete</button></td>
+               </tr>`;
+    table.innerHTML += row;
+
+  }
+}
+
+// Create function to add new data
+function addData() {
+    event.preventDefault();
+  let name = document.querySelector('#name').value;
+  let age = document.querySelector('#age').value;
+  let id = data.length + 1;
+  let newData = { id, name, age };
+  data.push(newData);
+  displayData();
+  document.querySelector('#name').value="";
+  document.querySelector('#age').value="";
+  console.log(data);
+  
+}
+
+// Create function to delete data
+function deleteData(id) {
+  let index = data.findIndex(item => item.id === id);
+  if (index !== -1) {
+    data.splice(index, 1);
+    displayData();
+  }
+}
+
+// Display initial data
+// displayData(); 
+
+</script>
+</html>
