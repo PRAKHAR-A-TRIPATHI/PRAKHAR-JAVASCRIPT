@@ -1,27 +1,27 @@
 function isValidPassword(password) {
-    const specialCharacters = "!@#$%^&*()_+-=[]{};':\"\\|,.<>/?";
+    const specialCharacters = "!@#$%^&*()_+-=[]{};'|,.<>/?";
     const upperCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     const lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
     const numbers = "0123456789";
-    let hasSpecialCharacter = false;
-    let hasUpperCase = false;
-    let hasLowerCase = false;
-    let hasNumber = false;
+    let isSpecial = false;
+    let isUpper = false;
+    let isLower = false;
+    let isNum = false;
     for (let i = 0; i < password.length; i++) {
         if (specialCharacters.includes(password[i])) {
-            hasSpecialCharacter = true;
+            isSpecial = true;
         }
         if (upperCaseLetters.includes(password[i])) {
-            hasUpperCase = true;
+            isUpper = true;
         }
         if (lowerCaseLetters.includes(password[i])) {
-            hasLowerCase = true;
+            isLower = true;
         }
         if (numbers.includes(password[i])) {
-            hasNumber = true;
+            isNum = true;
         }
     }
-    return hasSpecialCharacter && hasUpperCase && hasLowerCase && hasNumber;
+    return isSpecial && isUpper && isLower && isNum;
 }
 const password = "myP@sswrd0";
 if (isValidPassword(password)) {
