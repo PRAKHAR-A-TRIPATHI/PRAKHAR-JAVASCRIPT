@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color</title>
+</head>
+<body id="body">
+    color:<input type="color" id="col" >
+    <button onclick="colorChaner()">Change</button>
+
+    <script>
+        let body = document.getElementById("body");
+        // console.log(body);`
+        function colorChaner(){
+            let col = document.getElementById("col").value;
+            body.style.background = col;
+            // console.log(col);
+        }
+        
+    </script>
+</body>
+
+</html>

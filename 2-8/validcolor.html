@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validcolor</title>
+</head>
+
+<body id="body">
+    color:<input type="text" id="col">
+    <p id="valid"></p>
+    <button onclick="colorChaner()">Change</button>
+
+    <script>
+        let body = document.getElementById("body");
+        let valid = document.getElementById("valid")
+        // console.log(body);`
+        function colorChaner() {
+            let col = document.getElementById("col").value;
+
+            // 1 st soliution
+            // let arr = ["red", "blue", "green", "purple", "orange",];
+            // if (arr.includes(col)) {
+            //     body.style.background = col;
+            // } else {
+            //     valid.innerText = "invalid color input"
+            //     valid.style.color = "red"
+            //     body.style.background = "white";
+            // }
+
+            // 2 st solutions 
+
+            body.style.backgroundColor = col
+            if (body.style.backgroundColor == col) {
+                body.style.backgroundColor = col
+                valid.innerText = ''
+            }
+            else {
+                valid.innerText = "invalid color input"
+                valid.style.color = "red"
+                body.style.background = "white";
+            }
+            // console.log(col);
+        }
+
+    </script>
+</body>
+
+</html>
