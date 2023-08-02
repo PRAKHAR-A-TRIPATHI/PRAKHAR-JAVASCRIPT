@@ -3,6 +3,7 @@ const bar = document.querySelectorAll(".bar");
 // console.log(bar[0]);
 var count = 0;
 bar[count].style.color="red"
+bar[count].style.backgroundColor="darkblue"
 slide.forEach((value,index)=>{
     value.style.left = `${index * 100}%`
 })
@@ -12,8 +13,10 @@ function goPre(){
         // console.log(count);
         slideImage()
         bar[count].style.color="red"
+        bar[count].style.backgroundColor="darkblue"
     } 
         bar[count+1].style.color="black"
+        bar[count+1].style.backgroundColor="aquamarine"
         // bar[0].style.color="red"
 
     }
@@ -26,6 +29,7 @@ function goNex(){
         slideImage()
     }
     bar[count].style.color="red"
+    bar[count].style.backgroundColor="darkblue"
     // bar[0].style.backgroundColor="darkblue"
 }
 
@@ -36,6 +40,7 @@ function slideImage(){
     // console.log(`p:${count-1}`);
     if(count > 0){
         bar[count-1].style.color="black"
+        bar[count-1].style.backgroundColor="aquamarine"
     }else{
         bar[0].style.color="red"
         bar[0].style.backgroundColor="darkblue"
