@@ -221,16 +221,16 @@ const dount = [
 // console.log(shortenSentence("Every developer likes to mix kubernetes and javascript"));
 
 // 12 ------------------------------------------------------------------------------------------------
-const products = [
-  { name: "Product 1", price: 20, category: "Electronics" },
-  { name: "Product 2", price: 30, category: "Clothes" },
-  { name: "Product 3", price: 40, category: "Electronics" },
-  { name: "Product 4", price: 50, category: "Clothes" },
-  { name: "Product 5", price: 60, category: "Clothes" },
-  { name: "Product 6", price: 70, category: "Electronics" },
-  { name: "Product 7", price: 80, category: "Clothes" },
-  { name: "Product 8", price: 90, category: "Electronics" },
-];
+// const products = [
+//   { name: "Product 1", price: 20, category: "Electronics" },
+//   { name: "Product 2", price: 30, category: "Clothes" },
+//   { name: "Product 3", price: 40, category: "Electronics" },
+//   { name: "Product 4", price: 50, category: "Clothes" },
+//   { name: "Product 5", price: 60, category: "Clothes" },
+//   { name: "Product 6", price: 70, category: "Electronics" },
+//   { name: "Product 7", price: 80, category: "Clothes" },
+//   { name: "Product 8", price: 90, category: "Electronics" },
+// ];
 //1
 //   const categoryCounts = products.reduce((counts, product) => {
 //     counts[product.category] = (counts[product.category] || 0) + 1;
@@ -261,20 +261,20 @@ const products = [
 //   { name: "Emily", salary: 80000, department: "HR" },
 //   { name: "David", salary: 70000, department: "IT" },
 // ];
-//   1
-//   const departmentAverages = employees.reduce((averages, employee) => {
-//     averages[employee.department] = (averages[employee.department] || { sum: 0, count: 0 });
-//     averages[employee.department].sum += employee.salary;
-//     averages[employee.department].count += 1;
-//     return averages;
-// }, {});
+// //   1
+// //   const departmentAverages = employees.reduce((averages, employee) => {
+// //     averages[employee.department] = (averages[employee.department] || { sum: 0, count: 0 });
+// //     averages[employee.department].sum += employee.salary;
+// //     averages[employee.department].count += 1;
+// //     return averages;
+// // }, {});
 
-// Object.keys(departmentAverages).forEach(department => {
-//     departmentAverages[department] = departmentAverages[department].sum / departmentAverages[department].count;
-// });
-//   console.log(departmentAverages);
+// // Object.keys(departmentAverages).forEach(department => {
+// //     departmentAverages[department] = departmentAverages[department].sum / departmentAverages[department].count;
+// // });
+// //   console.log(departmentAverages);
 
-// 2
+// // 2
 // const departmentSalaries = employees.reduce((salaries, employee) => {
 //     salaries[employee.department] = (salaries[employee.department] || []);
 //     salaries[employee.department].push(employee.salary);
@@ -385,26 +385,26 @@ const products = [
 //     { name: "Emily", salary: 80000, department: "HR" },
 //     { name: "David", salary: 70000, department: "IT" },
 //   ];
-// //   1
-//   function newArray(data) {
-//     let obj = {};
+// // //   1
+// //   function newArray(data) {
+// //     let obj = {};
 
-//     data.forEach((object) => {
-//       const firstLetter = object.name[0];
+// //     data.forEach((object) => {
+// //       const firstLetter = object.name[0];
 
-//       if (obj[firstLetter]) {
-//         obj[firstLetter].push(object);
-//       } else {
-//         obj[firstLetter] = [object];
-//       }
-//     });
+// //       if (obj[firstLetter]) {
+// //         obj[firstLetter].push(object);
+// //       } else {
+// //         obj[firstLetter] = [object];
+// //       }
+// //     });
 
-//     return obj;
-//   }
+// //     return obj;
+// //   }
 
-// console.log(newArray(input));
+// // console.log(newArray(input));
 
-// 2
+// // 2
 // function newArray(data) {
 //     let obj = {};
 

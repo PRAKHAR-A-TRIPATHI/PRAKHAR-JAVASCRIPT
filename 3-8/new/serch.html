@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>serch</title>
+</head>
+
+<body>
+    <input type="text" id="searchInput" placeholder="Search for names.." oninput="searchNames()">
+    <ul id="myList">
+        <li>Video Learning</li>
+        <li> Practical</li>
+        <li>Virtual Learning</li>
+        <li>Class Session</li>
+        <li>Assessment</li>
+        <li>Mentoring</li>
+        <li>Typing Practice</li>
+        <li> Communication Training</li>
+        <li>Others</li>
+        <p id="invalid"></p>
+    </ul>
+    <button>click</button>
+    <script>
+
+
+        function searchNames() {
+            var searchValue = document.getElementById("searchInput").value.toUpperCase();
+
+            // ul list element
+            var list = document.getElementById("myList");
+
+            //all list item  
+            var listItems = list.getElementsByTagName("li");
+
+            // Loop  list items
+            for (var i = 0; i < listItems.length; i++) {
+                //  text content of the current list item
+                var name = listItems[i].textContent;
+
+                // Check if the name matches the search value
+                if (name.toUpperCase().indexOf(searchValue) > -1) {
+                    // If it does, show the list item
+                    listItems[i].style.display = "";
+                    // document.getElementById("invalid").innerText=""
+
+                } else {
+                    // Otherwise, hide the list item
+                    listItems[i].style.display = "none";
+                    // document.getElementById("invalid").innerText="NO Task Found."
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>
