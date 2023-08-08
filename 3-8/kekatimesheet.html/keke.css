@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    height: 100%;
+}
+
+td {
+    border: 1px solid black;
+    /* text-align: center; */
+    height: 70px;
+    /* width: 120px; */
+
+    /* padding: 8px; */
+
+}
+
+th {
+    border: 1px solid black;
+
+    padding: 8px;
+}
+
+tr {
+    border: 1px solid black;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+input {
+    width: 100%;
+    height: 80%;
+    border: none;
+    color: grey;
+    font-size: 20px;
+    outline: none;
+    text-align: center;
+    position: relative;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+p {
+    height: 20%;
+    background-color: lightgray;
+}
+
+#commentBox {
+    position: absolute;
+}
+
+.tBox {
+    /* pstition: relative; */
+}
+
+.text {
+    position: absolute;
+}

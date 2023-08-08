@@ -23,7 +23,7 @@ img{
     height: 100%;
     width: 100%;
     position: absolute;
-    transition: 0.5s;
+    /* transition: 0.5s; */
 }
 .btn{
     margin-top:20px;
@@ -53,4 +53,10 @@ button{
 .bar{
     padding: 0 10px;
     transition: 0.3s;
+}
+.trans{
+    transition: 0.5s;
+}
+.trans1{
+    transition: none;
 }

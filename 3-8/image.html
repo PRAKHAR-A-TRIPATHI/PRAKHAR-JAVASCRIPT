@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Upload Example</title>
+</head>
+<body>
+    <input type="file" id="fileInput" accept="image/png, image/jpeg">x
+    <img id="preview" src="" alt="Image preview">
+    <p id="error"></p>
+
+    <script>
+        const MAX_SIZE = 1024 * 1024; // 1 MB
+
+        let fileInput = document.querySelector('#fileInput');
+        let preview = document.querySelector('#preview');
+        let error = document.querySelector('#error');
+
+        fileInput.addEventListener('change', function() {
+            let file = fileInput.files[0];
+
+            // Check if the file is an image
+            if (!file.type.startsWith('image/')) {
+                error.textContent = 'Please select an image file';
+                return;
+            }
+
+            // Check if the file size is within the allowed limit
+            if (file.size > MAX_SIZE) {
+                error.textContent = 'File size must be less than 1 MB';
+                return;
+            }
+
+            // Clear any previous error message
+            error.textContent = '';
+
+            // Show the selected image in the preview element
+            let reader = new FileReader();
+            reader.onload = function() {
+                preview.src = reader.result;
+            };
+            reader.readAsDataURL(file);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>projec -1</title>
+</head>
+
+<body>
+    <h1>Async JS</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    let a = 0;
+    let b = 1;
+    let c = 4000;
+    let stop = setInterval(() => {
+        a++;
+        // b++;
+        // c++;
+        // b=b+2-1;
+        // c=c*10/10;
+        for (let index = 0; index < 5; index++) {
+            console.log(a + " " + index + "hello");
+        }
+        //   console.log(a,b,c);
+    }, 5)
+
+    let chang = setTimeout(() => {
+        c++;
+        console.log(c);
+    }, 5000)
+    document.querySelector("#stop").addEventListener("click", () => {
+        clearInterval(stop);
+        console.log("stop");
+    })
+    document.querySelector("#stop").addEventListener("click", () => {
+        clearTimeout(stop);
+        console.log("stop");
+    })
+</script>
+
+</html>

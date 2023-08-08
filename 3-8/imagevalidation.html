@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>image validation</title>
+</head>
+
+<body>
+    <h1>Image validation</h1>
+    <form name="form" onsubmit="vlaidation()">
+        <label for="">image upload</label>
+        <input type="file" name="upload"> <br><br>
+        <input type="submit" value="submit">
+        <img src="" alt="select file" id="img">
+    </form>
+</body>
+<script>
+    var img = document.forms['form']['upload'];
+    var image = document.getElementById("img")
+    var validExt = ["png", "jpg"];
+
+    function vlaidation() {
+        event.preventDefault()
+        if (img.value != "") {
+            // cheak vaid image or not
+            var imgExt = img.value.substring(img.value.lastIndexOf(".") + 1);
+            let result = validExt.includes(imgExt);
+            if (!result) {
+                alert("Slected file not a Image......");
+
+            } else {
+                // console.log(parseFloat(img.files[0].size/(1024*1024)));
+                if (parseFloat(img.files[0].size / (1024 * 1024)) >= 1) {
+                    let reader = new FileReader();
+                    reader.onload = function () {
+                        image.src = reader.result;
+                    };
+                    reader.readAsDataURL(img.files[0]);
+                    alert("file size must be Smaller Than 1 mb" + " " + "file size:" + (parseFloat(img.files[0].size / (1024 * 1024))).toFixed(2))
+                } else {
+                    //    image.src=img.value;
+                    let reader = new FileReader();
+                    reader.onload = function () {
+                        image.src = reader.result;
+                    };
+                    reader.readAsDataURL(img.files[0]);
+                }
+            }
+            // console.log(result);
+            // console.log(imgExt);
+
+        } else {
+            alert("no image is selected....");
+
+        }
+    }
+</script>
+
+</html>

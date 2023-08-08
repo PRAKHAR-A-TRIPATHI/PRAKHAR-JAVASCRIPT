@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input</title>
+</head>
+
+<body>
+    <input type="text" oninput="searchList()" id="input">
+    <ul id="list"></ul>
+    <script>
+        let myList = ['Video Learning', 'Practical', 'Virtual Learning', 'Class Sessiony'];
+
+
+
+        let ul = document.getElementById("list");
+        myList.forEach((val) => {
+            let li = document.createElement("li");
+            li.innerText = val;
+            ul.appendChild(li);
+        })
+        function searchList() {
+            let input = document.getElementById("input").value.toLowerCase();
+            let fil = myList.filter(item => item.toLowerCase().includes(input));
+            ul.innerHTML = "";
+            fil.forEach((val) => {
+                let li = document.createElement("li");
+                li.innerText = val;
+                ul.appendChild(li);
+            });
+        }
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
