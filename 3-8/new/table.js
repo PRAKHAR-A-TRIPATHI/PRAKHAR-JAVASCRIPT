@@ -23,11 +23,12 @@ function renderTable() {
   let timeInputs = document.querySelectorAll(".tBox");
   let commentBox = document.createElement("textarea");
   commentBox.className = "text";
+  commentBox.setAttribute("id", "commentBox");
   commentBox.style.display = "none";
   document.body.appendChild(commentBox);
 
   // Keep track of the last clicked input
-  let lastInput=null;
+  let lastInput = null;
 
   timeInputs.forEach(function (input) {
     input.addEventListener("click", function () {
@@ -39,10 +40,17 @@ function renderTable() {
         commentBox.style.left = input.offsetLeft + "px";
         commentBox.style.top = input.offsetTop + input.offsetHeight + "px";
         lastInput = input;
-        setTimeout(()=>{
-          commentBox.style.display = "none";
-        },2000)
-      }
+          commentBox.addEventListener("input",(e)=>{
+                //  commentBox.style.display = "block";
+                 if (commentBox.value.length > 0) {
+                  commentBox.style.display = "block";
+              } else {
+                  setTimeout(function() {
+                      commentBox.style.display = "none";
+                  }, 2000);
+                }
+          });
+        }
     });
   });
   commentBox.style.display = "none";
@@ -54,10 +62,9 @@ function search() {
   serchbar.style.display = "block";
   serchbar.style.left = add.offsetLeft + "px";
   serchbar.style.top = add.offsetTop + add.offsetHeight + "px";
-  setTimeout(()=>{
-    serchbar.style.display = "none";
-  },2000)
-  
+  // setTimeout(()=>{
+  //   serchbar.style.display = "none";
+  // },2000)
 }
 
 function searchNames() {
