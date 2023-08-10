@@ -1,0 +1,80 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="date" id="dateInput" />
+
+<script>
+    const dateInput = document.getElementById('dateInput');
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.setAttribute('min', today);
+    dateInput.setAttribute('max', today);
+</script>
+
+</body>
+<script>
+    function showForm() {
+    // Get the form element
+    var form = document.getElementById("myForm");
+
+    // Set the form's display style to "block" to make it visible
+    form.style.display = "block";
+
+    // Position the form in the middle of the screen
+    form.style.top = "50%";
+    form.style.left = "50%";
+    form.style.transform = "translate(-50%, -50%)";
+}
+
+// Add an event listener to the button
+document.getElementById("myButton").addEventListener("click", showForm);
+
+
+
+
+
+
+// function displayDropdownSelection(dropdownId, inputId) {
+//     // Get the selected value from the dropdown
+//     var dropdown = document.getElementById(dropdownId);
+//     var selectedValue = dropdown.options[dropdown.selectedIndex].value;
+
+//     // Set the value of the input field
+//     var input = document.getElementById(inputId);
+//     input.value = selectedValue;
+// }
+
+// function inputDates() {
+//     let today = new Date();
+//     let tomorrow = new Date(today);
+//     tomorrow.setDate(tomorrow.getDate() + 1);
+
+//     let todayString = today.toISOString().split('T')[0];
+//     let tomorrowString = tomorrow.toISOString().split('T')[0];
+
+//     let todayInput = prompt("Please enter today's date (YYYY-MM-DD):", todayString);
+//     let tomorrowInput = prompt("Please enter tomorrow's date (YYYY-MM-DD):", tomorrowString);
+
+//     console.log(`Today: ${todayInput}`);
+//     console.log(`Tomorrow: ${tomorrowInput}`);
+
+
+
+
+</script>
+</html> -->
+<input type="text" id="inputValue" />
+<button onclick="pushValue()">Push Value</button>
+
+<script>
+    let arr = [];
+    function pushValue() {
+        const inputValue = document.getElementById('inputValue').value;
+        arr.push(inputValue);
+        console.log(arr);
+    }
+</script>

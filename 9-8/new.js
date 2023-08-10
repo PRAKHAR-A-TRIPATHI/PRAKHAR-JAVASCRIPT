@@ -46,6 +46,7 @@
 // }
 
 
+
 function sum (){
   return new Promise((resolve, reject) => {
         setTimeout(()=>{
@@ -54,7 +55,7 @@ function sum (){
             let c =a+b;
             console.log(c);
             resolve(c)
-        },4000)
+        },2000)
     })
    
 }
@@ -64,3 +65,4 @@ async function wait(){
      console.log('10');
 
 }
+wait();
