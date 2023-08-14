@@ -4,19 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>task</title>
-    <link rel="stylesheet" href="medicine.css">
+    <title>form Submit</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="main">
-        <button id="popupForm">Add Madicinie</button>
         <form action="##" id="form">
             <label for="medicine">Medicine</label> <br>
-            <input type="text" id="medicine" class="input" required > <br> <br>
+            <input type="text" id="medicine" class="input" name="medicine"> <br> <br>
 
             <label for="Rack">Rack</label> <br>
-            <select id="Rack">
+            <select id="Rack" name="select">
                 <!-- <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -24,17 +23,17 @@
             </select> <br> <br>
 
             <label for="betNum">Batch Number</label> <br>
-            <input type="text" id="betNum" disabled class="input"> <br> <br>
+            <input type="text" id="betNum" disabled class="input" name="betNum"> <br> <br>
 
             <label for="quantity">Quantity</label><br>
-            <input type="number" id="quantity" class="input" min="0"> <br> <br>
-             
+            <input type="number" id="quantity" class="input" min="0" name="quantity"> <br> <br>
+
             <p>Expire Date</p>
             <div class="expDate">
-                <div class="byDate" >
+                <div class="byDate">
                     <div class="flex">
                         <label for="byDate">By Date</label>
-                        <input type="checkbox" id="byDate" >
+                        <input type="checkbox" id="byDate">
                     </div>
                     <div class="none" id="date">
                         <label for="eDate">Date</label>
@@ -49,33 +48,19 @@
                     <div class="none" id="days">
                         <label for="mDate">Manufacture Date</label><br>
                         <input type="date" id="mDate" class="input"><br>
-                        <label for="days">Days</label><br>
+                        <label for="dayss">Days</label><br>
                         <input type="number" id="dayss" class="input" min="0">
                     </div>
                 </div>
 
             </div>
             <button id="addTable">Add Madicine</button>
+            <button id="editTable">Update value</button>
+            <button id="cancel">cancel</button>
+
         </form>
     </div>
-    <div class="table">
-        <table id="table">
-            <thead>
-                <tr>
-                    <th>Medicine</th>
-                    <th>Quantity</th>
-                    <th>Expaire Date</th>   
-                    <th>Pack</th>
-                    <th>Betch</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody id="tbody"></tbody>
-        </table>
-    </div>
-    <div id="notification"></div>
 </body>
-
-<script src="medicine.js"></script>
+<script src="script.js"></script>
 
 </html>

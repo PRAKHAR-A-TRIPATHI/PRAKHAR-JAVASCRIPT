@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>task</title>
-    <link rel="stylesheet" href="medicine.css">
+    <title>Medicine</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
     <div class="main">
         <button id="popupForm">Add Madicinie</button>
         <form action="##" id="form">
             <label for="medicine">Medicine</label> <br>
-            <input type="text" id="medicine" class="input" required > <br> <br>
+            <input type="text" id="medicine" class="input"> <br> <br>
 
             <label for="Rack">Rack</label> <br>
             <select id="Rack">
@@ -56,6 +54,9 @@
 
             </div>
             <button id="addTable">Add Madicine</button>
+            <button id="editTable">Update value</button>
+            <button id="cancel">cancel</button>
+
         </form>
     </div>
     <div class="table">
@@ -75,7 +76,5 @@
     </div>
     <div id="notification"></div>
 </body>
-
-<script src="medicine.js"></script>
-
+<script src="script.js"></script>
 </html>

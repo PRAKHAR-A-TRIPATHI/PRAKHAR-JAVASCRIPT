@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #msg {
+            text-align: center;
+            margin: 3rem;
+        }
+
+        .button1 {
+            font-size: 18px;
+            height: 40px;
+            width: 200px;
+            border-radius: 15px;
+            background-color: aqua;
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+            border: 1px solid black;
+            width: 40%;
+            background-color: gray;
+            border: 2px solid red;
+            border-radius: 25px;
+        }
+
+        .medicine {
+            display: flex;
+
+            flex-direction: column;
+            width: 90%;
+            margin: 1rem;
+        }
+
+        .center {
+            margin-top: 3rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .table {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        #dateInput {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="msg"><button class="button1" onclick="showMsg();">Add Medicine</button></div>
+    <div class="center">
+        <form style="visibility:hidden" name="message" method="post" action="">
+            <div class="medicine">
+                <label for="">medicine</label>
+                <input type="text" id="medicineall">
+
+                <label for="Rack">Rack</label>
+                <select name="Rack" id="pack-dropdown">
+                    <!-- <option value=""></option> -->
+                    <!-- <option value=""></option> -->
+                </select>
+
+                <label for="Batch">Batch Number</label>
+                <select name="Batch1" id="Batchnumber" disabled>
+                    <!-- <option value=""></option>
+                    <option value=""></option> -->
+                </select>
+
+                <label for="">Quantatity</label>
+                <input type="number" id="number">
+                <br>
+
+
+                <label for="">Expiry By</label>
+                <div>
+                    <input type="radio" id="date" value="date" name="expiryType" required>
+                    <label for="date">By Date</label>
+                    <!-- <br> -->
+                    <input type="date" id="dateInput" min="2023-08-11">
+                    <input type="radio" id="days" value="days" name="expiryType" required>
+                    <label for="days">By Days</label>
+                    <div id="container"></div>
+                </div>
+
+                <br>
+
+                <input type="button" value="Add Medicine" onclick="Addrow()">
+                </select>
+            </div>
+        </form>
+    </div>
+</body>
+
+
+
+<div class="table">
+    <table border="4" id="show" style="visibility:visible">
+        <thead>
+            <tr>
+                <th>Medicine</th>
+                <th>Qty</th>
+                <th>Expiry Date</th>
+                <th>Rack</th>
+                <th>Batch</th>
+                <th>Opration</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            <!-- Table body content will be added dynamically -->
+        </tbody>
+    </table>
+</div>
+
+
+<div id="notification" class="center" style="display:none; color:green; text-align: center;"></div>
+<script>
+    function showMsg() {
+        document.message.style.visibility = "visible";
+    }
+
+    ////////radio button
+
+    const container = document.getElementById("container");
+    const dateRadio = document.getElementById("date");
+    const daysRadio = document.getElementById("days");
+
+    dateRadio.addEventListener("click", showInput);
+    daysRadio.addEventListener("click", showInput);
+
+
+    function showInput() {
+        container.innerHTML = ""; // Clear the container
+
+        if (dateRadio.checked) {
+            const dateInput = document.createElement("input");
+            dateInput.setAttribute("type", "date");
+            dateInput.id = "expiryDateInput";
+            dateInput.required = true; // Add required attribute for validation
+            container.appendChild(dateInput);
+            dateInput.addEventListener("input", validateDate);
+        } else if (daysRadio.checked) {
+            const dayAndDateInput = document.createElement("input");
+            dayAndDateInput.setAttribute("type", "date");
+            dayAndDateInput.id = "dayAndDateInput";
+            container.appendChild(dayAndDateInput);
+
+            const daysInput = document.createElement("input");
+            daysInput.setAttribute("type", "number");
+            daysInput.setAttribute("placeholder", "Enter number of days");
+            daysInput.id = "expiryDaysInput";
+            daysInput.required = true; // Add required attribute for validation
+            container.appendChild(daysInput);
+            daysInput.addEventListener("input", validateDays);
+        }
+    }
+
+
+    ////drop down
+
+    function dropdown() {
+        var rack1 = document.getElementById("Rack1")
+        var batch1 = document.getElementById("Batchnumber")
+
+    }
+
+
+    let Rack = [
+        { id: 1, value: "pack 1" },
+        { id: 2, value: "pack 2" },
+        { id: 3, value: "pack 3" },
+        { id: 4, value: "pack 4" },
+        { id: 5, value: "pack 5" },
+        { id: 6, value: "pack 6" },
+        { id: 7, value: "pack 7" },
+        { id: 8, value: "pack 8" },
+    ];
+    let batch = [
+        { pack_id: 1, batch: "A1" },
+        { pack_id: 2, batch: "A2" },
+        { pack_id: 3, batch: "A3" },
+        { pack_id: 4, batch: "A4" },
+        { pack_id: 5, batch: "A5" },
+        { pack_id: 6, batch: "A6" },
+        { pack_id: 7, batch: "A7" },
+        { pack_id: 8, batch: "A8" },
+    ];
+
+    // Adding a Options to Pack Dropdown
+    let packDropdown = document.getElementById('pack-dropdown');
+    Rack.forEach(ele => {
+        let option = document.createElement('option');
+        option.value = ele.value;
+        option.innerText = ele.value;
+        packDropdown.appendChild(option);
+    });
+
+
+
+    let batchInput = document.getElementById('Batchnumber');
+    batch.forEach(ele => {
+        let option = document.createElement('option');
+        option.value = ele.batch;
+        option.innerText = ele.batch;
+        batchInput.appendChild(option);
+    });
+
+    ///desable dropdown
+    packDropdown.addEventListener("change", function (e) {
+        e.preventDefault();
+        var packId = packDropdown.value;
+        var selectedPack = Rack.find(function (ele) {
+            return ele.value === packId;
+        });
+
+        var findBatch = batch.find(function (ele) {
+            return ele.pack_id === selectedPack.id;
+        });
+
+        batchInput.value = findBatch.batch;
+        batchInput.disabled = true;
+    });
+
+
+
+
+    function showNotification(message) {
+        const notificationDiv = document.getElementById("notification");
+        notificationDiv.innerText = message;
+        notificationDiv.style.display = "block";
+        setTimeout(() => {
+            notificationDiv.style.display = "none";
+        }, 2000); // Hide the notification after 3 seconds
+    }
+
+
+    function Addrow() {
+        var medicineInput = document.getElementById("medicineall").value;
+        var numberInput = document.getElementById("number").value;
+        var packDropdown = document.getElementById("pack-dropdown").value;
+        var batchInput = document.getElementById("Batchnumber").value;
+        var expiryInput = document.getElementById("container").innerHTML;
+
+
+        var expiryInput = "";
+
+        if (dateRadio.checked) {
+            const selectedDateInput = document.getElementById("expiryDateInput");
+            const selectedDate = new Date(selectedDateInput.value);
+            const currentDate = new Date();
+
+            if (selectedDate < currentDate) {
+                alert("Please choose a future date.");
+                return;
+            }
+
+            expiryInput = selectedDateInput.value;
+        } else if (daysRadio.checked) {
+            const selectedDaysInput = document.getElementById("expiryDaysInput").value;
+        const currentDate = new Date();
+
+        if (!isNaN(selectedDaysInput)) {
+            const calculatedDate = new Date();
+            calculatedDate.setDate(currentDate.getDate() + parseInt(selectedDaysInput));
+            expiryInput = calculatedDate.toISOString().split("T")[0];
+        }
+        }
+
+
+
+
+        if (
+            medicineInput.trim() === "" ||
+            numberInput.trim() === "" ||
+            packDropdown.trim() === "" ||
+            batchInput.trim() === "" ||
+            expiryInput.trim() === ""
+        ) {
+            alert("Please Enter Value");
+            return;
+        } else {
+            showNotification("Medicine added successfully!");
+        }
+
+        var tableBody = document.getElementById("tableBody");
+        var newRow = document.createElement("tr");
+        newRow.innerHTML = `
+                <td>${medicineInput}</td>
+                <td>${numberInput}</td>
+                <td>${expiryInput}</td>
+                <td>${packDropdown}</td>
+                <td>${batchInput}</td>
+                `;
+
+        tableBody.appendChild(newRow);
+
+
+
+        // Create delete and edit buttons
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete";
+        deleteButton.addEventListener("click", function () {
+            tableBody.removeChild(newRow); // Remove the row from the table
+        });
+
+        const editButton = document.createElement("button");
+        editButton.textContent = "Edit";
+        editButton.addEventListener("click", function () {
+            // Populate the form with row data for editing
+            document.getElementById("medicineall").value = medicineInput;
+            document.getElementById("number").value = numberInput;
+            document.getElementById("pack-dropdown").value = packDropdown;
+            document.getElementById("Batchnumber").value = batchInput;
+
+            if (dateRadio.checked) {
+                const selectedDateInput = document.getElementById("expiryDateInput");
+                selectedDateInput.value = expiryInput;
+                dateRadio.click(); // Simulate click to show date input
+            } else if (daysRadio.checked) {
+                const daysInput = document.getElementById("expiryDaysInput");
+                daysInput.value = expiryInput;
+                daysRadio.click(); // Simulate click to show days input
+            }
+
+            // Replace the "Add" button with an "Update" button
+            const updateButton = document.createElement("button");
+            updateButton.textContent = "Update";
+            updateButton.addEventListener("click", function () {
+                // Update row data with edited values
+                newRow.children[0].textContent = document.getElementById("medicineall").value;
+                newRow.children[1].textContent = document.getElementById("number").value;
+                newRow.children[2].textContent = expiryInput;
+                newRow.children[3].textContent = document.getElementById("pack-dropdown").value;
+                newRow.children[4].textContent = document.getElementById("Batchnumber").value;
+
+                // Replace the "Update" button with the "Edit" button
+                newRow.removeChild(updateButton);
+                newRow.appendChild(editButton);
+            });
+
+            // Remove the "Edit" button and add the "Update" button
+            newRow.removeChild(editButton);
+            newRow.appendChild(updateButton);
+        });
+
+        // Add buttons to the row
+        newRow.appendChild(deleteButton);
+        newRow.appendChild(editButton);
+
+        tableBody.appendChild(newRow);
+
+
+    }
+
+
+
+
+
+</script>
+
+</html>

@@ -108,3 +108,7 @@ input,select{
 #addTable{
     background-color: blue;
 }
+#editTable{
+    background-color: blue;
+    display: none;
+}

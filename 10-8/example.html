@@ -1,3 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Date Checker</title>
+</head>
+<body>
+    <h1>Date Checker</h1>
+    <form id="dateForm">
+        <label for="dateInput">Enter a date:</label>
+        <input type="date" id="dateInput">
+        <input type="submit" value="Check Date">
+    </form>
+
+    <script>
+        // let form = document.getElementById("dateForm");
+        // form.addEventListener("submit", function(event) {
+        //     event.preventDefault();
+        //     let inputDate = document.getElementById("dateInput").value;
+        //     checkDate(inputDate);
+        // });
+
+        // function checkDate(inputDate) {
+        //     let today = new Date();
+        //     let date = new Date(inputDate);
+        //     if (date < today) {
+        //         alert("The input date is less than today's date.");
+        //     } else if (date > today) {
+        //         alert("The input date is greater than today's date. Submit successfully.");
+        //     } else {
+        //         alert("The input date is equal to today's date.");
+        //     }
+        // }
+
+        formSubmitBtn.addEventListener("click", () => {
+  // add by days validation
+  let newDate = new Date(manufacturDate.value);
+  newDate.setDate(newDate.getDate() + Number(manufactdays.value));
+  let localDate = newDate.toLocaleDateString();
+  if (localDate == "Invalid Date") {
+    localDate = byDateInput.value;
+  }
+
+  // form validation
+  let valueofMedicine = medicineInput.value.replaceAll(" ", "");
+  if (
+    valueofMedicine === "" ||
+    quantityTnput.value === "" ||
+    quantityTnput.value < 0 ||
+    rackInput.value === "" ||
+    betchNum.value === "" ||
+    localDate == ""
+  ) {
+    if (valueofMedicine === "") {
+      notification.innerText = "invalid medicine...!";
+      medicineInput.value = "";
+    } else if (rackInput.value === "") {
+      notification.innerText = "invalid Rack input ....!";
+      rackInput.value = "";
+    } else if (betchNum.value === "") {
+      notification.innerText = "invalid Betch Num ....|";
+    } else if (quantityTnput.value === "") {
+      notification.innerText = "invalid quntity ....!";
+      quantityTnput.value = "";
+    } else if (quantityTnput.value < 0) {
+      notification.innerText = "invalid quntity not allow less than 0";
+      quantityTnput.value = "";
+    } else if (localDate === "") {
+      notification.innerText = "invalid Expaie Date ...!";
+    }
+    notification.style.background = "red";
+    notification.classList.add("show");
+    setTimeout(function () {
+      notification.classList.remove("show");
+    }, 3000);
+  } else {
+    // add table th value
+    document.getElementById("tbody").innerHTML += `
+    <tr>
+      <td>${medicineInput.value}</td>
+      <td>${quantityTnput.value}</td>
+      <td>${localDate}</td>
+      <td>${rackInput.value}</td>
+      <td>${betchNum.value}</td>
+      <td> <button class="delet">remove</button>
+     <button class="edit">Edit</button></td>
+  </tr>
+      `;
+
+    //   medicine validation
+    validArray.push(medicineInput.value);
+    console.log(validArray);
+
+    // show notification
+    notification.innerText = "Form submitted successfully!";
+    notification.classList.add("show");
+    notification.style.background = "#4CAF50";
+
+    // Hide the notification after 3 seconds
+    setTimeout(function () {
+      notification.classList.remove("show");
+    }, 3000);
+    form.style.display = "none";
+  }
+  
+  let deletButtons = document.querySelectorAll(".delet");
+  deletButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      let tr = button.parentNode.parentNode;
+      tr.remove();
+    });
+  });
+
+ 
+});
+
+    </script>
+</body>
+</html>
+
+
+
 <!-- <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,7 +188,7 @@ document.getElementById("myButton").addEventListener("click", showForm);
 
 </script>
 </html> -->
-<input type="text" id="inputValue" />
+<!-- <input type="text" id="inputValue" />
 <button onclick="pushValue()">Push Value</button>
 
 <script>
@@ -77,4 +198,5 @@ document.getElementById("myButton").addEventListener("click", showForm);
         arr.push(inputValue);
         console.log(arr);
     }
-</script>
+</script> -->
+
