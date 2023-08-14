@@ -28,6 +28,7 @@ let medicineInput = document.getElementById("medicine");
 let quantityTnput = document.getElementById("quantity");
 let form = document.getElementById("form");
 let main = document.getElementById("addform");
+let buttondiv = document.querySelector(".button");
 var notification = document.getElementById("notification");
 let popupButton = document.getElementById("popupForm");
 let rackInput = document.getElementById("Rack");
@@ -43,14 +44,15 @@ let manufactdays = document.getElementById("dayss");
 let cancel = document.getElementById("cancel");
 let editTable = document.getElementById("editTable");
 let validArray = [];
-
+// console.log(maindiv);
 // display form
 popupButton.addEventListener("click", () => {
+  buttondiv.appendChild(formSubmitBtn);
   form.style.display = "block";
   form.style.top = "50%";
   form.style.left = "50%";
   form.style.transform = "translate(-50%, -50%)";
-  formSubmitBtn.style.display = "block";
+  // formSubmitBtn.style.display = "block";
   editTable.style.display = "none";
   medicineInput.value = "";
   quantityTnput.value = "";
@@ -130,13 +132,15 @@ byDateInput.addEventListener("input", () => {
     }, 3000);
   }
 });
+
 formSubmitBtn.addEventListener("click", () => {
   // add by days validation
   let newDate = new Date(manufacturDate.value);
   newDate.setDate(newDate.getDate() + Number(manufactdays.value));
   let localDate = newDate.toLocaleDateString();
   if (localDate == "Invalid Date") {
-    localDate = byDateInput.value;
+    let a = new Date(byDateInput.value);
+    localDate = a.toLocaleDateString();
   }
 
   // form validation
@@ -217,7 +221,20 @@ formSubmitBtn.addEventListener("click", () => {
   deletButtons.forEach((button) => {
     button.addEventListener("click", () => {
       let tr = button.parentNode.parentNode;
+      let index = validArray.indexOf(tr.children[0].innerText);
+      if (index > -1) {
+        validArray.splice(index, 1);
+        console.log(validArray);
+      }
+      // console.log(index);
       tr.remove();
+      notification.innerText = "delete List Item......!";
+      notification.style.background = "red";
+      notification.classList.add("show");
+      byDateInput.value = "";
+      setTimeout(function () {
+        notification.classList.remove("show");
+      }, 3000);
     });
   });
 
@@ -228,7 +245,8 @@ formSubmitBtn.addEventListener("click", () => {
 
       // update button
       editTable.style.display = "block";
-      formSubmitBtn.style.display = "none";
+      // formSubmitBtn.style.display = "none";
+      formSubmitBtn.remove();
 
       // Get the current row data
       let medicineValue = tr.children[0].innerText;
@@ -250,21 +268,34 @@ formSubmitBtn.addEventListener("click", () => {
         newDate.setDate(newDate.getDate() + Number(manufactdays.value));
         let localDate = newDate.toLocaleDateString();
         if (localDate == "Invalid Date") {
-          localDate = byDateInput.value;
+          let a = new Date(byDateInput.value);
+          localDate = a.toLocaleDateString();
         }
+
+        // let tDate = localDate.replace(/\//g, "-");
         tr.children[0].innerText = medicineInput.value;
         tr.children[1].innerText = quantityTnput.value;
         tr.children[2].innerText = localDate;
         tr.children[3].innerText = rackInput.value;
         tr.children[4].innerText = betchNum.value;
-        validArray.push(medicineInput.value);
-        notification.innerText = "Form Update successfully!";
-        notification.classList.add("show");
-        notification.style.background = "blue";
-        form.style.display = "none";
-        setTimeout(function () {
-          notification.classList.remove("show");
-        }, 3000);
+        if (localDate == "Invalid Date") {
+          notification.innerText = "Invalid Date . ...!";
+          notification.classList.add("show");
+          notification.style.background = "red";
+          form.style.display = "block";
+          setTimeout(function () {
+            notification.classList.remove("show");
+          }, 3000);
+        } else {
+          validArray.push(medicineInput.value);
+          notification.innerText = "Form Update successfully!";
+          notification.classList.add("show");
+          notification.style.background = "blue";
+          form.style.display = "none";
+          setTimeout(function () {
+            notification.classList.remove("show");
+          }, 3000);
+        }
       });
       // Remove the current row
       // tr.remove();

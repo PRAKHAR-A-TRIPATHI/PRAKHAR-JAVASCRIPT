@@ -112,3 +112,11 @@ input,select{
     background-color: blue;
     display: none;
 }
+.button{
+    display: flex;
+    flex-direction: row;
+}
+#cancel{
+    position: absolute;
+    right: 0%;
+}

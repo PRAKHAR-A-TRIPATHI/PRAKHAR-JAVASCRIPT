@@ -7,5 +7,8 @@ let byDate = document.forms["form"]["eDate"];
 let byDayCheakBox = document.forms["form"]["byDays"];
 let byDays = document.forms["form"]["mDate"];
 let days = document.forms["form"]["dayss"];
+let formSubmitBtn = document.forms["form"]["addTable"];
+let editBtn = document.forms["form"]["editTable"];
+let cancelBtn = document.forms["form"]["cancel"];
+var notification = document.getElementById("notification");
 
-console.log(days);
