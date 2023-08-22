@@ -16,11 +16,11 @@
 
 
         let ul = document.getElementById("list");
-        myList.forEach((val) => {
-            let li = document.createElement("li");
-            li.innerText = val;
-            ul.appendChild(li);
-        })
+        // myList.forEach((val) => {
+        //     let li = document.createElement("li");
+        //     li.innerText = val;
+        //     ul.appendChild(li);
+        // })
         function searchList() {
             let input = document.getElementById("input").value.toLowerCase();
             let fil = myList.filter(item => item.toLowerCase().includes(input));

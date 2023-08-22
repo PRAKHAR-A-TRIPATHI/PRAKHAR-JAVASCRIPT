@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new task</title>
+    <link rel="stylesheet" href="STYLE.CSS">
+</head>
+
+<body>
+    <div class="main" id="maindiv">
+        <div id="popButton">
+            <button id="popupForm">Add Madicinie</button>
+            <button id="popupRecord">Add Record</button>
+        </div>
+
+        <form action="##" id="form">
+            <label for="medicine">Medicine</label> <br>
+            <input type="text" id="medicine" class="input"> <br> <br>
+
+            <label for="Rack">Rack</label> <br>
+            <select id="Rack">
+                <!-- <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option> -->
+            </select> <br> <br>
+
+            <label for="betNum">Batch Number</label> <br>
+            <input type="text" id="betNum" disabled class="input"> <br> <br>
+
+            <label for="quantity">Quantity</label><br>
+            <input type="number" id="quantity" class="input" min="0"> <br> <br>
+
+            <p>Expire Date</p>
+            <div class="expDate">
+                <div class="byDate">
+                    <div class="flex">
+                        <label for="byDate">By Date</label>
+                        <input type="checkbox" id="byDate">
+                    </div>
+                    <div class="none" id="date">
+                        <label for="eDate">Date</label>
+                        <input type="date" class="input" id="eDate">
+                    </div>
+                </div>
+                <div class="byDays">
+                    <div class="flex">
+                        <label for="byDays">By Days</label>
+                        <input type="checkbox" id="byDays">
+                    </div>
+                    <div class="none" id="days">
+                        <label for="mDate">Manufacture Date</label><br>
+                        <input type="date" id="mDate" class="input"><br>
+                        <label for="days">Days</label><br>
+                        <input type="number" id="dayss" class="input" min="0">
+                    </div>
+                </div>
+
+            </div>
+            <div class="button">
+                <button id="addTable">Add Madicine</button>
+                <button id="editTable">Update value</button>
+                <button id="cancel">cancel</button>
+            </div>
+
+        </form>
+    </div>
+
+    <div class="addRecode">
+        <form action="##" id="record">
+            <h1>Add Record</h1>
+            <label for="serch">Serch Medicine</label> <br>
+            <input type="text" name="serchMedicine" id="serchMedicine">
+            <p id="medi"></p><br><br>
+            <ul id="ul"></ul>
+
+            <label for="selectRecode">Select Reecode</label><br>
+            <select name="selectRecode" id="selectRecord">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select><br><br>
+
+            <label for="recodeQuntity">Quntity</label><br>
+            <input type="number" name="recodeQuntity" id="recodeQuntity" min="0">
+            <p id="qunt"></p>
+
+            <button id="recordButton">Add Rercord</button>
+            <button id="cancel1">cancel</button>
+
+        </form>
+
+    </div>
+    <div class="tables">
+        <div class="table">
+            <table id="table">
+                <thead>
+                    <tr>
+                        <th>Medicine</th>
+                        <th>Quantity</th>
+                        <th>Expaire Date</th>
+                        <th>Pack</th>
+                        <th>Betch</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody"></tbody>
+            </table>
+        </div>
+        <div class="table2">
+            <table id="table2">
+                <thead>
+                    <tr>
+                        <th>Medicine</th>
+                        <th>Quantity</th>
+                        <th>Slot</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody2"></tbody>
+            </table>
+        </div>
+    </div>
+    <div id="notification"></div>
+</body>
+<script src="SCRIPT.JS"></script>
+
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Crude Local Storage</title>
+    <link rel="stylesheet" href="l.css">
+</head>
+
+<body>
+    <div class="buttons">
+        <button id="popupForm" class="btn">ADD MEDCINE</button>
+        <button id="popupRecodeForm" class="btn">ADD RECORD</button>
+        <button id="popupRecodeOutForm" class="btn">ADD OUT RECORD</button>
+    </div>
+
+    <div class="addMedicineFormDiv">
+        <form action="" id="addMedicineForm">
+            <label for="medicineInput">Medicine</label><br>
+            <input type="text" id="medicineInput">
+
+            <label for="rack">Rack</label><br>
+            <select id="rack"></select> <br>
+
+            <label for="betNumber">Batch Number</label><br>
+            <input type="text" id="betNumber" disabled> <br>
+
+            <label for="quantityInput">Quntity</label>
+            <input type="number" id="quantityInput" min="0"><br>
+
+            <p>Expaire Date</p><br>
+            <div class="expireDiv">
+                <div class="byDateDiv">
+                    <div class="flex">
+                        <label for="byDateCheak">By Date</label>
+                        <input type="checkbox" id="byDateCheak">
+                    </div><br>
+                    <div class="none" id="date">
+                        <label for="byDateInput">Date</label>
+                        <input type="date" class="input" id="byDateInput">
+                    </div>
+                </div>
+                <div class="byDaysDiv">
+                    <div class="flex">
+                        <label for="byDaysCheak">By Days</label>
+                        <input type="checkbox" id="byDaysCheak">
+                    </div><br>
+                    <div class="none" id="days">
+                        <label for="ManufactureDateInput">Manufacture Date</label><br>
+                        <input type="date" id="ManufactureDateInput"><br>
+                        <label for="dayInput">Days</label><br>
+                        <input type="number" id="dayInput" min="0">
+                    </div>
+                </div>
+            </div> <br>
+            <div class="SubmitButton">
+                <button id="addMedicineBtn" class="btn">Add Madicine</button>
+                <button id="UpdateTable" class="btn">Update value</button>
+                <button id="cancel" class="btn">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="addRecodeFormDiv">
+        <form action="" id="addRecodeForm">
+            <h1>Add Recode</h1>
+            <label for="addRecodeSerchMedicine">Serch Medicine</label>
+            <input type="text" id="addRecodeSerchMedicine">
+            <ul id="searchResultsList"></ul>
+            <br>
+
+            <label for="SelctRecode">Select Recode</label>
+            <select id="SelctRecode">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select><br>
+
+            <label for="addRecodeQuntity">Quntity</label>
+            <input type="number" id="addRecodeQuntity" min="0"> <br>
+
+            <button id="addRecodeBtn" class="btn">Add Recode</button>
+            <button id="addRecodeCancelBtn" class="btn">Cancel</button>
+        </form>
+    </div>
+
+    <div class="addOutRecodeFormDiv">
+        <form action="" id="newOutForm">
+            <h1>Add Out Recode</h1>
+            <label for="outMedi">Serch Medicine</label><br>
+            <input type="text" id="outMedi">
+            <ul id="popul"></ul><br><br>
+
+            <label for="outquntity">Quantity</label><br>
+            <input type="number" id="outquntity" min="0">
+            <br><br>
+
+
+            <label for="purpose">Purpose</label><br>
+            <select id="purpose">
+                <option value="Purpose 1">Purpose 1</option>
+                <option value="Purpose 2">Purpose 2</option>
+                <option value="Purpose 3">Purpose 3</option>
+                <option value="Purpose 4">Purpose 4</option>
+            </select> <br>
+
+            <button id="addOutBtn" class="btn">Add Out Recode</button>
+            <button id="cancel2" class="btn">cancel</button>
+        </form>
+    </div>
+
+    <div class="tables">
+        <div class="table1">
+            <table id="medicineTable">
+                <thead>
+                    <tr>
+                        <th>Medicine</th>
+                        <th>Rack</th>
+                        <th>Batch Number</th>
+                        <th>Quantity</th>
+                        <th>Expiry Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="medicineTableBody">
+                </tbody>
+            </table>
+        </div>
+        <div class="table2">
+            <table id="addRecodeTable">
+                <thead>
+                    <tr>
+                        <th>Medicine</th>
+                        <th>Quntity</th>
+                        <th>Slot</th>
+                    </tr>
+                </thead>
+                <tbody id="addRecodeTableBody">
+                </tbody>
+            </table>
+        </div>
+        <div class="table3">
+            <table id="addOutRecodeTable">
+                <thead>
+                    <tr>
+                        <th>Medicine</th>
+                        <th>Remove Quntity</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+                <tbody id="addOutRecodeTableBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="notification"></div>
+</body>
+<script src="l.js"></script>
+
+</html>

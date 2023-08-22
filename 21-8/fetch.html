@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>state</th>
+                <th>universities</th>
+            </tr>
+        </thead>
+        <tbody id="userData"></tbody> <br> <br>
+    </table>
+</body>
+<script>
+    let p = fetch("http://universities.hipolabs.com/search?country=india");
+    let array = [];
+    p.then((val) => {
+        console.log(val.status);
+        console.log(val.ok);
+        return val.json()
+    }).then((val) => {
+        console.log(val);
+        val.forEach((val) => {
+            document.getElementById("userData").innerHTML += `
+            <tr>
+                <td>${val.country}</td>       
+                <td>${val["state-province"]}</td>       
+                <td>${val.name}</td>       
+                </tr>
+            `
+            array.push(val.name)
+        })
+    })
+    console.log(array);
+
+
+</script>
+
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crude</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="buttons">
+        <button id="popupForm">ADD MEDCINE</button>
+        <button id="popupRecodeForm">ADD RECORD</button>
+        <button id="popupRecodeOutForm">ADD OUT RECORD</button>
+    </div>
+
+    <div class="addmedicine">
+        <form action="" class="medicineForm" id="addmedicine">
+            <label for="medicine">Medicine</label> <br>
+            <input type="text" id="medicine" class="input" name="medicine"> <br> <br>
+
+            <label for="Rack">Rack</label> <br>
+            <select id="Rack" class="input" name="Rack">
+                <!-- <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option> -->
+            </select> <br> <br>
+
+            <label for="betNum">Batch Number</label> <br>
+            <input type="text" id="betNum" disabled class="input" name="betNum"> <br> <br>
+
+            <label for="quantity">Quantity</label><br>
+            <input type="number" id="quantity" class="input" min="0" name="quantity"> <br> <br>
+
+            <p>Expaire Date</p>
+            <div class="expaireDate">
+                <div class="byDate">
+                    <div class="flex">
+                        <label for="byDate">By Date</label>
+                        <input type="checkbox" id="byDate" name="byDate">
+                    </div>
+                    <div class="none" id="date">
+                        <label for="eDate">Date</label>
+                        <input type="date" class="input" id="eDate" name="eDate">
+                    </div>
+                </div>
+                <div class="byDays">
+                    <div class="flex">
+                        <label for="byDays">By Days</label>
+                        <input type="checkbox" id="byDays" name="byDays">
+                    </div>
+                    <div class="none" id="days">
+                        <label for="mDate">Manufacture Date</label><br>
+                        <input type="date" id="mDate" class="input" name="mDate"><br>
+                        <label for="days">Days</label><br>
+                        <input type="number" id="dayss" class="input" min="0" name="dayss">
+                    </div>
+                </div>
+            </div>
+            <div class="Submitbutton">
+                <button id="addTable">Add Madicine</button>
+                <button id="editTable">Update value</button>
+                <button id="cancel">cancel</button>
+            </div>
+        </form>
+    </div>
+
+
+    <div class="addRecode">
+        <form action="##" id="record">
+            <h1>Add Record</h1>
+            <label for="serch">Serch Medicine</label> <br>
+            <input type="text" name="serchMedicine" id="serchMedicine" class="input">
+            <p id="medi"></p><br><br>
+            <ul id="ul"></ul>
+
+            <label for="selectRecode">Select Reecode</label><br>
+            <select name="selectRecode" id="selectRecord" class="input">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select><br><br>
+
+            <label for="recodeQuntity">Quntity</label><br>
+            <input type="number" name="recodeQuntity" id="recodeQuntity" min="0" class="input">
+            <p id="qunt"></p>
+
+            <button id="recordButton" class="btn">Add Rercord</button>
+            <button id="cancel1" class="btn">cancel</button>
+        </form>
+    </div>
+
+
+    <div class="addOutRecode">
+    <form action="" id="newOutForm">
+        <h1>Add Out Recode</h1>
+        <label for="outMedi">Serch Medicine</label><br>
+        <input type="text" id="outMedi" name="outMedi" class="input">
+        <div id="popul"></div>
+        <p id="omed"></p><br><br>
+
+        <label for="outquntity">Quantity</label><br>
+        <input type="number" id="outquntity" name="outquntity" min="0" class="input">
+        <p id="oqun"></p><br><br>
+
+
+        <label for="purpose">Purpose</label><br>
+        <select name="purpose" id="purpose" class="input">
+            <option value="Purpose 1">Purpose 1</option>
+            <option value="Purpose 2">Purpose 2</option>
+            <option value="Purpose 3">Purpose 3</option>
+            <option value="Purpose 4">Purpose 4</option>
+        </select>
+
+        <button id="addOutBtn" class="btn">Add Out Recode</button>
+        <button id="cancel2" class="btn">cancel</button>
+    </form>
+    </div>
+
+    <div class="tables">
+        <div class="addmedicinetable">
+            <table id="table">
+                <thead>
+                    <tr>
+                        <th>Medicine</th>
+                        <th>Quantity</th>
+                        <th>Expaire Date</th>
+                        <th>Pack</th>
+                        <th>Betch</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="addMedicineTbody"></tbody>
+            </table>
+        </div>
+        <div class="table2">
+            <table id="table2">
+                <thead>
+                    <tr>
+                        <th>Medicine</th>
+                        <th>Quantity</th>
+                        <th>Slot</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody2"></tbody>
+            </table>
+        </div>
+        <div class="table3">
+            <table id="table2">
+                <thead>
+                    <tr>
+                        <th>Medicine</th>
+                        <th>Remove Quantity</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody3"></tbody>
+            </table>
+        </div>
+    </div>
+    </div>
+    <div id="notification"></div>
+</body>
+<script src="script.js"></script>
+
+</html>

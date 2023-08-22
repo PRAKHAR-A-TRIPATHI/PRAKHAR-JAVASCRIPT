@@ -43,7 +43,11 @@ let manufacturDate = document.getElementById("mDate");
 let manufactdays = document.getElementById("dayss");
 let cancel = document.getElementById("cancel");
 let editTable = document.getElementById("editTable");
+let recodeForm = document.getElementById("record");
+let popRecord = document.getElementById("popupRecord");
+let recordSubmitButton = document.getElementById("recordButton");
 let validArray = [];
+let newArray = [];
 
 // console.log(maindiv);
 // display form
@@ -192,16 +196,16 @@ formSubmitBtn.addEventListener("click", (e) => {
   } else {
     // add table th value
     document.getElementById("tbody").innerHTML += `
-    <tr>
-      <td>${medicineInput.value}</td>
-      <td>${quantityTnput.value}</td>
-      <td>${localDate}</td>
-      <td>${rackInput.value}</td>
-      <td>${betchNum.value}</td>
-      <td> <button class="delet">remove</button>
-     <button class="edit">Edit</button></td>
-  </tr>
-      `;
+      <tr>
+        <td>${medicineInput.value}</td>
+        <td>${quantityTnput.value}</td>
+        <td>${localDate}</td>
+        <td>${rackInput.value}</td>
+        <td>${betchNum.value}</td>
+        <td> <button class="delet">remove</button>
+       <button class="edit">Edit</button></td>
+    </tr>
+        `;
 
     //   medicine validation
     validArray.push(medicineInput.value);
@@ -217,6 +221,17 @@ formSubmitBtn.addEventListener("click", (e) => {
       notification.classList.remove("show");
     }, 3000);
     form.style.display = "none";
+
+    //   store value in new array
+    let myobj = {
+      medicine: medicineInput.value,
+      quantity: quantityTnput.value,
+      date: localDate,
+      rack: rackInput.value,
+      betch: betchNum.value,
+    };
+    newArray.push(myobj);
+    console.log(newArray);
   }
   //   remove list
   let deletButtons = document.querySelectorAll(".delet");
@@ -228,7 +243,10 @@ formSubmitBtn.addEventListener("click", (e) => {
         validArray.splice(index, 1);
         console.log(validArray);
       }
-      // console.log(index);
+      let x = tr.children[0].innerText;
+      newArray = newArray.filter((value) => value.medicine != x);
+      console.log(newArray);
+      // console.log(p);
       tr.remove();
       notification.innerText = "delete List Item......!";
       notification.style.background = "red";
@@ -243,6 +261,7 @@ formSubmitBtn.addEventListener("click", (e) => {
   let editButtons = document.querySelectorAll(".edit");
   editButtons.forEach((button) => {
     button.addEventListener("click", () => {
+      event.preventDefault();
       let tr = button.parentNode.parentNode;
 
       // update button
@@ -306,4 +325,103 @@ formSubmitBtn.addEventListener("click", (e) => {
       form.style.display = "block";
     });
   });
+});
+
+
+popRecord.addEventListener("click", () => {
+  recodeForm.style.display = "block";
+  recodeForm.style.top = "50%";
+  recodeForm.style.left = "50%";
+  recodeForm.style.transform = "translate(-50%, -50%)";
+  recodeForm.elements.serchMedicine.value="";
+  recodeForm.element.recodeQuntity.value="";
+});
+
+document.getElementById("cancel1").addEventListener("click", () => {
+  event.preventDefault();
+  recodeForm.style.display = "none";
+});
+
+let recordBtn = document.getElementById("recordButton");
+recordBtn.addEventListener("click", () => {});
+// event.preventDefault()
+let ul = document.getElementById("ul");
+ul.style.display = "none";
+recodeForm.elements.serchMedicine.addEventListener("input", () => {
+  let input = recodeForm.elements.serchMedicine.value.toLowerCase();
+  let compare = newArray.filter((item) =>
+    item.medicine.toLowerCase().includes(input)
+  );
+  ul.innerHTML = "";
+  ul.style.display = "none";
+  compare.forEach((val) => {
+    let li = document.createElement("li");
+    li.innerText = val.medicine;
+    ul.appendChild(li);
+    ul.style.display = "block";
+    li.addEventListener("click", () => {
+      li.background = "lightBlue";
+      recodeForm.elements.serchMedicine.value = `${val.medicine}/${val.quantity}/${val.date}/${val.rack}/${val.betch}`;
+      ul.style.display = "none";
+      recodeForm.elements.recodeQuntity.value=val.quantity;
+    });
+    
+  });
+  if (input === "") {
+    ul.style.display = "none";
+  }
+
+});
+
+recordSubmitButton.addEventListener("click", () => {
+  event.preventDefault();
+  let arr = [];
+  let selectElement = document.getElementById("selectRecord");
+  let selectedValue = selectElement.value;  
+  console.log(selectedValue);
+  let medicineValue = recodeForm.elements.serchMedicine.value;
+  let tableMedicine = medicineValue.split("/");
+  let a = medicineValue.replaceAll(" ","")
+  if (a == "") {
+    document.getElementById("medi").style.display="block"
+    document.getElementById("medi").style.color="red"
+    document.getElementById("medi").innerText="filled Requaired"
+    setTimeout(()=>{
+        document.getElementById("medi").style.display="none"
+    },3000)
+  }else if(recodeForm.elements.recodeQuntity.value==""){
+    document.getElementById("qunt").style.display="block"
+    document.getElementById("qunt").style.color="red"
+    document.getElementById("qunt").innerText="filled Requaired"
+    setTimeout(()=>{
+        document.getElementById("qunt").style.display="none"
+
+    },3000)
+  }else if(recodeForm.elements.recodeQuntity.value<0){
+    document.getElementById("qunt").style.display="block"
+    document.getElementById("qunt").style.color="red"
+    document.getElementById("qunt").innerText="valid value required"
+    setTimeout(()=>{
+        document.getElementById("qunt").style.display="none"
+
+    },3000)
+  }else if(arr.includes(tableMedicine[0])){
+    document.getElementById("medi").style.display="block"
+    document.getElementById("medi").style.color="red"
+    document.getElementById("medi").innerText="same value not required"
+    setTimeout(()=>{
+        document.getElementById("medi").style.display="none"
+    },3000)
+  }else {
+    document.getElementById("tbody2").innerHTML += `
+    <tr>
+      <td>${tableMedicine[0]}</td>
+      <td>${recodeForm.elements.recodeQuntity.value}</td>
+      <td>${selectedValue}</td>
+  </tr>
+      `;
+    arr.push(tableMedicine[0]);
+    console.log(arr);
+    recodeForm.style.display="none"
+  }
 });

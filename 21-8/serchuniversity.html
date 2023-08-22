@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(3, 3, 37);
+            color: white;
+           font-size: 30px;
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+            align-items: center;
+
+        }
+        input{
+            padding: 7px;
+            border: 5px;
+            width: 200px;
+            /* text-axgn: center; */
+        }
+        li{
+            background-color: blue;
+            margin: 2px;
+            list-style: none;
+            padding: 5px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="serch">
+    <ul id="ul"></ul>
+    <div id="div">
+        <a href="" id="a"></a>
+    </div>
+</body>
+<script>
+    let serch = document.getElementById("serch")
+    let ul = document.getElementById("ul")  
+    let div = document.getElementById("div")
+    let a = document.getElementById("a")
+    let Array=[];
+    let p = fetch("http://universities.hipolabs.com/search?country=india");
+    // let array = [];
+    p.then((val) => {
+        console.log(val.status);
+        console.log(val.ok);
+        return val.json()
+    }).then((val) => {
+        console.log(val);
+        val.forEach(val => Array.push(val))
+    })
+    console.log(Array);
+
+    serch.addEventListener("input", () => {
+    const query = serch.value;
+    const results = serchUnivercity(query);
+    updateSearchOutResults(results);
+  });
+
+    function serchUnivercity(query) {
+            query = query.toLowerCase();
+            const results = Array.filter((item) =>
+            item.name.toLowerCase().includes(query)
+            );
+            return results;
+        }
+
+    function updateSearchOutResults(results) {
+        ul.innerHTML = "";
+        if (results.length === 0) {
+            const noResultsItem = document.createElement("li");
+            noResultsItem.textContent = "No Univercity found";
+            ul.appendChild(noResultsItem);  
+        } else {
+            results.forEach((result) => {
+                const listItem = document.createElement("li");
+                listItem.textContent = `${result.country}/${result["state-province"]}/${result.name}`;
+                listItem.addEventListener("click", () => {
+                    serch.value =`${result.country}/${result["state-province"]}/${result.name}`;
+                   a.innerHTML= `Web_Page:${result.web_pages[0]}</br>Domains:${result.domains[0]}`
+                   a.href = result.web_pages[0]
+                    ul.innerHTML = ""; // Clear search results
+                });
+                ul.appendChild(listItem);
+            });
+        }
+        if (serch.value === "") {
+            ul.innerHTML = "";
+        }
+    }
+
+
+</script>
+
+</html>

@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crude</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(1, 1, 19);
+            color: white;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+        }
+
+        .input {
+            width: 100%;
+            padding: 6px;
+            border-radius: 5px;
+        }
+
+        .buttons button {
+            background-color: blue;
+            color: white;
+            border-radius: 5px;
+            padding: 10px;
+            border: none;
+            margin: 5px;
+        }
+
+        .medicineForm {
+            height: auto;
+            width: 400px;
+            border: 2px solid rgb(209, 209, 220);
+            padding: 10px;
+            border-radius: 5px;
+            position: absolute;
+            display: none;
+            background-color: rgb(1, 1, 19);
+        }
+
+        .expaireDate {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .flex {
+            display: flex;
+            padding: 10px 0;
+        }
+
+        .none {
+            display: none;
+        }
+
+        .Submitbutton button {
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            padding: 10px;
+            border: none;
+            margin: 5px;
+        }
+
+        #betNum {
+            color: white;
+        }
+
+        #notification {
+            position: fixed;
+            /* top: 200px; */
+            bottom: 10px;
+            right: -300px;
+            /* background-color: #4CAF50; */
+            color: white;
+            padding: 16px;
+            border-radius: 5px;
+            transition: right 0.5s ease-in-out;
+        }
+
+        #notification.show {
+            right: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            text-align: center;
+        }
+
+        th {
+            background-color: blue;
+            color: white;
+        }
+
+        th {
+            border: 1px solid rgb(243, 243, 243);
+            padding: 8px;
+        }
+
+        tr,
+        td {
+            border: 1px solid rgb(255, 255, 255);
+        }
+
+        #cancel {
+            position: absolute;
+            right: 0%;
+            bottom: 1%;
+        }
+
+        .delet {
+            background-color: red;
+            margin: 2px 10px;
+            padding: 6px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .edit {
+            background-color: blue;
+            padding: 6px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .addmedicinetable {
+            height: 200px;
+        }
+
+        #record {
+            height: auto;
+            width: 400px;
+            border: 2px solid rgb(209, 209, 220);
+            padding: 10px;
+            border-radius: 5px;
+            position: absolute;
+            background-color: rgb(1, 1, 19);
+            display: none;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            padding: 10px;
+            border: none;
+            margin: 5px;
+        }
+
+        ul {
+            background-color: blue;
+            position: absolute;
+            list-style: none;
+            height: 100px;
+            width: 90%;
+            top: 35%;
+            left: 4%;
+            opacity: 0.9;
+            /* border: 3px solid black; */
+            border-radius: 4px;
+
+        }
+
+        .table2 {
+            height: 200px;
+        }
+
+        #newOutForm {
+            height: auto;
+            width: 400px;
+            border: 2px solid rgb(209, 209, 220);
+            padding: 10px;
+            border-radius: 5px;
+            position: absolute;
+            background-color: rgb(1, 1, 19);
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="buttons">
+        <button id="popupForm">ADD MEDCINE</button>
+        <button id="popupRecodeForm">ADD RECORD</button>
+        <button id="popupRecodeOutForm">ADD OUT RECORD</button>
+    </div>
+
+    <div class="addmedicine">
+        <form action="" class="medicineForm" id="addmedicine">
+            <label for="medicine">Medicine</label> <br>
+            <input type="text" id="medicine" class="input" name="medicine"> <br> <br>
+
+            <label for="Rack">Rack</label> <br>
+            <select id="Rack" class="input" name="Rack">
+                <!-- <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option> -->
+            </select> <br> <br>
+
+            <label for="betNum">Batch Number</label> <br>
+            <input type="text" id="betNum" disabled class="input" name="betNum"> <br> <br>
+
+            <label for="quantity">Quantity</label><br>
+            <input type="number" id="quantity" class="input" min="0" name="quantity"> <br> <br>
+
+            <p>Expaire Date</p>
+            <div class="expaireDate">
+                <div class="byDate">
+                    <div class="flex">
+                        <label for="byDate">By Date</label>
+                        <input type="checkbox" id="byDate" name="byDate">
+                    </div>
+                    <div class="none" id="date">
+                        <label for="eDate">Date</label>
+                        <input type="date" class="input" id="eDate" name="eDate">
+                    </div>
+                </div>
+                <div class="byDays">
+                    <div class="flex">
+                        <label for="byDays">By Days</label>
+                        <input type="checkbox" id="byDays" name="byDays">
+                    </div>
+                    <div class="none" id="days">
+                        <label for="mDate">Manufacture Date</label><br>
+                        <input type="date" id="mDate" class="input" name="mDate"><br>
+                        <label for="days">Days</label><br>
+                        <input type="number" id="dayss" class="input" min="0" name="dayss">
+                    </div>
+                </div>
+            </div>
+            <div class="Submitbutton">
+                <button id="addTable">Add Madicine</button>
+                <button id="editTable">Update value</button>
+                <button id="cancel">cancel</button>
+            </div>
+        </form>
+    </div>
+
+
+    <div class="addRecode">
+        <form action="##" id="record">
+            <h1>Add Record</h1>
+            <label for="serch">Serch Medicine</label> <br>
+            <input type="text" name="serchMedicine" id="serchMedicine" class="input">
+            <p id="medi"></p><br><br>
+            <ul id="ul"></ul>
+
+            <label for="selectRecode">Select Reecode</label><br>
+            <select name="selectRecode" id="selectRecord" class="input">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select><br><br>
+
+            <label for="recodeQuntity">Quntity</label><br>
+            <input type="number" name="recodeQuntity" id="recodeQuntity" min="0" class="input">
+            <p id="qunt"></p>
+
+            <button id="recordButton" class="btn">Add Rercord</button>
+            <button id="cancel1" class="btn">cancel</button>
+        </form>
+    </div>
+
+
+    <div class="addOutRecode">
+        <form action="" id="newOutForm">
+            <h1>Add Out Recode</h1>
+            <label for="outMedi">Serch Medicine</label><br>
+            <input type="text" id="outMedi" name="outMedi" class="input">
+            <div id="popul"></div>
+            <p id="omed"></p><br><br>
+
+            <label for="outquntity">Quantity</label><br>
+            <input type="number" id="outquntity" name="outquntity" min="0" class="input">
+            <p id="oqun"></p><br><br>
+
+
+            <label for="purpose">Purpose</label><br>
+            <select name="purpose" id="purpose" class="input">
+                <option value="Purpose 1">Purpose 1</option>
+                <option value="Purpose 2">Purpose 2</option>
+                <option value="Purpose 3">Purpose 3</option>
+                <option value="Purpose 4">Purpose 4</option>
+            </select>
+
+            <button id="addOutBtn" class="btn">Add Out Recode</button>
+            <button id="cancel2" class="btn">cancel</button>
+        </form>
+    </div>
+
+    <div class="tables">
+        <div class="addmedicinetable">
+            <table id="table">
+                <thead>
+                    <tr>
+                        <th>Medicine</th>
+                        <th>Quantity</th>
+                        <th>Expaire Date</th>
+                        <th>Pack</th>
+                        <th>Betch</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="addMedicineTbody"></tbody>
+            </table>
+        </div>
+        <div class="table2">
+            <table id="table2">
+                <thead>
+                    <tr>
+                        <th>Medicine</th>
+                        <th>Quantity</th>
+                        <th>Slot</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody2"></tbody>
+            </table>
+        </div>
+        <div class="table3">
+            <table id="table2">
+                <thead>
+                    <tr>
+                        <th>Medicine</th>
+                        <th>Remove Quantity</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody3"></tbody>
+            </table>
+        </div>
+    </div>
+    </div>
+    <div id="notification"></div>
+</body>
+<script >
+   const racks = [
+  { id: 1, num: 1 },
+  { id: 2, num: 2 },
+  { id: 3, num: 3 },
+  { id: 4, num: 4 },
+  { id: 5, num: 5 },
+  { id: 6, num: 6 },
+  { id: 7, num: 7 },
+  { id: 8, num: 8 },
+  { id: 9, num: 9 },
+  { id: 10, num: 10 },
+];
+
+const batch = [
+  { rack_id: 1, batch: "A1" },
+  { rack_id: 2, batch: "A2" },
+  { rack_id: 3, batch: "A3" },
+  { rack_id: 4, batch: "A4" },
+  { rack_id: 5, batch: "A5" },
+  { rack_id: 6, batch: "A6" },
+  { rack_id: 7, batch: "A7" },
+  { rack_id: 8, batch: "A8" },
+  { rack_id: 9, batch: "A9" },
+  { rack_id: 10, batch: "A10" },
+];
+
+let addMedicineForm = document.getElementById("addmedicine");
+let addmedicineSubmitBtn = document.getElementById("addTable");
+let datesDiv = document.getElementById("date");
+let daysDiv = document.getElementById("days");
+var notification = document.getElementById("notification");
+let popupAddMedicineForm = document.getElementById("popupForm");
+let addMedicineUpdateBtn = document.getElementById("editTable");
+let addMedicineCancelBtn = document.getElementById("cancel");
+let SubmitBtnDiv = document.querySelector(".Submitbutton");
+let addMedicneArray = [];
+let cheackMedicine = [];
+let i = 0;
+
+popupAddMedicineForm.addEventListener("click", () => {
+  SubmitBtnDiv.appendChild(addmedicineSubmitBtn);
+  addMedicineForm.style.display = "block";
+  recodeForm.style.display = "none";
+  outForm.style.display = "none";
+  addMedicineForm.style.top = "50%";
+  addMedicineForm.style.left = "50%";
+  addMedicineForm.style.transform = "translate(-50%, -50%)";
+  addMedicineForm.reset();
+  addMedicineUpdateBtn.style.display = "none";
+  datesDiv.style.display = "none";
+  daysDiv.style.display = "none";
+});
+
+addMedicineCancelBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  addMedicineForm.style.display = "none";
+});
+
+//   racks options add
+racks.forEach((element) => {
+  addMedicineForm.elements.Rack.innerHTML += ` <option>${element.id}</option>`;
+});
+addMedicineForm.elements.Rack.value = "";
+
+// batch number addded
+addMedicineForm.elements.Rack.addEventListener("input", () => {
+  batch.forEach((element) => {
+    if (element.rack_id == addMedicineForm.elements.Rack.value) {
+      addMedicineForm.elements.betNum.value = element.batch;
+    }
+  });
+});
+
+// expaire date
+addMedicineForm.elements.byDate.addEventListener("click", () => {
+  if (addMedicineForm.elements.byDate.checked) {
+    datesDiv.style.display = "block";
+    daysDiv.style.display = "none";
+    addMedicineForm.elements.byDays.checked = false;
+  } else {
+    datesDiv.style.display = "none";
+  }
+});
+
+//   block and none date display
+addMedicineForm.elements.byDays.addEventListener("input", () => {
+  if (addMedicineForm.elements.byDays.checked) {
+    daysDiv.style.display = "block";
+    datesDiv.style.display = "none";
+    addMedicineForm.elements.byDate.checked = false;
+  } else {
+    daysDiv.style.display = "none";
+  }
+});
+
+addMedicineForm.elements.eDate.addEventListener("input", () => {
+  let today = new Date();
+  today.setHours(0, 0, 0, 0);
+  let inputdate = new Date(addMedicineForm.elements.eDate.value);
+  inputdate.setHours(0, 0, 0, 0);
+  if (inputdate < today) {
+    addMedicineForm.elements.eDate.value = "";
+    error("Inavlid Date");
+  }
+});
+function expireDate() {
+  let expireDate;
+  if (addMedicineForm.elements.byDays.checked) {
+    let a = addMedicineForm.elements.mDate.value;
+    let b = addMedicineForm.elements.dayss.value;
+    let selected_date = new Date(a);
+    selected_date.setDate(selected_date.getDate() + Number(b));
+    expireDate = `${String(selected_date.getFullYear()).padStart(
+      2,
+      "0"
+    )}-${String(selected_date.getMonth() + 1).padStart(2, "0")}-${String(
+      selected_date.getDate()
+    ).padStart(2, "0")}`;
+  } else {
+    expireDate = addMedicineForm.elements.eDate.value;
+  }
+  return expireDate;
+}
+
+// error
+function error(value) {
+  notification.innerText = value;
+  notification.style.background = "red";
+  notification.classList.add("show");
+  setTimeout(function () {
+    notification.classList.remove("show");
+  }, 3000);
+}
+// error
+function print(value) {
+  notification.innerText = value;
+  notification.style.background = "green";
+  notification.classList.add("show");
+  setTimeout(function () {
+    notification.classList.remove("show");
+  }, 3000);
+}
+
+// table add function
+function tableAdd() {
+  document.getElementById("addMedicineTbody").innerHTML += `
+    <tr>
+      <td>${addMedicineForm.elements.medicine.value}</td>
+      <td>${addMedicineForm.elements.quantity.value}</td>
+      <td>${expireDate()}</td>
+      <td>${addMedicineForm.elements.Rack.value}</td>
+      <td>${addMedicineForm.elements.betNum.value}</td>
+      <td> <button class="delet">remove</button>
+     <button class="edit">Edit</button></td>
+  </tr>
+      `;
+}
+
+// table remove
+function tableRemove() {
+  let deletButtons = document.querySelectorAll(".delet");
+  deletButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      let tr = button.parentNode.parentNode;
+      let index = cheackMedicine.indexOf(tr.children[0].innerText);
+      if (index > -1) {
+        cheackMedicine.splice(index, 1);
+      }
+      let x = tr.children[0].innerText;
+      addMedicneArray = addMedicneArray.filter((value) => value.medicine != x);
+      // console.log(addMedicneArray);
+      // console.log(p);
+      error("Delete Table Roe...!");
+      tr.remove();
+    });
+  });
+}
+
+// upadte table value
+function updateTableValue() {
+  let editButtons = document.querySelectorAll(".edit");
+  editButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      // event.preventDefault();
+      let tr = button.parentNode.parentNode;
+
+      // update button
+      editTable.style.display = "block";
+      // formSubmitBtn.style.display = "none";
+      addmedicineSubmitBtn.remove();
+
+      // Get the current row data
+      let medicineValue = tr.children[0].innerText;
+      let quantityValue = tr.children[1].innerText;
+      let dateValue = tr.children[2].innerText;
+      let rackValue = tr.children[3].innerText;
+      let batchValue = tr.children[4].innerText;
+
+      // Set the form input values to the current row data
+      addMedicineForm.elements.medicine.value = medicineValue;
+      addMedicineForm.elements.quantity.value = quantityValue;
+      addMedicineForm.elements.eDate.value = dateValue;
+      addMedicineForm.elements.Rack.value = rackValue;
+      addMedicineForm.elements.betNum.value = batchValue;
+
+      // edit row
+      addMedicineUpdateBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        tr.children[0].innerText = addMedicineForm.elements.medicine.value;
+        tr.children[1].innerText = addMedicineForm.elements.quantity.value;
+        tr.children[2].innerText = expireDate();
+        tr.children[3].innerText = addMedicineForm.elements.Rack.value;
+        tr.children[4].innerText = addMedicineForm.elements.betNum.value;
+        addMedicineForm.style.display = "none";
+        print("Data Update successfully!");
+      });
+      addMedicineForm.style.display = "block";
+    });
+  });
+}
+
+//  console.log(addmedicineSubmitBtn);
+addMedicineForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  let a = addMedicineForm.elements.medicine.value;
+  let medicineValue = a.trim();
+  if (medicineValue === "") {
+    error("invalid medicine...!");
+  } else if (addMedicineForm.elements.Rack.value === "") {
+    error("invalid rack....!");
+  } else if (addMedicineForm.elements.quantity.value === "") {
+    error("invalid quntity...!");
+  } else if (expireDate() === "" || expireDate() === "NaN-NaN-NaN") {
+    error("invalid expaireDate....!");
+  } else if (addMedicineForm.elements.quantity.value < 0) {
+    error("invalid quntity......!");
+  } else if (cheackMedicine.includes(medicineValue)) {
+    error("not same medicine add ....!");
+  } else {
+    addMedicneArray.push({
+      id: i++,
+      medicine: addMedicineForm.elements.medicine.value,
+      rack: addMedicineForm.elements.Rack.value,
+      betchNum: addMedicineForm.elements.betNum.value,
+      quntity: addMedicineForm.elements.quantity.value,
+      expaireDate: expireDate(),
+    });
+    cheackMedicine.push(addMedicineForm.elements.medicine.value);
+    print("Form Submit SucceFully...");
+    // console.log(addMedicneArray);
+    tableAdd();
+    tableRemove();
+    updateTableValue();
+    addMedicineForm.style.display = "none";
+    addMedicineForm.reset();
+  }
+});
+
+let popupRecodeForm = document.getElementById("popupRecodeForm");
+let recodeForm = document.getElementById("record");
+let serch;
+let u = 0;
+let addRecodeArray = [];
+let recQuntity;
+
+popupRecodeForm.addEventListener("click", () => {
+  addMedicineForm.style.display = "none";
+  recodeForm.style.display = "block";
+  outForm.style.display = "none";
+  recodeForm.style.top = "50%";
+  recodeForm.style.left = "50%";
+  recodeForm.style.transform = "translate(-50%, -50%)";
+});
+
+document.getElementById("cancel1").addEventListener("click", () => {
+  event.preventDefault();
+  recodeForm.style.display = "none";
+});
+
+// serch bar
+let ul = document.getElementById("ul");
+ul.style.display = "none";
+recodeForm.elements.serchMedicine.addEventListener("input", () => {
+  let input = recodeForm.elements.serchMedicine.value.toLowerCase();
+  let compare = addMedicneArray.filter((item) =>
+    item.medicine.toLowerCase().includes(input)
+  );
+  ul.innerHTML = "";
+  ul.style.display = "none";
+  if (compare.length === 0) {
+    document.getElementById("medi").style.color = "red";
+    document.getElementById("medi").innerText = "Value not Found";
+    serch = false;
+  } else {
+    compare.forEach((val) => {
+      let li = document.createElement("li");
+      li.innerText = val.medicine;
+      ul.appendChild(li);
+      ul.style.display = "block";
+      li.addEventListener("click", () => {
+        li.background = "lightBlue";
+        recodeForm.elements.serchMedicine.value = `${val.medicine}/${val.quntity}/${val.expaireDate}/${val.rack}/${val.betchNum}`;
+        ul.style.display = "none";
+        recodeForm.elements.recodeQuntity.value = val.quntity;
+        serch = true;
+        recQuntity=val.quntity;
+      });
+    });
+  }
+  if (input === "") {
+    ul.style.display = "none";
+    document.getElementById("medi").innerText = "";
+  }
+});
+
+function emtyError(val) {
+  document.getElementById(val).style.display = "block";
+  document.getElementById(val).style.color = "red";
+  document.getElementById(val).innerText = "filled Requaired";
+  setTimeout(() => {
+    document.getElementById(val).style.display = "none";
+  }, 3000);
+}
+
+recodeForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  // console.log(selectedValue);
+  let medicineValue = recodeForm.elements.serchMedicine.value;
+  let tableMedicine = medicineValue.split("/");
+  let a = medicineValue.replaceAll(" ", "");
+  if (a == "") {
+    emtyError("medi");
+  } else if (recodeForm.elements.recodeQuntity.value == "") {
+    emtyError("qunt");
+  } else if (recodeForm.elements.recodeQuntity.value < 0) {
+    emtyError("qunt");
+  } else if (!serch) {
+    error("plese selsect value...!");
+  }else if(recodeForm.elements.recodeQuntity.value>recQuntity){
+    error("this Quntity not Availabke in factorie..!")
+  } 
+  else {
+    document.getElementById("tbody2").innerHTML += `
+    <tr>
+      <td>${tableMedicine[0]}</td>
+      <td>${recodeForm.elements.recodeQuntity.value}</td>
+      <td>${recodeForm.elements.selectRecode.value}</td>
+  </tr>
+      `;
+    recodeForm.style.display = "none";
+    addRecodeArray.push({
+      id: u++,
+      mediucineName: tableMedicine[0],
+      recodeQuntity: recodeForm.elements.recodeQuntity.value,
+      slot: recodeForm.elements.selectRecode.value,
+    });
+  }
+
+  // console.log(addRecodeArray);
+});
+
+// add out Recode
+let outForm = document.getElementById("newOutForm");
+let popupRecodeOutForm = document.getElementById("popupRecodeOutForm");
+let popul = document.getElementById("popul");
+let b=0;
+let sel ;
+let addOutArray = [];
+let qunVal;
+
+popupRecodeOutForm.addEventListener("click", () => {
+  outForm.style.display = "block";
+  addMedicineForm.style.display = "none";
+  recodeForm.style.display = "none";
+  outForm.style.top = "50%";
+  outForm.style.left = "50%";
+  outForm.style.transform = "translate(-50%, -50%)";
+});
+
+document.getElementById("cancel2").addEventListener("click", (e) => {
+  e.preventDefault();
+  outForm.style.display = "none";
+});
+
+outForm.elements.outMedi.addEventListener("input", () => {
+  let input = outForm.elements.outMedi.value.toLowerCase();
+  let compare = addRecodeArray.filter((item) =>
+    item.mediucineName.toLowerCase().includes(input)
+  );
+  popul.innerHTML = "";
+  popul.style.display = "none";
+  if (compare.length === 0) {
+    document.getElementById("omed").style.color = "red";
+    document.getElementById("omed").innerText = "Value not Found";
+    sel=false;
+  } else {
+    compare.forEach((val) => {
+      let li = document.createElement("li");
+      li.innerText = val.mediucineName;
+      popul.appendChild(li);
+      popul.style.display = "block";
+      li.addEventListener("click", () => {
+        li.background = "lightBlue";
+        outForm.elements.outMedi.value = `${val.mediucineName}`;
+        outForm.elements.outquntity.value = val.recodeQuntity;
+        qunVal=val.recodeQuntity;
+        popul.style.display = "none";
+        sel=true;
+      });
+    });
+  }
+  if (input === "") {
+    popul.style.display = "none";
+    document.getElementById("omed").innerText = "";
+  }
+  
+});
+
+document.getElementById("addOutBtn").addEventListener("click", (e) => {
+  e.preventDefault();
+  if (outForm.elements.outMedi.value == "") {
+    emtyError("omed")
+  }else if(outForm.elements.outquntity.value==""){
+    emtyError("oqun")
+  }else if(outForm.elements.outquntity.value<0){
+    emtyError("oqun")
+  }else if(!sel){
+    error("Plaes Select value.")
+  }else if(outForm.elements.outquntity.value>qunVal){
+    error("this quntity not available in Strore")
+  }
+  else{
+    document.getElementById("tbody3").innerHTML += `
+    <tr>
+      <td>${outForm.elements.outMedi.value}</td>
+      <td>${outForm.elements.outquntity.value}</td>
+      <td>${outForm.elements.purpose.value}</td>
+  </tr>
+      `;
+      outForm.style.display="none"
+      addOutArray.push({
+        id: b++,
+        outmediucineName: outForm.elements.outMedi.value,
+        outrecodeQuntity: outForm.elements.outquntity.value,
+        purpose: outForm.elements.purpose.value,
+      });
+  }
+ 
+ 
+});
+ 
+</script>
+
+</html>

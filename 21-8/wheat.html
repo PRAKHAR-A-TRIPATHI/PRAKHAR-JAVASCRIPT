@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 200px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #weatherInfo {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Weather Search</h1>
+        <input type="text" id="cityInput" placeholder="Enter city name">
+        <button id="searchButton">Search</button>
+        <div id="weatherInfo"></div>
+    </div>
+    <script>
+        const searchButton = document.getElementById('searchButton');
+        const cityInput = document.getElementById('cityInput');
+        const weatherInfo = document.getElementById('weatherInfo');
+
+        const apiKey = `3265874a2c77ae4a04bb96236a642d2f`;
+        const apiUrl = 'https://api.openweathermap.org/data/2.5/weather';
+
+        searchButton.addEventListener('click', () => {
+            const city = cityInput.value;
+
+            if (city === '') {
+                weatherInfo.innerHTML = 'Please enter a city name.';
+                return;
+            }
+
+            const url = `${apiUrl}?q=${city}&appid=${apiKey}&units=metric`;
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    const temperature = data.main.temp;
+                    const weatherDescription = data.weather[0].description;
+
+                    weatherInfo.innerHTML = `Temperature: ${temperature}°C<br>Weather: ${weatherDescription}`;
+                })
+                .catch(error => {
+                    weatherInfo.innerHTML = 'Error fetching weather data.';
+                });
+        });
+
+    </script>
+</body>
+
+</html>

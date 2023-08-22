@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fetch api</title>
+    <style>
+        * {
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Call Api And Render Data</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>email</th>
+                <th>userName</th>
+                <th>Website</th>
+                <th>phoneNumber</th>
+            </tr>
+        </thead>
+        <tbody id="userData"></tbody> <br> <br>
+    </table>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>name</th>
+                <th>email</th>
+                <th>userName</th>
+                <th>Website</th>
+                <th>phoneNumber</th>
+                <th>Company</th>
+            </tr>
+        </thead>
+        <tbody id="userData1"></tbody> <br> <br>
+    </table>
+</body>
+<script>
+    let i;
+    async function callApi() {
+        let result = await fetch("https://jsonplaceholder.typicode.com/users")
+        result = await result.json();
+        console.log(result);
+        result.forEach((val) => {
+            document.getElementById("userData").innerHTML += `
+            <tr>
+                <td>${val.name}</td>
+                <td>${val.email}</td>
+                <td>${val.username}</td>
+                <td>${val.website}</td>
+                <td>${val.phone}</td>
+                </tr>
+            `
+        })
+    }
+    callApi()
+    let p = fetch("https://jsonplaceholder.typicode.com/users");
+    p.then((val) => {
+        console.log(val.status);
+        console.log(val.ok);
+        return val.json()
+    }).then((val) => {
+        val.forEach((val)=>{
+            console.log(val);
+            document.getElementById("userData1").innerHTML += `
+            <tr>
+                <td>${val.id}</td>
+                <td>${val.name}</td>
+                <td>${val.email}</td>
+                <td>${val.username}</td>
+                <td>${val.website}</td>
+                <td>${val.phone}</td>
+                <td>${val.company.name} </td>
+                </tr>
+            `
+        })
+    })
+</script>
+
+</html>
